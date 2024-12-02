@@ -9,10 +9,39 @@
 <body>
     <header>
         <h1>Bienvenue sur mon site !</h1>
+        <nav>
+        <ul class="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li>
+                <a href="#">Galeries</a>
+                <ul class="submenu">
+                    <li><a href="urbain.html">Urbain</a></li>
+                    <li><a href="paysage.html">Paysage</a></li>
+                    <li><a href="portraits.html">Portraits</a></li>
+                </ul>
+            </li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
     </header>
     <main>
         <p>Ceci est un site web rudimentaire créé avec GitHub.</p>
+        <section class="gallery">
+            <h2>Dernières Photographies</h2>
+            <div class="gallery-grid">
+                <img src="images/Photo05_8.jpg" alt="metro">
+                <img src="images/nyc2.jpg" alt="nyc">
+                <img src="images/nyc.jpg" alt="street">
+                <img src="images/nyc3.jpg" alt="sport">
+                <img src="images/suw.jpg" alt="metro">
+                <img src="images/cloud.jpg" alt="cloud">
+            </div>
+        </section>
     </main>
     <img src="images/Photo05_8.jpg" alt="Une belle image" style="max-width: 100%; height: auto;">
+    <footer>
+        <p>&copy; 2024 Votre Nom. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
