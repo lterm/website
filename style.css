@@ -28,10 +28,10 @@ nav ul.menu > li {
 
 nav ul.menu > li > a {
     text-decoration: none;
-    color: #fff;
+    color: white;
     padding: 10px 15px;
     display: inline-block;
-    background-color: #333;
+    background-color: #071eee;
     transition: background-color 0.3s;
 }
 
@@ -47,14 +47,14 @@ nav ul.submenu {
     top: 100%;
     left: 0;
     display: none;
-    background-color: #444;
+    background-color: #071eee;
     border-radius: 5px;
 }
 
 nav ul.submenu > li > a {
     display: block;
     padding: 10px 15px;
-    color: #fff;
+    color: white;
     text-decoration: none;
     transition: background-color 0.3s;
 }
@@ -85,7 +85,7 @@ nav ul.menu > li:hover .submenu {
 
 .gallery-grid img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -101,6 +101,6 @@ main {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #333;
+    background-color: #071eee;
     color: #aaa;
 }
