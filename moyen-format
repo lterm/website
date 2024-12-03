@@ -24,12 +24,14 @@
                         <li><a href="portraits.html">portraits</a></li>
                     </ul>
                 </li>
-                <li><a href="moyen%format.html">moyen format</a></li>
+                <li><a href="moyen-format.html">moyen format</a></li>
                 <li><a href="a-propos.html">à propos + contact</a></li>
             </ul>
         </nav>
+
         <h2>Moyen Format</h2>
         <p>Page en construction.</p>
+
         <section class="gallery">
             <h2>Galerie Moyen Format</h2>
             <div class="gallery-grid">
