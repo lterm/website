@@ -32,14 +32,6 @@
         <h2>Moyen Format</h2>
         <p>Page en construction.</p>
 
-        <section class="gallery">
-            <h2>Galerie Moyen Format</h2>
-            <div class="gallery-grid">
-                <img src="images/mf1.jpg" alt="Photo moyen format 1">
-                <img src="images/mf2.jpg" alt="Photo moyen format 2">
-                <img src="images/mf3.jpg" alt="Photo moyen format 3">
-            </div>
-        </section>
     </main>
     <footer>
         <p>&copy; 2024 Lucie Termignon. Tous droits réservés.</p>
