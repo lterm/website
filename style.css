@@ -179,3 +179,9 @@ footer {
 .contact-form button:active {
     transform: scale(0.98);
 }
+
+main section h2 {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
