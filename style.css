@@ -479,3 +479,28 @@ ul {
         margin-left: 0;
     }
 }
+
+/* Séries à venir : même grille, plus discrètes */
+.section-label--spaced {
+    margin-top: 48px;
+}
+
+.series--soon {
+    padding: 14px 0 18px;
+}
+
+.series--soon .series-title {
+    font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+    color: var(--muted);
+}
+
+.series--soon .series-title .muted {
+    display: inline;
+    margin-left: 0.4em;
+    font-size: 0.6em;
+    letter-spacing: 0;
+}
+
+.series--soon:hover .series-title .muted {
+    color: var(--muted);
+}
