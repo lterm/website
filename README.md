@@ -20,6 +20,11 @@ python3 build.py
 
 1. Placez le fichier dans `images/<série>/` (environ 1800 px de large).
 2. Ajoutez une ligne dans la liste `images` de la série, dans `content/series.json`.
-3. Lancez `python3 build.py`.
+3. Indiquez sa place dans la constellation de la page d'accueil :
+   - `"branch"` : la branche de l'arbre, par exemple `"montagne/ecrins"` ou `"personnes/inconnus"` (ou `"carre"` pour un thème sans branches) ;
+   - `"link"` (facultatif) : une autre branche reliée en pointillé, par exemple le lieu d'un portrait (`"villes/paris"`).
+
+   Les thèmes et les branches, avec leurs noms en français et en anglais, sont dans `content/constellation.json`.
+4. Lancez `python3 build.py`.
 
 `images/sources.tsv` indique l'origine (dossier Google Drive) de chaque photo.

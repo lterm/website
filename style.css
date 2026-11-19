@@ -549,10 +549,82 @@ ul {
     border: 1px solid var(--line);
 }
 
+.sky {
+    /* fond de carte : une grille d'étoiles */
+    background-image: radial-gradient(circle, color-mix(in srgb, var(--fg) 45%, transparent) 1.1px, transparent 1.5px);
+    background-size: 30px 30px;
+    background-position: 15px 15px;
+}
+
 .sky svg {
     display: block;
     width: 100%;
     height: 100%;
+    color: var(--fg);
+    cursor: zoom-out;
+}
+
+.sky[data-level="0"] svg {
+    cursor: default;
+}
+
+.sky line,
+.sky polyline {
+    vector-effect: non-scaling-stroke;
+}
+
+.sky .ramp {
+    stroke: var(--fg);
+    stroke-width: 1;
+    opacity: 0.55;
+}
+
+.sky .xlink {
+    stroke: var(--fg);
+    stroke-width: 1;
+    stroke-dasharray: 2 4;
+    opacity: 0.18;
+    transition: opacity 0.2s;
+}
+
+.sky .xlink.is-on {
+    opacity: 0.6;
+}
+
+.sky .xlink.is-hot {
+    opacity: 1;
+}
+
+.sky .branch .label {
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.sky .branch .cross {
+    stroke-width: 1.5;
+}
+
+.sky .is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sky .anchor,
+.sky .ramp {
+    transition: opacity 0.25s;
+}
+
+.bar .sky-crumbs {
+    gap: 0.4em;
+    white-space: nowrap;
+}
+
+.bar .sky-crumbs a {
+    color: var(--muted);
+}
+
+.bar .sky-crumbs a:hover,
+.bar .sky-crumbs a[aria-current] {
     color: var(--fg);
 }
 

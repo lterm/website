@@ -1,0 +1,31 @@
+{
+  "_note": "Arbre de la constellation (page d'accueil). Chaque photo de series.json indique sa branche (\"branch\": \"theme/branche\") et, si besoin, un lien en pointillé vers une autre branche (\"link\").",
+  "themes": [
+    {"id": "personnes", "fr": "Personnes", "en": "People", "branches": [
+      {"id": "proches", "fr": "Proches", "en": "Close ones"},
+      {"id": "inconnus", "fr": "Inconnus", "en": "Strangers"},
+      {"id": "scene", "fr": "Scène", "en": "Stage"}]},
+    {"id": "villes", "fr": "Villes", "en": "Cities", "branches": [
+      {"id": "new-york", "fr": "New York", "en": "New York"},
+      {"id": "boston", "fr": "Boston", "en": "Boston"},
+      {"id": "londres", "fr": "Londres", "en": "London"},
+      {"id": "paris", "fr": "Paris", "en": "Paris"},
+      {"id": "ailleurs", "fr": "Ailleurs", "en": "Elsewhere"}]},
+    {"id": "carre", "fr": "Le carré", "en": "The Square", "branches": []},
+    {"id": "mer", "fr": "Mer", "en": "Sea", "branches": [
+      {"id": "cote-opale", "fr": "Côte d’Opale", "en": "Côte d’Opale"},
+      {"id": "eoliennes", "fr": "Îles Éoliennes", "en": "Aeolian Islands"},
+      {"id": "rochers", "fr": "Côtes rocheuses", "en": "Rocky shores"},
+      {"id": "horizons", "fr": "Horizons", "en": "Horizons"},
+      {"id": "etes", "fr": "Étés", "en": "Summers"}]},
+    {"id": "hiver", "fr": "Hiver", "en": "Winter", "branches": [
+      {"id": "bessans", "fr": "Bessans", "en": "Bessans"},
+      {"id": "neige", "fr": "Neige", "en": "Snow"}]},
+    {"id": "montagne", "fr": "Montagne", "en": "Mountains", "branches": [
+      {"id": "corse", "fr": "Corse", "en": "Corsica"},
+      {"id": "ecrins", "fr": "Écrins", "en": "Écrins"},
+      {"id": "pyrenees", "fr": "Pyrénées", "en": "Pyrenees"},
+      {"id": "chamonix", "fr": "Chamonix", "en": "Chamonix"},
+      {"id": "etes", "fr": "Étés", "en": "Summers"}]}
+  ]
+}
