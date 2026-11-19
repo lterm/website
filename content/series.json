@@ -13,35 +13,43 @@
     "images": [
       {
         "src": "corps-dans-le-noir/corps-dans-le-noir-01.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/scene"
       },
       {
         "src": "corps-dans-le-noir/corps-dans-le-noir-02.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/scene"
       },
       {
         "src": "corps-dans-le-noir/corps-dans-le-noir-03.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/scene"
       },
       {
         "src": "corps-dans-le-noir/corps-dans-le-noir-04.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/scene"
       },
       {
         "src": "corps-dans-le-noir/corps-dans-le-noir-05.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/scene"
       },
       {
         "src": "corps-dans-le-noir/corps-dans-le-noir-09.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/scene"
       },
       {
         "src": "corps-dans-le-noir/corps-dans-le-noir-11.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/scene"
       },
       {
         "src": "corps-dans-le-noir/corps-dans-le-noir-14.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/scene"
       }
     ]
   },
@@ -59,67 +67,87 @@
     "images": [
       {
         "src": "nyc.jpg",
-        "caption": "New York"
+        "caption": "New York",
+        "branch": "personnes/inconnus",
+        "link": "villes/new-york"
       },
       {
         "src": "nyc2.jpg",
-        "caption": "New York"
+        "caption": "New York",
+        "branch": "villes/new-york"
       },
       {
         "src": "nyc3.jpg",
-        "caption": "New York"
+        "caption": "New York",
+        "branch": "villes/new-york"
       },
       {
         "src": "Photo05_8.jpg",
-        "caption": ""
+        "caption": "",
+        "branch": "villes/ailleurs"
       },
       {
         "src": "suw.jpg",
-        "caption": ""
+        "caption": "",
+        "branch": "villes/ailleurs"
       },
       {
         "src": "girls.jpg",
-        "caption": "New York — Nikon FM2"
+        "caption": "New York — Nikon FM2",
+        "branch": "villes/new-york"
       },
       {
         "src": "villes-de-passage/villes-de-passage-02.jpg",
-        "caption": "New York — Nikon FM2"
+        "caption": "New York — Nikon FM2",
+        "branch": "villes/new-york"
       },
       {
         "src": "villes-de-passage/villes-de-passage-04.jpg",
-        "caption": "New York — Nikon FM2"
+        "caption": "New York — Nikon FM2",
+        "branch": "personnes/inconnus",
+        "link": "villes/new-york"
       },
       {
         "src": "villes-de-passage/villes-de-passage-05.jpg",
-        "caption": "New York — Nikon FM2"
+        "caption": "New York — Nikon FM2",
+        "branch": "villes/new-york"
       },
       {
         "src": "villes-de-passage/villes-de-passage-06.jpg",
-        "caption": "Boston — Nikon FM2"
+        "caption": "Boston — Nikon FM2",
+        "branch": "personnes/inconnus",
+        "link": "villes/boston"
       },
       {
         "src": "villes-de-passage/villes-de-passage-07.jpg",
-        "caption": "New York — Nikon FM2"
+        "caption": "New York — Nikon FM2",
+        "branch": "villes/new-york"
       },
       {
         "src": "villes-de-passage/villes-de-passage-08.jpg",
-        "caption": "Londres — Nikon FM2"
+        "caption": "Londres — Nikon FM2",
+        "branch": "villes/londres"
       },
       {
         "src": "villes-de-passage/villes-de-passage-10.jpg",
-        "caption": "New York — Nikon FM2"
+        "caption": "New York — Nikon FM2",
+        "branch": "villes/new-york"
       },
       {
         "src": "villes-de-passage/villes-de-passage-11.jpg",
-        "caption": "Londres — Nikon FM2"
+        "caption": "Londres — Nikon FM2",
+        "branch": "villes/londres"
       },
       {
         "src": "villes-de-passage/villes-de-passage-12.jpg",
-        "caption": "Boston — Nikon FM2"
+        "caption": "Boston — Nikon FM2",
+        "branch": "personnes/inconnus",
+        "link": "villes/boston"
       },
       {
         "src": "villes-de-passage/villes-de-passage-13.jpg",
-        "caption": "Boston — Nikon FM2"
+        "caption": "Boston — Nikon FM2",
+        "branch": "villes/boston"
       }
     ]
   },
@@ -137,55 +165,69 @@
     "images": [
       {
         "src": "paris-suspendu/paris-suspendu-02.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-03.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-05.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-06.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-07.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-09.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-10.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-13.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-14.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-15.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-16.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-17.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/inconnus",
+        "link": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-18.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "villes/paris"
       }
     ]
   },
@@ -203,87 +245,119 @@
     "images": [
       {
         "src": "proches/proches-01.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "villes/paris"
       },
       {
         "src": "proches/proches-02.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-04.jpg",
-        "caption": "Bessans — Nikon FM2"
+        "caption": "Bessans — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "hiver/bessans"
       },
       {
         "src": "proches/proches-06.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-07.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-08.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-09.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-10.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-11.jpg",
-        "caption": "Côte d’Opale — Lomo"
+        "caption": "Côte d’Opale — Lomo",
+        "branch": "personnes/proches",
+        "link": "mer/cote-opale"
       },
       {
         "src": "proches/proches-12.jpg",
-        "caption": "Écrins — Nikon FM2"
+        "caption": "Écrins — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "montagne/ecrins"
       },
       {
         "src": "proches/proches-13.jpg",
-        "caption": "Îles Éoliennes — Nikon FM2"
+        "caption": "Îles Éoliennes — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "mer/eoliennes"
       },
       {
         "src": "proches/proches-14.jpg",
-        "caption": "Îles Éoliennes — Nikon FM2"
+        "caption": "Îles Éoliennes — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "mer/eoliennes"
       },
       {
         "src": "proches/proches-15.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-16.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-19.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "villes/paris"
       },
       {
         "src": "proches/proches-20.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "villes/paris"
       },
       {
         "src": "proches/proches-21.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "villes/paris"
       },
       {
         "src": "proches/proches-22.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-24.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "villes/paris"
       },
       {
         "src": "proches/proches-28.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "personnes/proches"
       },
       {
         "src": "proches/proches-29.jpg",
-        "caption": "Paris — Nikon FM2"
+        "caption": "Paris — Nikon FM2",
+        "branch": "personnes/proches",
+        "link": "villes/paris"
       }
     ]
   },
@@ -301,75 +375,93 @@
     "images": [
       {
         "src": "cloud.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-09.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-10.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-11.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-12.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-13.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-14.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-16.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-17.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-18.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-19.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-20.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-21.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-22.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-23.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-24.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-25.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       },
       {
         "src": "gr20/gr20-26.jpg",
-        "caption": "GR20 — Nikon FM2"
+        "caption": "GR20 — Nikon FM2",
+        "branch": "montagne/corse"
       }
     ]
   },
@@ -387,71 +479,88 @@
     "images": [
       {
         "src": "montagne/montagne-01.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "montagne/etes"
       },
       {
         "src": "montagne/montagne-02.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "montagne/etes"
       },
       {
         "src": "montagne/montagne-03.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "montagne/etes"
       },
       {
         "src": "montagne/montagne-04.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "montagne/etes"
       },
       {
         "src": "montagne/montagne-05.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "montagne/etes"
       },
       {
         "src": "montagne/montagne-06.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "montagne/etes"
       },
       {
         "src": "montagne/montagne-07.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "montagne/etes"
       },
       {
         "src": "montagne/montagne-08.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "montagne/etes"
       },
       {
         "src": "montagne/montagne-09.jpg",
-        "caption": "Écrins — Nikon FM2"
+        "caption": "Écrins — Nikon FM2",
+        "branch": "montagne/ecrins"
       },
       {
         "src": "montagne/montagne-11.jpg",
-        "caption": "Écrins — Nikon FM2"
+        "caption": "Écrins — Nikon FM2",
+        "branch": "montagne/ecrins"
       },
       {
         "src": "montagne/montagne-13.jpg",
-        "caption": "Écrins — Nikon FM2"
+        "caption": "Écrins — Nikon FM2",
+        "branch": "montagne/ecrins"
       },
       {
         "src": "montagne/montagne-14.jpg",
-        "caption": "Écrins — Nikon FM2"
+        "caption": "Écrins — Nikon FM2",
+        "branch": "montagne/ecrins"
       },
       {
         "src": "montagne/montagne-15.jpg",
-        "caption": "Écrins — Nikon FM2"
+        "caption": "Écrins — Nikon FM2",
+        "branch": "montagne/ecrins"
       },
       {
         "src": "montagne/montagne-17.jpg",
-        "caption": "Pyrénées — Leica M3"
+        "caption": "Pyrénées — Leica M3",
+        "branch": "montagne/pyrenees"
       },
       {
         "src": "montagne/montagne-19.jpg",
-        "caption": "Pyrénées — Leica M3"
+        "caption": "Pyrénées — Leica M3",
+        "branch": "montagne/pyrenees"
       },
       {
         "src": "montagne/montagne-20.jpg",
-        "caption": "Pyrénées — Leica M3"
+        "caption": "Pyrénées — Leica M3",
+        "branch": "montagne/pyrenees"
       },
       {
         "src": "montagne/montagne-21.jpg",
-        "caption": "Chamonix — Lomo"
+        "caption": "Chamonix — Lomo",
+        "branch": "montagne/chamonix"
       }
     ]
   },
@@ -469,71 +578,88 @@
     "images": [
       {
         "src": "lignes-d-horizon/lignes-d-horizon-01.jpg",
-        "caption": "Leica M3"
+        "caption": "Leica M3",
+        "branch": "mer/horizons"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-02.jpg",
-        "caption": "Leica M3"
+        "caption": "Leica M3",
+        "branch": "mer/horizons"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-03.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "mer/rochers"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-04.jpg",
-        "caption": "Leica M3"
+        "caption": "Leica M3",
+        "branch": "mer/horizons"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-07.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "mer/rochers"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-08.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "mer/rochers"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-10.jpg",
-        "caption": "Côte d’Opale — Lomo"
+        "caption": "Côte d’Opale — Lomo",
+        "branch": "mer/cote-opale"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-11.jpg",
-        "caption": "Côte d’Opale — Lomo"
+        "caption": "Côte d’Opale — Lomo",
+        "branch": "mer/cote-opale"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-13.jpg",
-        "caption": "Leica M3"
+        "caption": "Leica M3",
+        "branch": "mer/horizons"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-14.jpg",
-        "caption": "Côte d’Opale — Lomo"
+        "caption": "Côte d’Opale — Lomo",
+        "branch": "mer/cote-opale"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-15.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "mer/etes"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-16.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "mer/etes"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-17.jpg",
-        "caption": "Nikon FM2"
+        "caption": "Nikon FM2",
+        "branch": "mer/etes"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-19.jpg",
-        "caption": "Îles Éoliennes — Nikon FM2"
+        "caption": "Îles Éoliennes — Nikon FM2",
+        "branch": "mer/eoliennes"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-20.jpg",
-        "caption": "Îles Éoliennes — Nikon FM2"
+        "caption": "Îles Éoliennes — Nikon FM2",
+        "branch": "mer/eoliennes"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-25.jpg",
-        "caption": "Îles Éoliennes — Nikon FM2"
+        "caption": "Îles Éoliennes — Nikon FM2",
+        "branch": "mer/eoliennes"
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-26.jpg",
-        "caption": "Îles Éoliennes — Nikon FM2"
+        "caption": "Îles Éoliennes — Nikon FM2",
+        "branch": "mer/eoliennes"
       }
     ]
   },
@@ -551,51 +677,63 @@
     "images": [
       {
         "src": "hiver/hiver-02.jpg",
-        "caption": "Bessans — Lomo"
+        "caption": "Bessans — Lomo",
+        "branch": "hiver/bessans"
       },
       {
         "src": "hiver/hiver-03.jpg",
-        "caption": "Leica M3"
+        "caption": "Leica M3",
+        "branch": "hiver/neige"
       },
       {
         "src": "hiver/hiver-04.jpg",
-        "caption": "Bessans — Lomo"
+        "caption": "Bessans — Lomo",
+        "branch": "hiver/bessans"
       },
       {
         "src": "hiver/hiver-05.jpg",
-        "caption": "Leica M3"
+        "caption": "Leica M3",
+        "branch": "hiver/neige"
       },
       {
         "src": "hiver/hiver-07.jpg",
-        "caption": "Bessans — Lomo"
+        "caption": "Bessans — Lomo",
+        "branch": "hiver/bessans"
       },
       {
         "src": "hiver/hiver-08.jpg",
-        "caption": "Bessans — Lomo"
+        "caption": "Bessans — Lomo",
+        "branch": "hiver/bessans"
       },
       {
         "src": "hiver/hiver-09.jpg",
-        "caption": "Bessans — Lomo"
+        "caption": "Bessans — Lomo",
+        "branch": "hiver/bessans"
       },
       {
         "src": "hiver/hiver-10.jpg",
-        "caption": "Bessans — Lomo"
+        "caption": "Bessans — Lomo",
+        "branch": "hiver/bessans"
       },
       {
         "src": "hiver/hiver-11.jpg",
-        "caption": "Leica M3"
+        "caption": "Leica M3",
+        "branch": "hiver/neige"
       },
       {
         "src": "hiver/hiver-12.jpg",
-        "caption": "Bessans — Lomo"
+        "caption": "Bessans — Lomo",
+        "branch": "hiver/bessans"
       },
       {
         "src": "hiver/hiver-13.jpg",
-        "caption": "Leica M3"
+        "caption": "Leica M3",
+        "branch": "hiver/neige"
       },
       {
         "src": "hiver/hiver-14.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "hiver/bessans"
       }
     ]
   },
@@ -613,51 +751,63 @@
     "images": [
       {
         "src": "le-carre/le-carre-01.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-02.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-03.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-04.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-05.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-06.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-08.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-10.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-11.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-12.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-13.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       },
       {
         "src": "le-carre/le-carre-14.jpg",
-        "caption": "Yashica"
+        "caption": "Yashica",
+        "branch": "carre"
       }
     ]
   }
