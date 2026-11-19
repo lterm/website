@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le carré — Lucie Termignon</title>
-    <meta name="description" content="Le carré : Moyen format 6×6. Série de Lucie Termignon.">
+    <meta name="description" content="Le carré : 6×6. Série de Lucie Termignon.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="alternate" hreflang="fr" href="le-carre.html">
+    <link rel="alternate" hreflang="en" href="en/le-carre.html">
     <link rel="stylesheet" href="style.css">
-    <script>document.documentElement.classList.add("js");</script>
+    <script>(function(){var d=document.documentElement;d.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribute("data-theme",t);}catch(e){}})();</script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -19,6 +22,8 @@
             <a href="index.html">index</a>
             <a href="a-propos.html">à propos</a>
             <a class="nav-end" href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
+            <a href="en/le-carre.html" hreflang="en" lang="en" aria-label="EN — English version">EN</a>
+            <button type="button" class="theme-toggle" hidden aria-label="Changer de thème" data-dark="sombre" data-light="clair"></button>
         </nav>
     </header>
     <main class="viewer" aria-label="Le carré">
@@ -47,35 +52,27 @@
             <figcaption>Yashica</figcaption>
         </figure>
         <figure class="slide">
-            <img src="images/le-carre/le-carre-07.jpg" alt="Le carré, photographie 7" loading="lazy" decoding="async">
+            <img src="images/le-carre/le-carre-08.jpg" alt="Le carré, photographie 7" loading="lazy" decoding="async">
             <figcaption>Yashica</figcaption>
         </figure>
         <figure class="slide">
-            <img src="images/le-carre/le-carre-08.jpg" alt="Le carré, photographie 8" loading="lazy" decoding="async">
+            <img src="images/le-carre/le-carre-10.jpg" alt="Le carré, photographie 8" loading="lazy" decoding="async">
             <figcaption>Yashica</figcaption>
         </figure>
         <figure class="slide">
-            <img src="images/le-carre/le-carre-09.jpg" alt="Le carré, photographie 9" loading="lazy" decoding="async">
+            <img src="images/le-carre/le-carre-11.jpg" alt="Le carré, photographie 9" loading="lazy" decoding="async">
             <figcaption>Yashica</figcaption>
         </figure>
         <figure class="slide">
-            <img src="images/le-carre/le-carre-10.jpg" alt="Le carré, photographie 10" loading="lazy" decoding="async">
+            <img src="images/le-carre/le-carre-12.jpg" alt="Le carré, photographie 10" loading="lazy" decoding="async">
             <figcaption>Yashica</figcaption>
         </figure>
         <figure class="slide">
-            <img src="images/le-carre/le-carre-11.jpg" alt="Le carré, photographie 11" loading="lazy" decoding="async">
+            <img src="images/le-carre/le-carre-13.jpg" alt="Le carré, photographie 11" loading="lazy" decoding="async">
             <figcaption>Yashica</figcaption>
         </figure>
         <figure class="slide">
-            <img src="images/le-carre/le-carre-12.jpg" alt="Le carré, photographie 12" loading="lazy" decoding="async">
-            <figcaption>Yashica</figcaption>
-        </figure>
-        <figure class="slide">
-            <img src="images/le-carre/le-carre-13.jpg" alt="Le carré, photographie 13" loading="lazy" decoding="async">
-            <figcaption>Yashica</figcaption>
-        </figure>
-        <figure class="slide">
-            <img src="images/le-carre/le-carre-14.jpg" alt="Le carré, photographie 14" loading="lazy" decoding="async">
+            <img src="images/le-carre/le-carre-14.jpg" alt="Le carré, photographie 12" loading="lazy" decoding="async">
             <figcaption>Yashica</figcaption>
         </figure>
     </main>
@@ -84,7 +81,7 @@
         <span class="bar-format">Yashica</span>
         <span class="bar-caption"></span>
         <span class="counter no-js-hide"></span>
-        <button type="button" class="toggle-index no-js-hide">index</button>
+        <button type="button" class="toggle-index no-js-hide" data-open="index" data-close="fermer">index</button>
     </div>
 </body>
 </html>

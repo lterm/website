@@ -64,7 +64,7 @@
 
     function setIndex(on) {
         viewer.classList.toggle("is-index", on);
-        if (toggle) toggle.textContent = on ? "fermer" : "index";
+        if (toggle) toggle.textContent = toggle.getAttribute(on ? "data-close" : "data-open");
         window.scrollTo(0, 0);
     }
 
@@ -107,3 +107,32 @@ document.addEventListener("click", function (e) {
     e.preventDefault();
     window.location.href = "mailto:" + link.getAttribute("data-m").split("").reverse().join("");
 });
+
+/* ---------- Thème clair / sombre : suit le système, sauf choix explicite ---------- */
+(function () {
+    var button = document.querySelector(".theme-toggle");
+    if (!button) return;
+    var root = document.documentElement;
+    var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+    function current() {
+        return root.getAttribute("data-theme") || (media.matches ? "dark" : "light");
+    }
+
+    function render() {
+        // le bouton affiche le thème vers lequel on bascule
+        button.textContent = button.getAttribute(current() === "dark" ? "data-light" : "data-dark");
+    }
+
+    button.hidden = false;
+    render();
+
+    button.addEventListener("click", function () {
+        var next = current() === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+        render();
+    });
+
+    if (media.addEventListener) media.addEventListener("change", render);
+})();
