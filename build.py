@@ -29,9 +29,7 @@ TEXT = {
         "sky_title": "Constellation",
         "sky_desc": "Photographies argentiques de Lucie Termignon, disposées comme une carte du ciel : villes, portraits, montagne, mer, hiver.",
         "sky_noscript": "Cette vue a besoin de JavaScript. Retrouvez les séries sur la page",
-        "sky_label": "Carte des photographies : chaque thème est une constellation, ses branches des lieux ou des catégories, chaque photo une étoile.",
-        "sky_help": "Choisissez un thème puis une branche pour vous rapprocher. Échap revient en arrière.",
-        "sky_crumbs": "Position dans la constellation",
+        "sky_label": "Carte des photographies : chaque série est une constellation, chaque photo une étoile.",
         "series": "Séries",
         "image": "image",
         "images": "images",
@@ -57,9 +55,7 @@ TEXT = {
         "sky_title": "Constellation",
         "sky_desc": "Film photographs by Lucie Termignon, laid out like a sky chart: cities, portraits, mountains, sea, winter.",
         "sky_noscript": "This view needs JavaScript. Browse the series on the",
-        "sky_label": "Map of the photographs: each theme is a constellation, its branches places or categories, each photo a star.",
-        "sky_help": "Choose a theme, then a branch, to zoom in. Escape goes back.",
-        "sky_crumbs": "Position in the constellation",
+        "sky_label": "Map of the photographs: each series is a constellation, each photo a star.",
         "series": "Series",
         "image": "image",
         "images": "images",
@@ -304,61 +300,35 @@ def camera_of(caption, series_cameras):
     return "nikon"
 
 
-def count_label(n, t):
-    return f'{n:02d} {t["image"] if n == 1 else t["images"]}'
-
-
 def build_sky(lang, series):
-    """Page d'accueil : la constellation à plusieurs niveaux (thèmes > branches > photos)."""
     t = TEXT[lang]
     p = LANGS[lang]["prefix"]
-    with open(os.path.join(ROOT, "content", "constellation.json"), encoding="utf-8") as f:
-        tree = json.load(f)["themes"]
-    index = {}  # "theme/branche" -> (indice du thème, indice de la branche ou -1)
-    themes = []
-    for i, th in enumerate(tree):
-        index[th["id"]] = (i, -1)
-        for k, br in enumerate(th["branches"]):
-            index[th["id"] + "/" + br["id"]] = (i, k)
-        themes.append({"id": th["id"], "title": th[lang], "count": 0,
-                       "branches": [{"id": br["id"], "title": br[lang], "count": 0} for br in th["branches"]]})
-    photos = []
-    for s in series:
+    data = {"series": [], "photos": []}
+    for i, s in enumerate(series):
+        n = len(s["images"])
+        data["series"].append({"title": s[lang]["title"], "href": s["slug"] + ".html",
+                               "count": f'{n:02d} {t["image"] if n == 1 else t["images"]}'})
         for k, img in enumerate(s["images"]):
-            ti, bi = index[img["branch"]]  # une branche inconnue fait échouer la génération
-            lt, lb = index[img["link"]] if img.get("link") else (-1, -1)
-            themes[ti]["count"] += 1
-            if bi >= 0:
-                themes[ti]["branches"][bi]["count"] += 1
-            photos.append({"t": ti, "b": bi, "lt": lt, "lb": lb, "n": k + 1,
-                           "series": s[lang]["title"], "href": s["slug"] + ".html#" + str(k + 1),
-                           "src": p + "images/" + img["src"],
-                           "cap": translate_caption(img["caption"], lang),
-                           "cam": camera_of(img["caption"], s["cameras"])})
-    for th in themes:
-        th["count"] = count_label(th["count"], t)
-        for br in th["branches"]:
-            br["count"] = count_label(br["count"], t)
-    data = {"home": t["sky_title"], "themes": themes, "photos": photos}
+            data["photos"].append({"s": i, "n": k + 1, "src": p + "images/" + img["src"],
+                                   "cap": translate_caption(img["caption"], lang),
+                                   "cam": camera_of(img["caption"], s["cameras"])})
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     return (head(lang, "index.html", "Lucie Termignon — " + t["tagline"], t["sky_desc"])
             + header(lang, "index.html", "sky")
             + f'''    <main>
         <h1 class="visually-hidden">{t["sky_title"]}</h1>
-        <p class="visually-hidden">{t["sky_help"]}</p>
-        <div class="sky" data-level="0">
-            <svg role="group" aria-label="{esc(t["sky_label"])}"></svg>
+        <div class="sky">
+            <svg role="img" aria-label="{esc(t["sky_label"])}"></svg>
             <noscript><p class="sky-noscript">{t["sky_noscript"]} <a href="liste.html">{t["index"]}</a>.</p></noscript>
         </div>
     </main>
     <script type="application/json" id="sky-data">{payload}</script>
     <div class="preview" aria-hidden="true"><img src="" alt=""></div>
     <div class="bar">
-        <nav class="sky-crumbs" aria-label="{t["sky_crumbs"]}"></nav>
         <span class="sky-coord">RA&nbsp;<span class="sky-ra">—</span></span>
         <span class="sky-coord">DE&nbsp;<span class="sky-de">—</span></span>
         <span class="sky-info" aria-live="polite"></span>
-        <span>{len(photos)} {t["images"]}</span>
+        <span>{len(data["photos"])} {t["images"]}</span>
     </div>
 </body>
 </html>
