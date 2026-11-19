@@ -18,6 +18,29 @@
     --fs-small: 13px;
     --fs-base: 15px;
     --fs-title: clamp(2rem, 5.2vw, 4.75rem);
+
+    color-scheme: light;
+}
+
+/* Mode sombre : suit le système, sauf si le visiteur a choisi « clair » */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #0f0f0f;
+        --fg: #ececec;
+        --muted: #7f7f7f;
+        --line: #ececec;
+        --line-soft: #2a2a2a;
+        color-scheme: dark;
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg: #0f0f0f;
+    --fg: #ececec;
+    --muted: #7f7f7f;
+    --line: #ececec;
+    --line-soft: #2a2a2a;
+    color-scheme: dark;
 }
 
 *,
@@ -178,6 +201,10 @@ ul {
 
 .series-title .muted {
     display: block;
+    margin-top: 6px;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 400;
+    letter-spacing: 0;
     transition: color 0.2s;
 }
 
@@ -503,4 +530,19 @@ ul {
 
 .series--soon:hover .series-title .muted {
     color: var(--muted);
+}
+
+/* Bouton de thème : se présente comme un lien de la navigation */
+.theme-toggle {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font: inherit;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.theme-toggle:hover {
+    color: var(--fg);
 }

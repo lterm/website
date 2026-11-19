@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucie Termignon — travaux argentiques</title>
-    <meta name="description" content="Séries photographiques argentiques de Lucie Termignon : villes, montagne, littoral, scène.">
+    <meta name="description" content="Séries photographiques argentiques de Lucie Termignon : villes, portraits, montagne, mer, hiver.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="alternate" hreflang="fr" href="index.html">
+    <link rel="alternate" hreflang="en" href="en/index.html">
     <link rel="stylesheet" href="style.css">
-    <script>document.documentElement.classList.add("js");</script>
+    <script>(function(){var d=document.documentElement;d.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribute("data-theme",t);}catch(e){}})();</script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -19,6 +22,8 @@
             <a href="index.html" aria-current="page">index</a>
             <a href="a-propos.html">à propos</a>
             <a class="nav-end" href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
+            <a href="en/index.html" hreflang="en" lang="en" aria-label="EN — English version">EN</a>
+            <button type="button" class="theme-toggle" hidden aria-label="Changer de thème" data-dark="sombre" data-light="clair"></button>
         </nav>
     </header>
     <main class="page">
@@ -29,16 +34,7 @@
                     <span class="series-meta">Nikon FM2</span>
                     <span class="series-meta series-meta--right">08 images</span>
                     <h2 class="series-title">Corps dans le noir
-                        <span class="muted">Danse, scène, concerts, Projet Berio</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="gr20.html" data-preview="images/cloud.jpg">
-                    <span class="series-meta">Lomo, Nikon FM2</span>
-                    <span class="series-meta series-meta--right">16 images</span>
-                    <h2 class="series-title">GR20, deux fois
-                        <span class="muted">Lomo en couleur, Nikon en noir et blanc</span>
+                        <span class="muted">Scène et danse</span>
                     </h2>
                 </a>
             </li>
@@ -47,25 +43,52 @@
                     <span class="series-meta">Nikon FM2, Leica M3</span>
                     <span class="series-meta series-meta--right">16 images</span>
                     <h2 class="series-title">Villes de passage
-                        <span class="muted">New York, Boston, Londres, Paris</span>
+                        <span class="muted">Photographie de rue</span>
                     </h2>
                 </a>
             </li>
             <li>
                 <a class="series" href="paris-suspendu.html" data-preview="images/paris-suspendu/paris-suspendu-02.jpg">
                     <span class="series-meta">Nikon FM2</span>
-                    <span class="series-meta series-meta--right">07 images</span>
+                    <span class="series-meta series-meta--right">13 images</span>
                     <h2 class="series-title">Paris suspendu
-                        <span class="muted">Le confinement</span>
+                        <span class="muted">Confinement</span>
+                    </h2>
+                </a>
+            </li>
+            <li>
+                <a class="series" href="proches.html" data-preview="images/proches/proches-01.jpg">
+                    <span class="series-meta">Nikon FM2, Leica M3, Lomo, Yashica</span>
+                    <span class="series-meta series-meta--right">21 images</span>
+                    <h2 class="series-title">Proches
+                        <span class="muted">Portraits</span>
+                    </h2>
+                </a>
+            </li>
+            <li>
+                <a class="series" href="gr20.html" data-preview="images/cloud.jpg">
+                    <span class="series-meta">Nikon FM2</span>
+                    <span class="series-meta series-meta--right">18 images</span>
+                    <h2 class="series-title">GR20
+                        <span class="muted">Corse</span>
+                    </h2>
+                </a>
+            </li>
+            <li>
+                <a class="series" href="montagne.html" data-preview="images/montagne/montagne-01.jpg">
+                    <span class="series-meta">Nikon FM2, Leica M3, Lomo</span>
+                    <span class="series-meta series-meta--right">17 images</span>
+                    <h2 class="series-title">Montagne
+                        <span class="muted">Alpes, Pyrénées</span>
                     </h2>
                 </a>
             </li>
             <li>
                 <a class="series" href="lignes-d-horizon.html" data-preview="images/lignes-d-horizon/lignes-d-horizon-01.jpg">
-                    <span class="series-meta">Leica M3, Yashica, Lomo</span>
-                    <span class="series-meta series-meta--right">10 images</span>
+                    <span class="series-meta">Leica M3, Yashica, Lomo, Nikon FM2</span>
+                    <span class="series-meta series-meta--right">17 images</span>
                     <h2 class="series-title">Lignes d’horizon
-                        <span class="muted">Côte d’Opale, côtes rocheuses, horizons de mer</span>
+                        <span class="muted">Mer</span>
                     </h2>
                 </a>
             </li>
@@ -74,30 +97,20 @@
                     <span class="series-meta">Leica M3, Lomo, Nikon FM2, Yashica</span>
                     <span class="series-meta series-meta--right">12 images</span>
                     <h2 class="series-title">Hiver
-                        <span class="muted">Bessans, la neige</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="etes.html" data-preview="images/etes/etes-03.jpg">
-                    <span class="series-meta">Nikon FM2</span>
-                    <span class="series-meta series-meta--right">15 images</span>
-                    <h2 class="series-title">Étés
-                        <span class="muted">2025, 2026 — montagne et bord de mer</span>
+                        <span class="muted">Neige</span>
                     </h2>
                 </a>
             </li>
             <li>
                 <a class="series" href="le-carre.html" data-preview="images/le-carre/le-carre-01.jpg">
                     <span class="series-meta">Yashica</span>
-                    <span class="series-meta series-meta--right">14 images</span>
+                    <span class="series-meta series-meta--right">12 images</span>
                     <h2 class="series-title">Le carré
-                        <span class="muted">Moyen format 6×6</span>
+                        <span class="muted">6×6</span>
                     </h2>
                 </a>
             </li>
         </ul>
-
     </main>
     <div class="preview" aria-hidden="true"><img src="" alt=""></div>
     <footer class="site-footer">

@@ -1,0 +1,664 @@
+[
+  {
+    "slug": "corps-dans-le-noir",
+    "cameras": "Nikon FM2",
+    "fr": {
+      "title": "Corps dans le noir",
+      "subtitle": "Scène et danse"
+    },
+    "en": {
+      "title": "Bodies in the Dark",
+      "subtitle": "Stage and dance"
+    },
+    "images": [
+      {
+        "src": "corps-dans-le-noir/corps-dans-le-noir-01.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "corps-dans-le-noir/corps-dans-le-noir-02.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "corps-dans-le-noir/corps-dans-le-noir-03.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "corps-dans-le-noir/corps-dans-le-noir-04.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "corps-dans-le-noir/corps-dans-le-noir-05.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "corps-dans-le-noir/corps-dans-le-noir-09.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "corps-dans-le-noir/corps-dans-le-noir-11.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "corps-dans-le-noir/corps-dans-le-noir-14.jpg",
+        "caption": "Nikon FM2"
+      }
+    ]
+  },
+  {
+    "slug": "villes-de-passage",
+    "cameras": "Nikon FM2, Leica M3",
+    "fr": {
+      "title": "Villes de passage",
+      "subtitle": "Photographie de rue"
+    },
+    "en": {
+      "title": "Passing Cities",
+      "subtitle": "Street photography"
+    },
+    "images": [
+      {
+        "src": "nyc.jpg",
+        "caption": "New York"
+      },
+      {
+        "src": "nyc2.jpg",
+        "caption": "New York"
+      },
+      {
+        "src": "nyc3.jpg",
+        "caption": "New York"
+      },
+      {
+        "src": "Photo05_8.jpg",
+        "caption": ""
+      },
+      {
+        "src": "suw.jpg",
+        "caption": ""
+      },
+      {
+        "src": "girls.jpg",
+        "caption": "New York — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-02.jpg",
+        "caption": "New York — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-04.jpg",
+        "caption": "New York — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-05.jpg",
+        "caption": "New York — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-06.jpg",
+        "caption": "Boston — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-07.jpg",
+        "caption": "New York — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-08.jpg",
+        "caption": "Londres — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-10.jpg",
+        "caption": "New York — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-11.jpg",
+        "caption": "Londres — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-12.jpg",
+        "caption": "Boston — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-13.jpg",
+        "caption": "Boston — Nikon FM2"
+      }
+    ]
+  },
+  {
+    "slug": "paris-suspendu",
+    "cameras": "Nikon FM2",
+    "fr": {
+      "title": "Paris suspendu",
+      "subtitle": "Confinement"
+    },
+    "en": {
+      "title": "Paris on Hold",
+      "subtitle": "Lockdown"
+    },
+    "images": [
+      {
+        "src": "paris-suspendu/paris-suspendu-02.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-03.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-05.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-06.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-07.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-09.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-10.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-13.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-14.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-15.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-16.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-17.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-18.jpg",
+        "caption": "Nikon FM2"
+      }
+    ]
+  },
+  {
+    "slug": "proches",
+    "cameras": "Nikon FM2, Leica M3, Lomo, Yashica",
+    "fr": {
+      "title": "Proches",
+      "subtitle": "Portraits"
+    },
+    "en": {
+      "title": "Close Ones",
+      "subtitle": "Portraits"
+    },
+    "images": [
+      {
+        "src": "proches/proches-01.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "proches/proches-02.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "proches/proches-04.jpg",
+        "caption": "Bessans — Nikon FM2"
+      },
+      {
+        "src": "proches/proches-06.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "proches/proches-07.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "proches/proches-08.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "proches/proches-09.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "proches/proches-10.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "proches/proches-11.jpg",
+        "caption": "Côte d’Opale — Lomo"
+      },
+      {
+        "src": "proches/proches-12.jpg",
+        "caption": "Écrins — Nikon FM2"
+      },
+      {
+        "src": "proches/proches-13.jpg",
+        "caption": "Îles Éoliennes — Nikon FM2"
+      },
+      {
+        "src": "proches/proches-14.jpg",
+        "caption": "Îles Éoliennes — Nikon FM2"
+      },
+      {
+        "src": "proches/proches-15.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "proches/proches-16.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "proches/proches-19.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "proches/proches-20.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "proches/proches-21.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "proches/proches-22.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "proches/proches-24.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "proches/proches-28.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "proches/proches-29.jpg",
+        "caption": "Paris — Nikon FM2"
+      }
+    ]
+  },
+  {
+    "slug": "gr20",
+    "cameras": "Nikon FM2",
+    "fr": {
+      "title": "GR20",
+      "subtitle": "Corse"
+    },
+    "en": {
+      "title": "GR20",
+      "subtitle": "Corsica"
+    },
+    "images": [
+      {
+        "src": "cloud.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-09.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-10.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-11.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-12.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-13.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-14.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-16.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-17.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-18.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-19.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-20.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-21.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-22.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-23.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-24.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-25.jpg",
+        "caption": "GR20 — Nikon FM2"
+      },
+      {
+        "src": "gr20/gr20-26.jpg",
+        "caption": "GR20 — Nikon FM2"
+      }
+    ]
+  },
+  {
+    "slug": "montagne",
+    "cameras": "Nikon FM2, Leica M3, Lomo",
+    "fr": {
+      "title": "Montagne",
+      "subtitle": "Alpes, Pyrénées"
+    },
+    "en": {
+      "title": "Mountains",
+      "subtitle": "Alps, Pyrenees"
+    },
+    "images": [
+      {
+        "src": "montagne/montagne-01.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-02.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-03.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-04.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-05.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-06.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-07.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-08.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-09.jpg",
+        "caption": "Écrins — Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-11.jpg",
+        "caption": "Écrins — Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-13.jpg",
+        "caption": "Écrins — Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-14.jpg",
+        "caption": "Écrins — Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-15.jpg",
+        "caption": "Écrins — Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-17.jpg",
+        "caption": "Pyrénées — Leica M3"
+      },
+      {
+        "src": "montagne/montagne-19.jpg",
+        "caption": "Pyrénées — Leica M3"
+      },
+      {
+        "src": "montagne/montagne-20.jpg",
+        "caption": "Pyrénées — Leica M3"
+      },
+      {
+        "src": "montagne/montagne-21.jpg",
+        "caption": "Chamonix — Lomo"
+      }
+    ]
+  },
+  {
+    "slug": "lignes-d-horizon",
+    "cameras": "Leica M3, Yashica, Lomo, Nikon FM2",
+    "fr": {
+      "title": "Lignes d’horizon",
+      "subtitle": "Mer"
+    },
+    "en": {
+      "title": "Horizon Lines",
+      "subtitle": "Sea"
+    },
+    "images": [
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-01.jpg",
+        "caption": "Leica M3"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-02.jpg",
+        "caption": "Leica M3"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-03.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-04.jpg",
+        "caption": "Leica M3"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-07.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-08.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-10.jpg",
+        "caption": "Côte d’Opale — Lomo"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-11.jpg",
+        "caption": "Côte d’Opale — Lomo"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-13.jpg",
+        "caption": "Leica M3"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-14.jpg",
+        "caption": "Côte d’Opale — Lomo"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-15.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-16.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-17.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-19.jpg",
+        "caption": "Îles Éoliennes — Nikon FM2"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-20.jpg",
+        "caption": "Îles Éoliennes — Nikon FM2"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-25.jpg",
+        "caption": "Îles Éoliennes — Nikon FM2"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-26.jpg",
+        "caption": "Îles Éoliennes — Nikon FM2"
+      }
+    ]
+  },
+  {
+    "slug": "hiver",
+    "cameras": "Leica M3, Lomo, Nikon FM2, Yashica",
+    "fr": {
+      "title": "Hiver",
+      "subtitle": "Neige"
+    },
+    "en": {
+      "title": "Winter",
+      "subtitle": "Snow"
+    },
+    "images": [
+      {
+        "src": "hiver/hiver-02.jpg",
+        "caption": "Bessans — Lomo"
+      },
+      {
+        "src": "hiver/hiver-03.jpg",
+        "caption": "Leica M3"
+      },
+      {
+        "src": "hiver/hiver-04.jpg",
+        "caption": "Bessans — Lomo"
+      },
+      {
+        "src": "hiver/hiver-05.jpg",
+        "caption": "Leica M3"
+      },
+      {
+        "src": "hiver/hiver-07.jpg",
+        "caption": "Bessans — Lomo"
+      },
+      {
+        "src": "hiver/hiver-08.jpg",
+        "caption": "Bessans — Lomo"
+      },
+      {
+        "src": "hiver/hiver-09.jpg",
+        "caption": "Bessans — Lomo"
+      },
+      {
+        "src": "hiver/hiver-10.jpg",
+        "caption": "Bessans — Lomo"
+      },
+      {
+        "src": "hiver/hiver-11.jpg",
+        "caption": "Leica M3"
+      },
+      {
+        "src": "hiver/hiver-12.jpg",
+        "caption": "Bessans — Lomo"
+      },
+      {
+        "src": "hiver/hiver-13.jpg",
+        "caption": "Leica M3"
+      },
+      {
+        "src": "hiver/hiver-14.jpg",
+        "caption": "Yashica"
+      }
+    ]
+  },
+  {
+    "slug": "le-carre",
+    "cameras": "Yashica",
+    "fr": {
+      "title": "Le carré",
+      "subtitle": "6×6"
+    },
+    "en": {
+      "title": "The Square",
+      "subtitle": "6×6"
+    },
+    "images": [
+      {
+        "src": "le-carre/le-carre-01.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-02.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-03.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-04.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-05.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-06.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-08.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-10.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-11.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-12.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-13.jpg",
+        "caption": "Yashica"
+      },
+      {
+        "src": "le-carre/le-carre-14.jpg",
+        "caption": "Yashica"
+      }
+    ]
+  }
+]

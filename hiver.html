@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hiver — Lucie Termignon</title>
-    <meta name="description" content="Hiver : Bessans, la neige. Série de Lucie Termignon.">
+    <meta name="description" content="Hiver : Neige. Série de Lucie Termignon.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="alternate" hreflang="fr" href="hiver.html">
+    <link rel="alternate" hreflang="en" href="en/hiver.html">
     <link rel="stylesheet" href="style.css">
-    <script>document.documentElement.classList.add("js");</script>
+    <script>(function(){var d=document.documentElement;d.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribute("data-theme",t);}catch(e){}})();</script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -19,6 +22,8 @@
             <a href="index.html">index</a>
             <a href="a-propos.html">à propos</a>
             <a class="nav-end" href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
+            <a href="en/hiver.html" hreflang="en" lang="en" aria-label="EN — English version">EN</a>
+            <button type="button" class="theme-toggle" hidden aria-label="Changer de thème" data-dark="sombre" data-light="clair"></button>
         </nav>
     </header>
     <main class="viewer" aria-label="Hiver">
@@ -76,7 +81,7 @@
         <span class="bar-format">Leica M3, Lomo, Nikon FM2, Yashica</span>
         <span class="bar-caption"></span>
         <span class="counter no-js-hide"></span>
-        <button type="button" class="toggle-index no-js-hide">index</button>
+        <button type="button" class="toggle-index no-js-hide" data-open="index" data-close="fermer">index</button>
     </div>
 </body>
 </html>
