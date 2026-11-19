@@ -25,6 +25,11 @@ TEXT = {
         "tagline": "travaux argentiques",
         "index": "index",
         "about": "à propos",
+        "sky": "constellation",
+        "sky_title": "Constellation",
+        "sky_desc": "Toutes les photographies de Lucie Termignon, disposées comme une carte du ciel.",
+        "sky_noscript": "Cette vue a besoin de JavaScript. Retrouvez les séries sur la page",
+        "sky_label": "Carte des photographies : chaque série est une constellation, chaque photo une étoile.",
         "series": "Séries",
         "image": "image",
         "images": "images",
@@ -46,6 +51,11 @@ TEXT = {
         "tagline": "film photography",
         "index": "index",
         "about": "about",
+        "sky": "constellation",
+        "sky_title": "Constellation",
+        "sky_desc": "All of Lucie Termignon’s photographs, laid out like a sky chart.",
+        "sky_noscript": "This view needs JavaScript. Browse the series on the",
+        "sky_label": "Map of the photographs: each series is a constellation, each photo a star.",
         "series": "Series",
         "image": "image",
         "images": "images",
@@ -165,6 +175,7 @@ def header(lang, page, current):
         </a>
         <nav class="site-nav" aria-label="{t["nav_label"]}">
             <a href="index.html"{cur("index")}>{t["index"]}</a>
+            <a href="constellation.html"{cur("sky")}>{t["sky"]}</a>
             <a href="a-propos.html"{cur("about")}>{t["about"]}</a>
             <a class="nav-end" href="{INSTAGRAM}" rel="me">instagram</a>
             <a href="{other}" hreflang="{other_lang}" lang="{other_lang}" aria-label="{t["other_lang_label"]}">{t["other_lang"]}</a>
@@ -276,6 +287,54 @@ def build_about(lang):
 ''' + footer(lang))
 
 
+CAMERA_KEYS = [("Nikon", "nikon"), ("Leica", "leica"), ("Lomo", "lomo"), ("Yashica", "yashica")]
+
+
+def camera_of(caption, series_cameras):
+    for name, key in CAMERA_KEYS:
+        if name in caption:
+            return key
+    for name, key in CAMERA_KEYS:  # pas d'appareil dans la légende : celui de la série
+        if series_cameras.startswith(name):
+            return key
+    return "nikon"
+
+
+def build_sky(lang, series):
+    t = TEXT[lang]
+    p = LANGS[lang]["prefix"]
+    data = {"series": [], "photos": []}
+    for i, s in enumerate(series):
+        n = len(s["images"])
+        data["series"].append({"title": s[lang]["title"], "href": s["slug"] + ".html",
+                               "count": f'{n:02d} {t["image"] if n == 1 else t["images"]}'})
+        for k, img in enumerate(s["images"]):
+            data["photos"].append({"s": i, "n": k + 1, "src": p + "images/" + img["src"],
+                                   "cap": translate_caption(img["caption"], lang),
+                                   "cam": camera_of(img["caption"], s["cameras"])})
+    payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    return (head(lang, "constellation.html", f'{t["sky_title"]} — Lucie Termignon', t["sky_desc"])
+            + header(lang, "constellation.html", "sky")
+            + f'''    <main>
+        <h1 class="visually-hidden">{t["sky_title"]}</h1>
+        <div class="sky">
+            <svg role="img" aria-label="{esc(t["sky_label"])}"></svg>
+            <noscript><p class="sky-noscript">{t["sky_noscript"]} <a href="index.html">{t["index"]}</a>.</p></noscript>
+        </div>
+    </main>
+    <script type="application/json" id="sky-data">{payload}</script>
+    <div class="preview" aria-hidden="true"><img src="" alt=""></div>
+    <div class="bar">
+        <span class="sky-coord">RA&nbsp;<span class="sky-ra">—</span></span>
+        <span class="sky-coord">DE&nbsp;<span class="sky-de">—</span></span>
+        <span class="sky-info" aria-live="polite"></span>
+        <span>{len(data["photos"])} {t["images"]}</span>
+    </div>
+</body>
+</html>
+''')
+
+
 def write(lang, name, content):
     folder = os.path.join(ROOT, LANGS[lang]["dir"])
     os.makedirs(folder, exist_ok=True)
@@ -289,9 +348,10 @@ def main():
     for lang in LANGS:
         write(lang, "index.html", build_index(lang, series))
         write(lang, "a-propos.html", build_about(lang))
+        write(lang, "constellation.html", build_sky(lang, series))
         for s in series:
             write(lang, s["slug"] + ".html", build_series(lang, s))
-    print(f"{len(series)} séries, {2 * (len(series) + 2)} pages générées.")
+    print(f"{len(series)} séries, {2 * (len(series) + 3)} pages générées.")
 
 
 if __name__ == "__main__":
