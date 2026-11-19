@@ -3,52 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À Propos - Lucie Termignon</title>
+    <title>À propos — Lucie Termignon</title>
+    <meta name="description" content="La démarche photographique de Lucie Termignon : noir et blanc, montagne, littoral, ville.">
     <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>travaux argentiques</h1>
-        <h2>lucie termignon</h2>
-    </header>
-    <main>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">accueil</a></li>
-                <li>
-                    <a href="#">35mm</a>
-                    <ul class="submenu">
-                        <li><a href="urbain.html">urbain</a></li>
-                        <li><a href="paysages.html">paysages</a></li>
-                        <li><a href="abstrait.html">abstrait</a></li>
-                        <li><a href="portraits.html">portraits</a></li>
-                    </ul>
-                </li>
-                <li><a href="moyen-format.html">moyen format</a></li>
-                <li><a href="a-propos.html">à propos + contact</a></li>
-            </ul>
+    <header class="site-header">
+        <a class="site-title" href="index.html">
+            <span>Lucie Termignon</span>
+            <span class="muted">travaux argentiques</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+            <a href="35mm.html">35mm</a>
+            <a href="moyen-format.html">moyen format</a>
+            <a href="a-propos.html" aria-current="page">à propos</a>
+            <a class="nav-end" href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
         </nav>
-        
-        <h3>À Propos</h3>
-        <p>Ce site est une vitrine de mes expérimentations en photographie 35mm et moyen format. Merci de votre visite et de votre soutien.</p>
-    
-        <h3>Contact</h3>
-        <p>Vous souhaitez en savoir plus ou commander un tirage ? N'hésitez pas à me contacter via le formulaire ci-dessous :</p>
-        <form action="https://formspree.io/f/{your-form-id}" method="POST">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            
-            <button type="submit">Envoyer</button>
-        </form>
+    </header>
+    <main class="page about">
+        <h1 class="visually-hidden">À propos</h1>
+        <div class="about-text">
+            <p>Je photographie à l’argentique, en 35mm et en moyen format, surtout en noir et blanc&nbsp;: <span class="muted">des contrastes francs, des ombres marquées, des silhouettes et des architectures graphiques.</span></p>
+        </div>
+
+        <dl class="about-rows">
+            <div class="about-row">
+                <dt>Montagne</dt>
+                <dd>Du GR20 à Bessans, de Chamonix aux Pyrénées&nbsp;: des sentiers, des crêtes enneigées, l’hiver.</dd>
+            </div>
+            <div class="about-row">
+                <dt>Littoral</dt>
+                <dd>La Côte d’Opale, des côtes rocheuses et leur phare, des horizons de mer réduits à une ligne.</dd>
+            </div>
+            <div class="about-row">
+                <dt>Ville</dt>
+                <dd>New York, Boston, Londres, Paris. Une photographie de rue, de passage.</dd>
+            </div>
+            <div class="about-row">
+                <dt>Présences</dt>
+                <dd>Des corps qui dansent, éclairés sur fond noir. Des concerts, un piano. Des proches, des intérieurs, la lumière d’une fenêtre.</dd>
+            </div>
+            <div class="about-row">
+                <dt>Dates</dt>
+                <dd>Certaines images portent leur moment&nbsp;: le Paris vide et masqué du confinement, l’Arc de Triomphe empaqueté par Christo en 2021.</dd>
+            </div>
+            <div class="about-row">
+                <dt>Couleur et essais</dt>
+                <dd>La couleur arrive avec les appareils Lomo et l’Olympus XA4. Ailleurs, l’expérimentation prend le dessus&nbsp;: traitement croisé aux tons bleutés, fuites de lumière, ombres qui deviennent abstraites.</dd>
+            </div>
+            <div class="about-row about-row--contact">
+                <dt>Contact</dt>
+                <dd>Pour en savoir plus ou commander un tirage&nbsp;:<br>
+                    <a class="js-mail" href="#" data-m="rf.egnaro@nongimreteicul">m’écrire un e-mail</a><br>
+                    <a href="https://www.instagram.com/lucie_tmgn/" rel="me">@lucie_tmgn</a> sur Instagram</dd>
+            </div>
+        </dl>
     </main>
-    <footer>
-        <p>&copy; 2024 Lucie Termignon. Tous droits réservés.</p>
+    <footer class="site-footer">
+        <span>&copy; 2026 Lucie Termignon — tous droits réservés</span>
+        <span class="footer-links">
+            <a class="js-mail" href="a-propos.html" data-m="rf.egnaro@nongimreteicul">e-mail</a>
+            <a href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
+        </span>
     </footer>
 </body>
 </html>

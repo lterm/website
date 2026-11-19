@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abstrait - Lucie Termignon</title>
+    <title>Abstrait — Lucie Termignon</title>
+    <meta name="description" content="Abstrait, série 35mm de Lucie Termignon.">
     <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>travaux argentiques</h1>
-        <h2>lucie termignon</h2>
-    </header>
-    <main>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">accueil</a></li>
-                <li>
-                    <a href="#">35mm</a>
-                    <ul class="submenu">
-                        <li><a href="urbain.html">urbain</a></li>
-                        <li><a href="paysages.html">paysages</a></li>
-                        <li><a href="abstrait.html">abstrait</a></li>
-                        <li><a href="portraits.html">portraits</a></li>
-                    </ul>
-                </li>
-                <li><a href="moyen-format.html">moyen format</a></li>
-                <li><a href="a-propos.html">à propos + contact</a></li>
-            </ul>
+    <header class="site-header">
+        <a class="site-title" href="index.html">
+            <span>Lucie Termignon</span>
+            <span class="muted">travaux argentiques</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+            <a href="35mm.html" aria-current="page">35mm</a>
+            <a href="moyen-format.html">moyen format</a>
+            <a href="a-propos.html">à propos</a>
+            <a class="nav-end" href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
         </nav>
-
-        <h2>abstrait</h2>
-        <p>Page en construction.</p>
-
+    </header>
+    <main class="viewer" aria-label="Abstrait">
+        <p class="empty">Série en cours de numérisation.</p>
     </main>
-    <footer>
-        <p>&copy; 2024 Lucie Termignon. Tous droits réservés.</p>
-    </footer>
+    <div class="bar">
+        <h1>Abstrait</h1>
+        <span class="bar-format">35mm</span>
+        <span class="bar-caption"></span>
+        <span class="counter no-js-hide"></span>
+        <button type="button" class="toggle-index no-js-hide">index</button>
+    </div>
 </body>
 </html>

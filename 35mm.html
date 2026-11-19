@@ -3,80 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moyen Format - Lucie Termignon</title>
+    <title>35mm — Lucie Termignon</title>
+    <meta name="description" content="Séries photographiques en 35mm de Lucie Termignon.">
     <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>travaux argentiques</h1>
-        <h2>lucie termignon</h2>
-    </header>
-    <main>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">accueil</a></li>
-                <li>
-                    <a href="#">35mm</a>
-                    <ul class="submenu">
-                        <li><a href="urbain.html">urbain</a></li>
-                        <li><a href="paysages.html">paysages</a></li>
-                        <li><a href="abstrait.html">abstrait</a></li>
-                        <li><a href="portraits.html">portraits</a></li>
-                    </ul>
-                </li>
-                <li><a href="moyen-format.html">moyen format</a></li>
-                <li><a href="a-propos.html">à propos + contact</a></li>
-            </ul>
+    <header class="site-header">
+        <a class="site-title" href="index.html">
+            <span>Lucie Termignon</span>
+            <span class="muted">travaux argentiques</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+            <a href="35mm.html" aria-current="page">35mm</a>
+            <a href="moyen-format.html">moyen format</a>
+            <a href="a-propos.html">à propos</a>
+            <a class="nav-end" href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
         </nav>
-
-        <h2>35mm</h2>
-        <p>Page en construction.</p>
-        
-        <section id="urbain" class="category">
-            <h3>Urbain</h3>
-            <p>test</p>
-            <div class="gallery-grid">
-                <img src="images/nyc.jpg" alt="Rue animée">
-                <img src="images/nyc2.jpg" alt="Architecture moderne">
-                <img src="images/nyc3.jpg" alt="Reflets dans une vitrine">
-                <img src="images/girls.jpg" alt ="friends">
-            </div>
-        </section>
-        
-        <section id="paysages" class="category">
-            <h3>Paysages</h3>
-            <p>test</p>
-            <div class="gallery-grid">
-                <img src="images/cloud.jpg" alt="Vue de montagne">
-                <img src="images/photo05_8.jpg" alt="Plage au coucher de soleil">
-                <img src="images/nyc.jpg" alt="Forêt brumeuse">
-            </div>
-        </section>
-
-        <section id="abstrait" class="category">
-            <h3>Abstrait</h3>
-            <p>test</p>
-            <div class="gallery-grid">
-                <img src="images/nyc.jpg" alt="Jeu d'ombres et lumières">
-                <img src="images/nyc2.jpg" alt="Textures abstraites">
-                <img src="images/nyc3.jpg" alt="Détails macro colorés">
-            </div>
-        </section>
-
-        <section id="portraits" class="category">
-            <h3>Portraits</h3>
-            <p>test</p>
-            <div class="gallery-grid">
-                <img src="images/nyc.jpg" alt="Portrait en noir et blanc">
-                <img src="images/nyc2.jpg" alt="Portrait en extérieur">
-                <img src="images/nyc3.jpg" alt="Portrait dans un studio">
-            </div>
-        </section>
-      
-
+    </header>
+    <main class="page">
+        <p class="section-label">35mm</p>
+        <ul class="series-list">
+            <li>
+                <a class="series" href="urbain.html" data-preview="images/nyc.jpg">
+                    <span class="series-meta">2015 — 2022</span>
+                    <span class="series-meta"></span>
+                    <span class="series-meta series-meta--right">05 images</span>
+                    <h2 class="series-title">Urbain
+                        <span class="muted">Paris, New York, Beyrouth, Munich</span>
+                    </h2>
+                </a>
+            </li>
+            <li>
+                <a class="series" href="paysages.html" data-preview="images/cloud.jpg">
+                    <span class="series-meta">&nbsp;</span>
+                    <span class="series-meta"></span>
+                    <span class="series-meta series-meta--right">02 images</span>
+                    <h2 class="series-title">Paysages
+                    </h2>
+                </a>
+            </li>
+            <li>
+                <a class="series" href="abstrait.html">
+                    <span class="series-meta">&nbsp;</span>
+                    <span class="series-meta"></span>
+                    <span class="series-meta series-meta--right">en cours</span>
+                    <h2 class="series-title">Abstrait
+                    </h2>
+                </a>
+            </li>
+            <li>
+                <a class="series" href="portraits.html">
+                    <span class="series-meta">&nbsp;</span>
+                    <span class="series-meta"></span>
+                    <span class="series-meta series-meta--right">en cours</span>
+                    <h2 class="series-title">Portraits
+                    </h2>
+                </a>
+            </li>
+        </ul>
     </main>
-    <footer>
-        <p>&copy; 2024 Lucie Termignon. Tous droits réservés.</p>
+    <div class="preview" aria-hidden="true"><img src="" alt=""></div>
+    <footer class="site-footer">
+        <span>&copy; 2026 Lucie Termignon — tous droits réservés</span>
+        <span class="footer-links">
+            <a class="js-mail" href="a-propos.html" data-m="rf.egnaro@nongimreteicul">e-mail</a>
+            <a href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
+        </span>
     </footer>
 </body>
 </html>
