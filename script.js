@@ -108,15 +108,14 @@ document.addEventListener("click", function (e) {
     window.location.href = "mailto:" + link.getAttribute("data-m").split("").reverse().join("");
 });
 
-/* ---------- Thème clair / sombre : suit le système, sauf choix explicite ---------- */
+/* ---------- Thème : sombre par défaut, clair si le visiteur le choisit ---------- */
 (function () {
     var button = document.querySelector(".theme-toggle");
     if (!button) return;
     var root = document.documentElement;
-    var media = window.matchMedia("(prefers-color-scheme: dark)");
 
     function current() {
-        return root.getAttribute("data-theme") || (media.matches ? "dark" : "light");
+        return root.getAttribute("data-theme") || "dark";
     }
 
     function render() {
@@ -134,7 +133,6 @@ document.addEventListener("click", function (e) {
         render();
     });
 
-    if (media.addEventListener) media.addEventListener("change", render);
 })();
 
 /* ---------- Constellation : chaque photo est une étoile, chaque série une constellation ---------- */

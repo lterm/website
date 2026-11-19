@@ -4,11 +4,12 @@
    ========================================================================== */
 
 :root {
-    --bg: #ffffff;
-    --fg: #111111;
-    --muted: #a3a3a3;
-    --line: #111111;
-    --line-soft: #e4e4e4;
+    /* Sombre par défaut */
+    --bg: #0f0f0f;
+    --fg: #ececec;
+    --muted: #7f7f7f;
+    --line: #ececec;
+    --line-soft: #2a2a2a;
 
     --gutter: 16px;
     --header-h: 48px;
@@ -19,28 +20,17 @@
     --fs-base: 15px;
     --fs-title: clamp(2rem, 5.2vw, 4.75rem);
 
-    color-scheme: light;
-}
-
-/* Mode sombre : suit le système, sauf si le visiteur a choisi « clair » */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --bg: #0f0f0f;
-        --fg: #ececec;
-        --muted: #7f7f7f;
-        --line: #ececec;
-        --line-soft: #2a2a2a;
-        color-scheme: dark;
-    }
-}
-
-:root[data-theme="dark"] {
-    --bg: #0f0f0f;
-    --fg: #ececec;
-    --muted: #7f7f7f;
-    --line: #ececec;
-    --line-soft: #2a2a2a;
     color-scheme: dark;
+}
+
+/* Mode clair : uniquement si le visiteur le choisit */
+:root[data-theme="light"] {
+    --bg: #ffffff;
+    --fg: #111111;
+    --muted: #a3a3a3;
+    --line: #111111;
+    --line-soft: #e4e4e4;
+    color-scheme: light;
 }
 
 *,
