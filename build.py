@@ -27,7 +27,7 @@ TEXT = {
         "about": "à propos",
         "sky": "constellation",
         "sky_title": "Constellation",
-        "sky_desc": "Toutes les photographies de Lucie Termignon, disposées comme une carte du ciel.",
+        "sky_desc": "Photographies argentiques de Lucie Termignon, disposées comme une carte du ciel : villes, portraits, montagne, mer, hiver.",
         "sky_noscript": "Cette vue a besoin de JavaScript. Retrouvez les séries sur la page",
         "sky_label": "Carte des photographies : chaque série est une constellation, chaque photo une étoile.",
         "series": "Séries",
@@ -53,7 +53,7 @@ TEXT = {
         "about": "about",
         "sky": "constellation",
         "sky_title": "Constellation",
-        "sky_desc": "All of Lucie Termignon’s photographs, laid out like a sky chart.",
+        "sky_desc": "Film photographs by Lucie Termignon, laid out like a sky chart: cities, portraits, mountains, sea, winter.",
         "sky_noscript": "This view needs JavaScript. Browse the series on the",
         "sky_label": "Map of the photographs: each series is a constellation, each photo a star.",
         "series": "Series",
@@ -152,7 +152,7 @@ def head(lang, page, title, desc):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{esc(title)}</title>
     <meta name="description" content="{esc(desc)}">
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="dark light">
     <link rel="alternate" hreflang="fr" href="{fr_href}">
     <link rel="alternate" hreflang="en" href="{en_href}">
     <link rel="stylesheet" href="{p}style.css">
@@ -174,8 +174,8 @@ def header(lang, page, current):
             <span class="muted">{t["tagline"]}</span>
         </a>
         <nav class="site-nav" aria-label="{t["nav_label"]}">
-            <a href="index.html"{cur("index")}>{t["index"]}</a>
-            <a href="constellation.html"{cur("sky")}>{t["sky"]}</a>
+            <a href="index.html"{cur("sky")}>{t["sky"]}</a>
+            <a href="liste.html"{cur("index")}>{t["index"]}</a>
             <a href="a-propos.html"{cur("about")}>{t["about"]}</a>
             <a class="nav-end" href="{INSTAGRAM}" rel="me">instagram</a>
             <a href="{other}" hreflang="{other_lang}" lang="{other_lang}" aria-label="{t["other_lang_label"]}">{t["other_lang"]}</a>
@@ -216,8 +216,8 @@ def build_index(lang, series):
                 </a>
             </li>''')
     rows = "\n".join(rows)
-    return (head(lang, "index.html", "Lucie Termignon — " + t["tagline"], t["home_desc"])
-            + header(lang, "index.html", "index")
+    return (head(lang, "liste.html", "Index — Lucie Termignon", t["home_desc"])
+            + header(lang, "liste.html", "index")
             + f'''    <main class="page">
         <p class="section-label">{t["series"]}</p>
         <ul class="series-list">
@@ -313,13 +313,13 @@ def build_sky(lang, series):
                                    "cap": translate_caption(img["caption"], lang),
                                    "cam": camera_of(img["caption"], s["cameras"])})
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
-    return (head(lang, "constellation.html", f'{t["sky_title"]} — Lucie Termignon', t["sky_desc"])
-            + header(lang, "constellation.html", "sky")
+    return (head(lang, "index.html", "Lucie Termignon — " + t["tagline"], t["sky_desc"])
+            + header(lang, "index.html", "sky")
             + f'''    <main>
         <h1 class="visually-hidden">{t["sky_title"]}</h1>
         <div class="sky">
             <svg role="img" aria-label="{esc(t["sky_label"])}"></svg>
-            <noscript><p class="sky-noscript">{t["sky_noscript"]} <a href="index.html">{t["index"]}</a>.</p></noscript>
+            <noscript><p class="sky-noscript">{t["sky_noscript"]} <a href="liste.html">{t["index"]}</a>.</p></noscript>
         </div>
     </main>
     <script type="application/json" id="sky-data">{payload}</script>
@@ -346,9 +346,9 @@ def main():
     with open(os.path.join(ROOT, "content", "series.json"), encoding="utf-8") as f:
         series = json.load(f)
     for lang in LANGS:
-        write(lang, "index.html", build_index(lang, series))
+        write(lang, "liste.html", build_index(lang, series))
         write(lang, "a-propos.html", build_about(lang))
-        write(lang, "constellation.html", build_sky(lang, series))
+        write(lang, "index.html", build_sky(lang, series))  # la constellation est la page d'accueil
         for s in series:
             write(lang, s["slug"] + ".html", build_series(lang, s))
     print(f"{len(series)} séries, {2 * (len(series) + 3)} pages générées.")

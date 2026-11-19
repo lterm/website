@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucie Termignon — film photography</title>
-    <meta name="description" content="Film photography series by Lucie Termignon: cities, portraits, mountains, sea, winter.">
-    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Film photographs by Lucie Termignon, laid out like a sky chart: cities, portraits, mountains, sea, winter.">
+    <meta name="color-scheme" content="dark light">
     <link rel="alternate" hreflang="fr" href="../index.html">
     <link rel="alternate" hreflang="en" href="index.html">
     <link rel="stylesheet" href="../style.css">
@@ -19,107 +19,28 @@
             <span class="muted">film photography</span>
         </a>
         <nav class="site-nav" aria-label="Main navigation">
-            <a href="index.html" aria-current="page">index</a>
-            <a href="constellation.html">constellation</a>
+            <a href="index.html" aria-current="page">constellation</a>
+            <a href="liste.html">index</a>
             <a href="a-propos.html">about</a>
             <a class="nav-end" href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
             <a href="../index.html" hreflang="fr" lang="fr" aria-label="FR — version française">FR</a>
             <button type="button" class="theme-toggle" hidden aria-label="Switch theme" data-dark="dark" data-light="light"></button>
         </nav>
     </header>
-    <main class="page">
-        <p class="section-label">Series</p>
-        <ul class="series-list">
-            <li>
-                <a class="series" href="corps-dans-le-noir.html" data-preview="../images/corps-dans-le-noir/corps-dans-le-noir-01.jpg">
-                    <span class="series-meta">Nikon FM2</span>
-                    <span class="series-meta series-meta--right">08 images</span>
-                    <h2 class="series-title">Bodies in the Dark
-                        <span class="muted">Stage and dance</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="villes-de-passage.html" data-preview="../images/nyc.jpg">
-                    <span class="series-meta">Nikon FM2, Leica M3</span>
-                    <span class="series-meta series-meta--right">16 images</span>
-                    <h2 class="series-title">Passing Cities
-                        <span class="muted">Street photography</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="paris-suspendu.html" data-preview="../images/paris-suspendu/paris-suspendu-02.jpg">
-                    <span class="series-meta">Nikon FM2</span>
-                    <span class="series-meta series-meta--right">13 images</span>
-                    <h2 class="series-title">Paris on Hold
-                        <span class="muted">Lockdown</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="proches.html" data-preview="../images/proches/proches-01.jpg">
-                    <span class="series-meta">Nikon FM2, Leica M3, Lomo, Yashica</span>
-                    <span class="series-meta series-meta--right">21 images</span>
-                    <h2 class="series-title">Close Ones
-                        <span class="muted">Portraits</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="gr20.html" data-preview="../images/cloud.jpg">
-                    <span class="series-meta">Nikon FM2</span>
-                    <span class="series-meta series-meta--right">18 images</span>
-                    <h2 class="series-title">GR20
-                        <span class="muted">Corsica</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="montagne.html" data-preview="../images/montagne/montagne-01.jpg">
-                    <span class="series-meta">Nikon FM2, Leica M3, Lomo</span>
-                    <span class="series-meta series-meta--right">17 images</span>
-                    <h2 class="series-title">Mountains
-                        <span class="muted">Alps, Pyrenees</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="lignes-d-horizon.html" data-preview="../images/lignes-d-horizon/lignes-d-horizon-01.jpg">
-                    <span class="series-meta">Leica M3, Yashica, Lomo, Nikon FM2</span>
-                    <span class="series-meta series-meta--right">17 images</span>
-                    <h2 class="series-title">Horizon Lines
-                        <span class="muted">Sea</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="hiver.html" data-preview="../images/hiver/hiver-02.jpg">
-                    <span class="series-meta">Leica M3, Lomo, Nikon FM2, Yashica</span>
-                    <span class="series-meta series-meta--right">12 images</span>
-                    <h2 class="series-title">Winter
-                        <span class="muted">Snow</span>
-                    </h2>
-                </a>
-            </li>
-            <li>
-                <a class="series" href="le-carre.html" data-preview="../images/le-carre/le-carre-01.jpg">
-                    <span class="series-meta">Yashica</span>
-                    <span class="series-meta series-meta--right">12 images</span>
-                    <h2 class="series-title">The Square
-                        <span class="muted">6×6</span>
-                    </h2>
-                </a>
-            </li>
-        </ul>
+    <main>
+        <h1 class="visually-hidden">Constellation</h1>
+        <div class="sky">
+            <svg role="img" aria-label="Map of the photographs: each series is a constellation, each photo a star."></svg>
+            <noscript><p class="sky-noscript">This view needs JavaScript. Browse the series on the <a href="liste.html">index</a>.</p></noscript>
+        </div>
     </main>
+    <script type="application/json" id="sky-data">{"series": [{"title": "Bodies in the Dark", "href": "corps-dans-le-noir.html", "count": "08 images"}, {"title": "Passing Cities", "href": "villes-de-passage.html", "count": "16 images"}, {"title": "Paris on Hold", "href": "paris-suspendu.html", "count": "13 images"}, {"title": "Close Ones", "href": "proches.html", "count": "21 images"}, {"title": "GR20", "href": "gr20.html", "count": "18 images"}, {"title": "Mountains", "href": "montagne.html", "count": "17 images"}, {"title": "Horizon Lines", "href": "lignes-d-horizon.html", "count": "17 images"}, {"title": "Winter", "href": "hiver.html", "count": "12 images"}, {"title": "The Square", "href": "le-carre.html", "count": "12 images"}], "photos": [{"s": 0, "n": 1, "src": "../images/corps-dans-le-noir/corps-dans-le-noir-01.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 0, "n": 2, "src": "../images/corps-dans-le-noir/corps-dans-le-noir-02.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 0, "n": 3, "src": "../images/corps-dans-le-noir/corps-dans-le-noir-03.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 0, "n": 4, "src": "../images/corps-dans-le-noir/corps-dans-le-noir-04.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 0, "n": 5, "src": "../images/corps-dans-le-noir/corps-dans-le-noir-05.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 0, "n": 6, "src": "../images/corps-dans-le-noir/corps-dans-le-noir-09.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 0, "n": 7, "src": "../images/corps-dans-le-noir/corps-dans-le-noir-11.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 0, "n": 8, "src": "../images/corps-dans-le-noir/corps-dans-le-noir-14.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 1, "src": "../images/nyc.jpg", "cap": "New York", "cam": "nikon"}, {"s": 1, "n": 2, "src": "../images/nyc2.jpg", "cap": "New York", "cam": "nikon"}, {"s": 1, "n": 3, "src": "../images/nyc3.jpg", "cap": "New York", "cam": "nikon"}, {"s": 1, "n": 4, "src": "../images/Photo05_8.jpg", "cap": "", "cam": "nikon"}, {"s": 1, "n": 5, "src": "../images/suw.jpg", "cap": "", "cam": "nikon"}, {"s": 1, "n": 6, "src": "../images/girls.jpg", "cap": "New York — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 7, "src": "../images/villes-de-passage/villes-de-passage-02.jpg", "cap": "New York — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 8, "src": "../images/villes-de-passage/villes-de-passage-04.jpg", "cap": "New York — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 9, "src": "../images/villes-de-passage/villes-de-passage-05.jpg", "cap": "New York — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 10, "src": "../images/villes-de-passage/villes-de-passage-06.jpg", "cap": "Boston — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 11, "src": "../images/villes-de-passage/villes-de-passage-07.jpg", "cap": "New York — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 12, "src": "../images/villes-de-passage/villes-de-passage-08.jpg", "cap": "London — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 13, "src": "../images/villes-de-passage/villes-de-passage-10.jpg", "cap": "New York — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 14, "src": "../images/villes-de-passage/villes-de-passage-11.jpg", "cap": "London — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 15, "src": "../images/villes-de-passage/villes-de-passage-12.jpg", "cap": "Boston — Nikon FM2", "cam": "nikon"}, {"s": 1, "n": 16, "src": "../images/villes-de-passage/villes-de-passage-13.jpg", "cap": "Boston — Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 1, "src": "../images/paris-suspendu/paris-suspendu-02.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 2, "src": "../images/paris-suspendu/paris-suspendu-03.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 3, "src": "../images/paris-suspendu/paris-suspendu-05.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 4, "src": "../images/paris-suspendu/paris-suspendu-06.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 5, "src": "../images/paris-suspendu/paris-suspendu-07.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 6, "src": "../images/paris-suspendu/paris-suspendu-09.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 7, "src": "../images/paris-suspendu/paris-suspendu-10.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 8, "src": "../images/paris-suspendu/paris-suspendu-13.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 9, "src": "../images/paris-suspendu/paris-suspendu-14.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 10, "src": "../images/paris-suspendu/paris-suspendu-15.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 11, "src": "../images/paris-suspendu/paris-suspendu-16.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 12, "src": "../images/paris-suspendu/paris-suspendu-17.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 2, "n": 13, "src": "../images/paris-suspendu/paris-suspendu-18.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 1, "src": "../images/proches/proches-01.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 2, "src": "../images/proches/proches-02.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 3, "src": "../images/proches/proches-04.jpg", "cap": "Bessans — Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 4, "src": "../images/proches/proches-06.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 5, "src": "../images/proches/proches-07.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 6, "src": "../images/proches/proches-08.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 7, "src": "../images/proches/proches-09.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 8, "src": "../images/proches/proches-10.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 9, "src": "../images/proches/proches-11.jpg", "cap": "Côte d’Opale — Lomo", "cam": "lomo"}, {"s": 3, "n": 10, "src": "../images/proches/proches-12.jpg", "cap": "Écrins — Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 11, "src": "../images/proches/proches-13.jpg", "cap": "Aeolian Islands — Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 12, "src": "../images/proches/proches-14.jpg", "cap": "Aeolian Islands — Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 13, "src": "../images/proches/proches-15.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 3, "n": 14, "src": "../images/proches/proches-16.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 3, "n": 15, "src": "../images/proches/proches-19.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 16, "src": "../images/proches/proches-20.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 17, "src": "../images/proches/proches-21.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 18, "src": "../images/proches/proches-22.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 19, "src": "../images/proches/proches-24.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 20, "src": "../images/proches/proches-28.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 3, "n": 21, "src": "../images/proches/proches-29.jpg", "cap": "Paris — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 1, "src": "../images/cloud.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 2, "src": "../images/gr20/gr20-09.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 3, "src": "../images/gr20/gr20-10.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 4, "src": "../images/gr20/gr20-11.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 5, "src": "../images/gr20/gr20-12.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 6, "src": "../images/gr20/gr20-13.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 7, "src": "../images/gr20/gr20-14.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 8, "src": "../images/gr20/gr20-16.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 9, "src": "../images/gr20/gr20-17.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 10, "src": "../images/gr20/gr20-18.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 11, "src": "../images/gr20/gr20-19.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 12, "src": "../images/gr20/gr20-20.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 13, "src": "../images/gr20/gr20-21.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 14, "src": "../images/gr20/gr20-22.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 15, "src": "../images/gr20/gr20-23.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 16, "src": "../images/gr20/gr20-24.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 17, "src": "../images/gr20/gr20-25.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 4, "n": 18, "src": "../images/gr20/gr20-26.jpg", "cap": "GR20 — Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 1, "src": "../images/montagne/montagne-01.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 2, "src": "../images/montagne/montagne-02.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 3, "src": "../images/montagne/montagne-03.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 4, "src": "../images/montagne/montagne-04.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 5, "src": "../images/montagne/montagne-05.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 6, "src": "../images/montagne/montagne-06.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 7, "src": "../images/montagne/montagne-07.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 8, "src": "../images/montagne/montagne-08.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 9, "src": "../images/montagne/montagne-09.jpg", "cap": "Écrins — Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 10, "src": "../images/montagne/montagne-11.jpg", "cap": "Écrins — Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 11, "src": "../images/montagne/montagne-13.jpg", "cap": "Écrins — Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 12, "src": "../images/montagne/montagne-14.jpg", "cap": "Écrins — Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 13, "src": "../images/montagne/montagne-15.jpg", "cap": "Écrins — Nikon FM2", "cam": "nikon"}, {"s": 5, "n": 14, "src": "../images/montagne/montagne-17.jpg", "cap": "Pyrenees — Leica M3", "cam": "leica"}, {"s": 5, "n": 15, "src": "../images/montagne/montagne-19.jpg", "cap": "Pyrenees — Leica M3", "cam": "leica"}, {"s": 5, "n": 16, "src": "../images/montagne/montagne-20.jpg", "cap": "Pyrenees — Leica M3", "cam": "leica"}, {"s": 5, "n": 17, "src": "../images/montagne/montagne-21.jpg", "cap": "Chamonix — Lomo", "cam": "lomo"}, {"s": 6, "n": 1, "src": "../images/lignes-d-horizon/lignes-d-horizon-01.jpg", "cap": "Leica M3", "cam": "leica"}, {"s": 6, "n": 2, "src": "../images/lignes-d-horizon/lignes-d-horizon-02.jpg", "cap": "Leica M3", "cam": "leica"}, {"s": 6, "n": 3, "src": "../images/lignes-d-horizon/lignes-d-horizon-03.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 6, "n": 4, "src": "../images/lignes-d-horizon/lignes-d-horizon-04.jpg", "cap": "Leica M3", "cam": "leica"}, {"s": 6, "n": 5, "src": "../images/lignes-d-horizon/lignes-d-horizon-07.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 6, "n": 6, "src": "../images/lignes-d-horizon/lignes-d-horizon-08.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 6, "n": 7, "src": "../images/lignes-d-horizon/lignes-d-horizon-10.jpg", "cap": "Côte d’Opale — Lomo", "cam": "lomo"}, {"s": 6, "n": 8, "src": "../images/lignes-d-horizon/lignes-d-horizon-11.jpg", "cap": "Côte d’Opale — Lomo", "cam": "lomo"}, {"s": 6, "n": 9, "src": "../images/lignes-d-horizon/lignes-d-horizon-13.jpg", "cap": "Leica M3", "cam": "leica"}, {"s": 6, "n": 10, "src": "../images/lignes-d-horizon/lignes-d-horizon-14.jpg", "cap": "Côte d’Opale — Lomo", "cam": "lomo"}, {"s": 6, "n": 11, "src": "../images/lignes-d-horizon/lignes-d-horizon-15.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 6, "n": 12, "src": "../images/lignes-d-horizon/lignes-d-horizon-16.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 6, "n": 13, "src": "../images/lignes-d-horizon/lignes-d-horizon-17.jpg", "cap": "Nikon FM2", "cam": "nikon"}, {"s": 6, "n": 14, "src": "../images/lignes-d-horizon/lignes-d-horizon-19.jpg", "cap": "Aeolian Islands — Nikon FM2", "cam": "nikon"}, {"s": 6, "n": 15, "src": "../images/lignes-d-horizon/lignes-d-horizon-20.jpg", "cap": "Aeolian Islands — Nikon FM2", "cam": "nikon"}, {"s": 6, "n": 16, "src": "../images/lignes-d-horizon/lignes-d-horizon-25.jpg", "cap": "Aeolian Islands — Nikon FM2", "cam": "nikon"}, {"s": 6, "n": 17, "src": "../images/lignes-d-horizon/lignes-d-horizon-26.jpg", "cap": "Aeolian Islands — Nikon FM2", "cam": "nikon"}, {"s": 7, "n": 1, "src": "../images/hiver/hiver-02.jpg", "cap": "Bessans — Lomo", "cam": "lomo"}, {"s": 7, "n": 2, "src": "../images/hiver/hiver-03.jpg", "cap": "Leica M3", "cam": "leica"}, {"s": 7, "n": 3, "src": "../images/hiver/hiver-04.jpg", "cap": "Bessans — Lomo", "cam": "lomo"}, {"s": 7, "n": 4, "src": "../images/hiver/hiver-05.jpg", "cap": "Leica M3", "cam": "leica"}, {"s": 7, "n": 5, "src": "../images/hiver/hiver-07.jpg", "cap": "Bessans — Lomo", "cam": "lomo"}, {"s": 7, "n": 6, "src": "../images/hiver/hiver-08.jpg", "cap": "Bessans — Lomo", "cam": "lomo"}, {"s": 7, "n": 7, "src": "../images/hiver/hiver-09.jpg", "cap": "Bessans — Lomo", "cam": "lomo"}, {"s": 7, "n": 8, "src": "../images/hiver/hiver-10.jpg", "cap": "Bessans — Lomo", "cam": "lomo"}, {"s": 7, "n": 9, "src": "../images/hiver/hiver-11.jpg", "cap": "Leica M3", "cam": "leica"}, {"s": 7, "n": 10, "src": "../images/hiver/hiver-12.jpg", "cap": "Bessans — Lomo", "cam": "lomo"}, {"s": 7, "n": 11, "src": "../images/hiver/hiver-13.jpg", "cap": "Leica M3", "cam": "leica"}, {"s": 7, "n": 12, "src": "../images/hiver/hiver-14.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 1, "src": "../images/le-carre/le-carre-01.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 2, "src": "../images/le-carre/le-carre-02.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 3, "src": "../images/le-carre/le-carre-03.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 4, "src": "../images/le-carre/le-carre-04.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 5, "src": "../images/le-carre/le-carre-05.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 6, "src": "../images/le-carre/le-carre-06.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 7, "src": "../images/le-carre/le-carre-08.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 8, "src": "../images/le-carre/le-carre-10.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 9, "src": "../images/le-carre/le-carre-11.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 10, "src": "../images/le-carre/le-carre-12.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 11, "src": "../images/le-carre/le-carre-13.jpg", "cap": "Yashica", "cam": "yashica"}, {"s": 8, "n": 12, "src": "../images/le-carre/le-carre-14.jpg", "cap": "Yashica", "cam": "yashica"}]}</script>
     <div class="preview" aria-hidden="true"><img src="" alt=""></div>
-    <footer class="site-footer">
-        <span>&copy; 2026 Lucie Termignon — all rights reserved</span>
-        <span class="footer-links">
-            <a class="js-mail" href="a-propos.html" data-m="rf.egnaro@nongimreteicul">e-mail</a>
-            <a href="https://www.instagram.com/lucie_tmgn/" rel="me">instagram</a>
-        </span>
-    </footer>
+    <div class="bar">
+        <span class="sky-coord">RA&nbsp;<span class="sky-ra">—</span></span>
+        <span class="sky-coord">DE&nbsp;<span class="sky-de">—</span></span>
+        <span class="sky-info" aria-live="polite"></span>
+        <span>134 images</span>
+    </div>
 </body>
 </html>
