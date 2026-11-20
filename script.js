@@ -243,9 +243,10 @@ document.addEventListener("click", function (e) {
                 linkEls.push(el("line", { x1: x, y1: y, x2: to.x, y2: to.y, "class": "xlink", "data-t": p.t, "data-lt": p.lt, "data-i": idx }, gLinks));
             }
 
-            var a = el("a", { href: p.href, "class": "star", "data-t": p.t, "data-b": p.b,
+            var a = el("a", { href: p.href, "class": p.col >= 0 ? "star is-color" : "star", "data-t": p.t, "data-b": p.b,
                               "aria-label": p.series + ", " + p.n + (p.cap ? " — " + p.cap : "") }, gStars);
             var g = el("g", {}, a);
+            if (p.col >= 0) a.style.setProperty("--h", p.col); // teinte dominante de la photo
             symbol(g, p.cam);
             floating.push({ node: g, x: x, y: y, star: true });
             starEls.push(a);

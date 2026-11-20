@@ -335,7 +335,8 @@ def build_sky(lang, series):
                            "series": s[lang]["title"], "href": s["slug"] + ".html#" + str(k + 1),
                            "src": p + "images/" + img["src"],
                            "cap": translate_caption(img["caption"], lang),
-                           "cam": camera_of(img["caption"], s["cameras"])})
+                           "cam": camera_of(img["caption"], s["cameras"]),
+                           "col": img.get("color", -1)})  # teinte dominante, -1 = noir et blanc
     for th in themes:
         th["count"] = count_label(th["count"], t)
         for br in th["branches"]:

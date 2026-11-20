@@ -22,7 +22,8 @@ python3 build.py
 2. Ajoutez une ligne dans la liste `images` de la série, dans `content/series.json`.
 3. Indiquez sa place dans la constellation de la page d'accueil :
    - `"branch"` : la branche de l'arbre, par exemple `"montagne/ecrins"` ou `"personnes/inconnus"` (ou `"carre"` pour un thème sans branches) ;
-   - `"link"` (facultatif) : une autre branche reliée en pointillé, par exemple le lieu d'un portrait (`"villes/paris"`).
+   - `"link"` (facultatif) : une autre branche reliée en pointillé, par exemple le lieu d'un portrait (`"villes/paris"`) ;
+   - `"color"` (facultatif, photos en couleur) : la teinte dominante de la photo, en degrés de 0 à 360 (0 rouge, 30 orange, 60 jaune, 120 vert, 200 bleu ciel, 240 bleu, 300 violet). Son symbole prend cette teinte dans la constellation.
 
    Les thèmes et les branches, avec leurs noms en français et en anglais, sont dans `content/constellation.json`.
 4. Lancez `python3 build.py`.

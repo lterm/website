@@ -74,12 +74,14 @@
       {
         "src": "nyc2.jpg",
         "caption": "New York",
-        "branch": "villes/new-york"
+        "branch": "villes/new-york",
+        "color": 27
       },
       {
         "src": "nyc3.jpg",
         "caption": "New York",
-        "branch": "villes/new-york"
+        "branch": "villes/new-york",
+        "color": 26
       },
       {
         "src": "Photo05_8.jpg",
@@ -89,12 +91,14 @@
       {
         "src": "suw.jpg",
         "caption": "",
-        "branch": "villes/ailleurs"
+        "branch": "villes/ailleurs",
+        "color": 45
       },
       {
         "src": "girls.jpg",
         "caption": "New York — Nikon FM2",
-        "branch": "villes/new-york"
+        "branch": "villes/new-york",
+        "color": 30
       },
       {
         "src": "villes-de-passage/villes-de-passage-02.jpg",
@@ -110,7 +114,8 @@
       {
         "src": "villes-de-passage/villes-de-passage-05.jpg",
         "caption": "New York — Nikon FM2",
-        "branch": "villes/new-york"
+        "branch": "villes/new-york",
+        "color": 199
       },
       {
         "src": "villes-de-passage/villes-de-passage-06.jpg",
@@ -376,7 +381,8 @@
       {
         "src": "montagne/montagne-21.jpg",
         "caption": "Chamonix — Lomo",
-        "branch": "montagne/chamonix"
+        "branch": "montagne/chamonix",
+        "color": 38
       }
     ]
   },
@@ -425,7 +431,8 @@
       {
         "src": "lignes-d-horizon/lignes-d-horizon-10.jpg",
         "caption": "Côte d’Opale — Lomo",
-        "branch": "mer/cote-opale"
+        "branch": "mer/cote-opale",
+        "color": 218
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-11.jpg",
@@ -435,12 +442,14 @@
       {
         "src": "lignes-d-horizon/lignes-d-horizon-13.jpg",
         "caption": "Leica M3",
-        "branch": "mer/horizons"
+        "branch": "mer/horizons",
+        "color": 37
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-14.jpg",
         "caption": "Côte d’Opale — Lomo",
-        "branch": "mer/cote-opale"
+        "branch": "mer/cote-opale",
+        "color": 223
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-15.jpg",
@@ -470,7 +479,8 @@
       {
         "src": "lignes-d-horizon/lignes-d-horizon-25.jpg",
         "caption": "Îles Éoliennes — Nikon FM2",
-        "branch": "mer/eoliennes"
+        "branch": "mer/eoliennes",
+        "color": 31
       },
       {
         "src": "lignes-d-horizon/lignes-d-horizon-26.jpg",
@@ -494,12 +504,14 @@
       {
         "src": "essais/essais-01.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 41
       },
       {
         "src": "essais/essais-02.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 35
       },
       {
         "src": "essais/essais-03.jpg",
@@ -509,12 +521,14 @@
       {
         "src": "essais/essais-04.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 31
       },
       {
         "src": "essais/essais-05.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 30
       },
       {
         "src": "essais/essais-06.jpg",
@@ -524,12 +538,14 @@
       {
         "src": "essais/essais-07.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 21
       },
       {
         "src": "essais/essais-08.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 53
       },
       {
         "src": "essais/essais-09.jpg",
@@ -539,17 +555,20 @@
       {
         "src": "essais/essais-10.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 33
       },
       {
         "src": "essais/essais-11.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 93
       },
       {
         "src": "essais/essais-12.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 31
       },
       {
         "src": "essais/essais-13.jpg",
@@ -559,27 +578,32 @@
       {
         "src": "essais/essais-14.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 15
       },
       {
         "src": "essais/essais-15.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 37
       },
       {
         "src": "essais/essais-16.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 198
       },
       {
         "src": "essais/essais-17.jpg",
         "caption": "Olympus XA4",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 195
       },
       {
         "src": "essais/essais-18.jpg",
         "caption": "Projet Berio",
-        "branch": "essais"
+        "branch": "essais",
+        "color": 198
       }
     ]
   },
