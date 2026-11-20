@@ -85,6 +85,7 @@ PLACES_EN = {
     "Pyrénées": "Pyrenees",
     "Îles Éoliennes": "Aeolian Islands",
     "Projet Berio": "Berio Project",
+    "La Muse endormie II": "Sleeping Muse II",
 }
 
 ABOUT = {

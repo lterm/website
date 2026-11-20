@@ -1,17 +1,17 @@
 {
   "_note": "Arbre de la constellation (page d'accueil). Chaque photo de series.json indique sa branche (\"branch\": \"theme/branche\") et, si besoin, un lien en pointillé vers une autre branche (\"link\").",
   "themes": [
-    {"id": "personnes", "fr": "Personnes", "en": "People", "branches": [
-      {"id": "proches", "fr": "Proches", "en": "Close ones"},
-      {"id": "inconnus", "fr": "Inconnus", "en": "Strangers"},
-      {"id": "scene", "fr": "Scène", "en": "Stage"}]},
+    {"id": "paris", "fr": "Paris", "en": "Paris", "branches": []},
     {"id": "villes", "fr": "Villes de passage", "en": "Passing Cities", "branches": [
       {"id": "new-york", "fr": "New York", "en": "New York"},
       {"id": "boston", "fr": "Boston", "en": "Boston"},
       {"id": "londres", "fr": "Londres", "en": "London"},
       {"id": "munich", "fr": "Munich", "en": "Munich"},
       {"id": "ailleurs", "fr": "Ailleurs", "en": "Elsewhere"}]},
-    {"id": "paris", "fr": "Paris", "en": "Paris", "branches": []},
+    {"id": "personnes", "fr": "Personnes", "en": "People", "branches": [
+      {"id": "proches", "fr": "Proches", "en": "Close ones"},
+      {"id": "inconnus", "fr": "Inconnus", "en": "Strangers"},
+      {"id": "scene", "fr": "Scène", "en": "Stage"}]},
     {"id": "mer", "fr": "Mer", "en": "Sea", "branches": [
       {"id": "cote-opale", "fr": "Côte d’Opale", "en": "Côte d’Opale"},
       {"id": "eoliennes", "fr": "Îles Éoliennes", "en": "Aeolian Islands"},
