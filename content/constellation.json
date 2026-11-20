@@ -18,9 +18,7 @@
       {"id": "rochers", "fr": "Côtes rocheuses", "en": "Rocky shores"},
       {"id": "horizons", "fr": "Horizons", "en": "Horizons"},
       {"id": "etes", "fr": "Étés", "en": "Summers"}]},
-    {"id": "hiver", "fr": "Hiver", "en": "Winter", "branches": [
-      {"id": "bessans", "fr": "Bessans", "en": "Bessans"},
-      {"id": "neige", "fr": "Neige", "en": "Snow"}]},
+    {"id": "essais", "fr": "Essais", "en": "Experiments", "branches": []},
     {"id": "montagne", "fr": "Montagne", "en": "Mountains", "branches": [
       {"id": "corse", "fr": "Corse", "en": "Corsica"},
       {"id": "ecrins", "fr": "Écrins", "en": "Écrins"},

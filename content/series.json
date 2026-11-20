@@ -480,76 +480,106 @@
     ]
   },
   {
-    "slug": "hiver",
-    "cameras": "Leica M3, Lomo, Nikon FM2, Yashica",
+    "slug": "essais",
+    "cameras": "Olympus XA4",
     "fr": {
-      "title": "Hiver",
-      "subtitle": "Neige"
+      "title": "Essais",
+      "subtitle": "Lumière, flou"
     },
     "en": {
-      "title": "Winter",
-      "subtitle": "Snow"
+      "title": "Experiments",
+      "subtitle": "Light, blur"
     },
     "images": [
       {
-        "src": "hiver/hiver-02.jpg",
-        "caption": "Bessans — Lomo",
-        "branch": "hiver/bessans"
+        "src": "essais/essais-01.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-03.jpg",
-        "caption": "Leica M3",
-        "branch": "hiver/neige"
+        "src": "essais/essais-02.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-04.jpg",
-        "caption": "Bessans — Lomo",
-        "branch": "hiver/bessans"
+        "src": "essais/essais-03.jpg",
+        "caption": "Projet Berio",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-05.jpg",
-        "caption": "Leica M3",
-        "branch": "hiver/neige"
+        "src": "essais/essais-04.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-07.jpg",
-        "caption": "Bessans — Lomo",
-        "branch": "hiver/bessans"
+        "src": "essais/essais-05.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-08.jpg",
-        "caption": "Bessans — Lomo",
-        "branch": "hiver/bessans"
+        "src": "essais/essais-06.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-09.jpg",
-        "caption": "Bessans — Lomo",
-        "branch": "hiver/bessans"
+        "src": "essais/essais-07.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-10.jpg",
-        "caption": "Bessans — Lomo",
-        "branch": "hiver/bessans"
+        "src": "essais/essais-08.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-11.jpg",
-        "caption": "Leica M3",
-        "branch": "hiver/neige"
+        "src": "essais/essais-09.jpg",
+        "caption": "Projet Berio",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-12.jpg",
-        "caption": "Bessans — Lomo",
-        "branch": "hiver/bessans"
+        "src": "essais/essais-10.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-13.jpg",
-        "caption": "Leica M3",
-        "branch": "hiver/neige"
+        "src": "essais/essais-11.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
       },
       {
-        "src": "hiver/hiver-14.jpg",
-        "caption": "Yashica",
-        "branch": "hiver/bessans"
+        "src": "essais/essais-12.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
+      },
+      {
+        "src": "essais/essais-13.jpg",
+        "caption": "Projet Berio",
+        "branch": "essais"
+      },
+      {
+        "src": "essais/essais-14.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
+      },
+      {
+        "src": "essais/essais-15.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
+      },
+      {
+        "src": "essais/essais-16.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
+      },
+      {
+        "src": "essais/essais-17.jpg",
+        "caption": "Olympus XA4",
+        "branch": "essais"
+      },
+      {
+        "src": "essais/essais-18.jpg",
+        "caption": "Projet Berio",
+        "branch": "essais"
       }
     ]
   },

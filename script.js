@@ -172,8 +172,9 @@ document.addEventListener("click", function (e) {
         return e;
     }
 
-    function symbol(g, cam) { // ○ Nikon, × Leica, ⊙ Lomo, ⊗ Yashica
-        if (cam !== "leica") el("circle", { r: 5.5, "class": "sym" }, g);
+    function symbol(g, cam) { // ○ Nikon, × Leica, ⊙ Lomo, ⊗ Yashica, □ Olympus
+        if (cam === "olympus") el("rect", { x: -4.6, y: -4.6, width: 9.2, height: 9.2, "class": "sym" }, g);
+        else if (cam !== "leica") el("circle", { r: 5.5, "class": "sym" }, g);
         if (cam === "leica" || cam === "yashica") {
             var d = cam === "leica" ? 5.5 : 3.9;
             el("path", { d: "M" + -d + " " + -d + "L" + d + " " + d + "M" + d + " " + -d + "L" + -d + " " + d, "class": "sym" }, g);
