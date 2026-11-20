@@ -155,6 +155,10 @@
       {
         "src": "paris-suspendu/paris-suspendu-04.jpg",
         "caption": "Paris — Leica M3"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-05.jpg",
+        "caption": "Arènes de Lutèce, Paris"
       }
     ]
   },
@@ -450,7 +454,7 @@
       },
       {
         "src": "essais/essais-03.jpg",
-        "caption": "Projet Berio"
+        "caption": "La Muse endormie II"
       },
       {
         "src": "essais/essais-04.jpg",
@@ -478,7 +482,7 @@
       },
       {
         "src": "essais/essais-09.jpg",
-        "caption": "Projet Berio"
+        "caption": "New York"
       },
       {
         "src": "essais/essais-10.jpg",
@@ -494,10 +498,6 @@
         "src": "essais/essais-12.jpg",
         "caption": "Olympus XA4",
         "color": 31
-      },
-      {
-        "src": "essais/essais-13.jpg",
-        "caption": "Projet Berio"
       },
       {
         "src": "essais/essais-14.jpg",
@@ -521,7 +521,7 @@
       },
       {
         "src": "essais/essais-18.jpg",
-        "caption": "Projet Berio",
+        "caption": "New York",
         "color": 198
       }
     ]
