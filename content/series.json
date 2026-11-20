@@ -134,60 +134,7 @@
       "title": "Paris on Hold",
       "subtitle": "Lockdown"
     },
-    "images": [
-      {
-        "src": "paris-suspendu/paris-suspendu-02.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-03.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-05.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-06.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-07.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-09.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-10.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-13.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-14.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-15.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-16.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-17.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "paris-suspendu/paris-suspendu-18.jpg",
-        "caption": "Nikon FM2"
-      }
-    ]
+    "images": []
   },
   {
     "slug": "proches",
@@ -200,92 +147,7 @@
       "title": "Close Ones",
       "subtitle": "Portraits"
     },
-    "images": [
-      {
-        "src": "proches/proches-01.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "proches/proches-02.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "proches/proches-04.jpg",
-        "caption": "Bessans — Nikon FM2"
-      },
-      {
-        "src": "proches/proches-06.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "proches/proches-07.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "proches/proches-08.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "proches/proches-09.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "proches/proches-10.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "proches/proches-11.jpg",
-        "caption": "Côte d’Opale — Lomo"
-      },
-      {
-        "src": "proches/proches-12.jpg",
-        "caption": "Écrins — Nikon FM2"
-      },
-      {
-        "src": "proches/proches-13.jpg",
-        "caption": "Îles Éoliennes — Nikon FM2"
-      },
-      {
-        "src": "proches/proches-14.jpg",
-        "caption": "Îles Éoliennes — Nikon FM2"
-      },
-      {
-        "src": "proches/proches-15.jpg",
-        "caption": "Yashica"
-      },
-      {
-        "src": "proches/proches-16.jpg",
-        "caption": "Yashica"
-      },
-      {
-        "src": "proches/proches-19.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "proches/proches-20.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "proches/proches-21.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "proches/proches-22.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "proches/proches-24.jpg",
-        "caption": "Paris — Nikon FM2"
-      },
-      {
-        "src": "proches/proches-28.jpg",
-        "caption": "Nikon FM2"
-      },
-      {
-        "src": "proches/proches-29.jpg",
-        "caption": "Paris — Nikon FM2"
-      }
-    ]
+    "images": []
   },
   {
     "slug": "gr20",
