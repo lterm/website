@@ -152,7 +152,9 @@ document.addEventListener("click", function (e) {
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // centres des thèmes (paysage), dans l'ordre de content/constellation.json
-    var CENTERS = [[0.18, 0.28], [0.48, 0.2], [0.8, 0.26], [0.78, 0.7], [0.5, 0.8], [0.2, 0.72], [0.40, 0.56]];
+    // [x, y] en paysage. En portrait, les coordonnées sont transposées,
+    // sauf si l'entrée donne une 3e et 4e valeur : la position [x, y] en portrait.
+    var CENTERS = [[0.18, 0.28], [0.48, 0.2], [0.82, 0.38, 0.22, 0.9], [0.78, 0.7], [0.5, 0.8], [0.2, 0.72]];
 
     var W, H, vb, state = { t: -1, b: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [];
 
@@ -206,7 +208,8 @@ document.addEventListener("click", function (e) {
         // positions des thèmes et des branches
         data.themes.forEach(function (th, i) {
             var c = CENTERS[i % CENTERS.length];
-            th.x = (portrait ? c[1] : c[0]) * W; th.y = (portrait ? c[0] : c[1]) * H;
+            var px = c.length > 2 ? c[2] : c[1], py = c.length > 2 ? c[3] : c[0]; // position en portrait
+            th.x = (portrait ? px : c[0]) * W; th.y = (portrait ? py : c[1]) * H;
             var n = th.branches.length, start = rand() * Math.PI * 2;
             th.branches.forEach(function (br, k) {
                 var a = start + k * Math.PI * 2 / n, r = unit * (0.1 + rand() * 0.03);

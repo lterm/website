@@ -622,62 +622,62 @@
       {
         "src": "le-carre/le-carre-01.jpg",
         "caption": "Yashica",
-        "branch": "carre"
+        "branch": "montagne"
       },
       {
         "src": "le-carre/le-carre-02.jpg",
         "caption": "Yashica",
-        "branch": "carre"
+        "branch": "mer/rochers"
       },
       {
         "src": "le-carre/le-carre-03.jpg",
         "caption": "Yashica",
-        "branch": "carre"
+        "branch": "montagne"
       },
       {
         "src": "le-carre/le-carre-04.jpg",
-        "caption": "Yashica",
-        "branch": "carre"
+        "caption": "Paris — Yashica",
+        "branch": "paris-suspendu"
       },
       {
         "src": "le-carre/le-carre-05.jpg",
-        "caption": "Yashica",
-        "branch": "carre"
+        "caption": "Paris — Yashica",
+        "branch": "paris-suspendu"
       },
       {
         "src": "le-carre/le-carre-06.jpg",
         "caption": "Yashica",
-        "branch": "carre"
+        "branch": "montagne/neige"
       },
       {
         "src": "le-carre/le-carre-07.jpg",
         "caption": "Yashica",
-        "branch": "carre"
+        "branch": "montagne/neige"
       },
       {
         "src": "le-carre/le-carre-08.jpg",
         "caption": "Yashica",
-        "branch": "carre"
+        "branch": "montagne/neige"
       },
       {
         "src": "le-carre/le-carre-09.jpg",
-        "caption": "Yashica",
-        "branch": "carre"
+        "caption": "New York — Yashica",
+        "branch": "villes/new-york"
       },
       {
         "src": "le-carre/le-carre-10.jpg",
-        "caption": "Yashica",
-        "branch": "carre"
+        "caption": "New York — Yashica",
+        "branch": "villes/new-york"
       },
       {
         "src": "le-carre/le-carre-11.jpg",
-        "caption": "Yashica",
-        "branch": "carre"
+        "caption": "New York — Yashica",
+        "branch": "villes/new-york"
       },
       {
         "src": "le-carre/le-carre-12.jpg",
-        "caption": "Yashica",
-        "branch": "carre"
+        "caption": "Paris — Yashica",
+        "branch": "paris-suspendu"
       }
     ]
   }

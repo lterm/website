@@ -11,7 +11,7 @@
       {"id": "londres", "fr": "Londres", "en": "London"},
       {"id": "munich", "fr": "Munich", "en": "Munich"},
       {"id": "ailleurs", "fr": "Ailleurs", "en": "Elsewhere"}]},
-    {"id": "carre", "fr": "Le carré", "en": "The Square", "branches": []},
+    {"id": "paris-suspendu", "fr": "Paris suspendu", "en": "Paris on Hold", "branches": []},
     {"id": "mer", "fr": "Mer", "en": "Sea", "branches": [
       {"id": "cote-opale", "fr": "Côte d’Opale", "en": "Côte d’Opale"},
       {"id": "eoliennes", "fr": "Îles Éoliennes", "en": "Aeolian Islands"},
@@ -24,7 +24,7 @@
       {"id": "ecrins", "fr": "Écrins", "en": "Écrins"},
       {"id": "pyrenees", "fr": "Pyrénées", "en": "Pyrenees"},
       {"id": "chamonix", "fr": "Chamonix", "en": "Chamonix"},
-      {"id": "etes", "fr": "Étés", "en": "Summers"}]},
-    {"id": "paris-suspendu", "fr": "Paris suspendu", "en": "Paris on Hold", "branches": []}
+      {"id": "neige", "fr": "Neige", "en": "Snow"},
+      {"id": "etes", "fr": "Étés", "en": "Summers"}]}
   ]
 }
