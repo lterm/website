@@ -11,7 +11,7 @@
       {"id": "londres", "fr": "Londres", "en": "London"},
       {"id": "munich", "fr": "Munich", "en": "Munich"},
       {"id": "ailleurs", "fr": "Ailleurs", "en": "Elsewhere"}]},
-    {"id": "paris-suspendu", "fr": "Paris suspendu", "en": "Paris on Hold", "branches": []},
+    {"id": "paris", "fr": "Paris", "en": "Paris", "branches": []},
     {"id": "mer", "fr": "Mer", "en": "Sea", "branches": [
       {"id": "cote-opale", "fr": "Côte d’Opale", "en": "Côte d’Opale"},
       {"id": "eoliennes", "fr": "Îles Éoliennes", "en": "Aeolian Islands"},

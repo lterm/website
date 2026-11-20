@@ -158,7 +158,7 @@
   },
   {
     "slug": "paris-suspendu",
-    "cameras": "Nikon FM2",
+    "cameras": "Leica M3",
     "fr": {
       "title": "Paris suspendu",
       "subtitle": "Confinement"
@@ -167,7 +167,28 @@
       "title": "Paris on Hold",
       "subtitle": "Lockdown"
     },
-    "images": []
+    "images": [
+      {
+        "src": "paris-suspendu/paris-suspendu-01.jpg",
+        "caption": "Paris — Leica M3",
+        "branch": "paris"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-02.jpg",
+        "caption": "Paris — Leica M3",
+        "branch": "paris"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-03.jpg",
+        "caption": "Paris — Leica M3",
+        "branch": "paris"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-04.jpg",
+        "caption": "Paris — Leica M3",
+        "branch": "paris"
+      }
+    ]
   },
   {
     "slug": "proches",
@@ -637,12 +658,12 @@
       {
         "src": "le-carre/le-carre-04.jpg",
         "caption": "Paris — Yashica",
-        "branch": "paris-suspendu"
+        "branch": "paris"
       },
       {
         "src": "le-carre/le-carre-05.jpg",
         "caption": "Paris — Yashica",
-        "branch": "paris-suspendu"
+        "branch": "paris"
       },
       {
         "src": "le-carre/le-carre-06.jpg",
@@ -677,7 +698,7 @@
       {
         "src": "le-carre/le-carre-12.jpg",
         "caption": "Paris — Yashica",
-        "branch": "paris-suspendu"
+        "branch": "paris"
       }
     ]
   }
