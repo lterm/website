@@ -210,8 +210,9 @@ def build_index(lang, series):
     for s in series:
         n = len(s["images"])
         txt = s[lang]
+        preview = f' data-preview="{p}images/{s["images"][0]["src"]}"' if n else ""  # série vide : pas d'aperçu
         rows.append(f'''            <li>
-                <a class="series" href="{s["slug"]}.html" data-preview="{p}images/{s["images"][0]["src"]}">
+                <a class="series" href="{s["slug"]}.html"{preview}>
                     <span class="series-meta">{esc(s["cameras"])}</span>
                     <span class="series-meta series-meta--right">{n:02d} {t["image"] if n == 1 else t["images"]}</span>
                     <h2 class="series-title">{esc(txt["title"])}
