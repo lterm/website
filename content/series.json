@@ -174,13 +174,13 @@
       },
       {
         "src": "villes-de-passage/villes-de-passage-14.jpg",
-        "caption": "Leica M3",
-        "branch": "villes/ailleurs"
+        "caption": "Munich — Leica M3",
+        "branch": "villes/munich"
       },
       {
         "src": "villes-de-passage/villes-de-passage-15.jpg",
-        "caption": "Leica M3",
-        "branch": "villes/ailleurs"
+        "caption": "Munich — Leica M3",
+        "branch": "villes/munich"
       }
     ]
   },
@@ -732,7 +732,7 @@
       },
       {
         "src": "essais/essais-20.jpg",
-        "caption": "Nikon FM2",
+        "caption": "Hambourg — Nikon FM2",
         "branch": "essais",
         "color": 23
       },
