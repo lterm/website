@@ -130,7 +130,7 @@
   },
   {
     "slug": "paris-suspendu",
-    "cameras": "Nikon FM2",
+    "cameras": "Leica M3",
     "fr": {
       "title": "Paris suspendu",
       "subtitle": "Confinement"
@@ -139,7 +139,24 @@
       "title": "Paris on Hold",
       "subtitle": "Lockdown"
     },
-    "images": []
+    "images": [
+      {
+        "src": "paris-suspendu/paris-suspendu-01.jpg",
+        "caption": "Paris — Leica M3"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-02.jpg",
+        "caption": "Paris — Leica M3"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-03.jpg",
+        "caption": "Paris — Leica M3"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-04.jpg",
+        "caption": "Paris — Leica M3"
+      }
+    ]
   },
   {
     "slug": "proches",
