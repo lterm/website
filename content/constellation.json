@@ -1,14 +1,14 @@
 {
   "_note": "Arbre de la constellation (page d'accueil). Chaque photo de series.json indique sa branche (\"branch\": \"theme/branche\") et, si besoin, un lien en pointillé vers une autre branche (\"link\").",
   "themes": [
-    {"id": "paris", "fr": "Paris", "en": "Paris", "branches": []},
-    {"id": "villes", "fr": "Villes de passage", "en": "Passing Cities", "branches": [
+    {"id": "paris", "fr": "Dates", "en": "Dates", "branches": []},
+    {"id": "villes", "fr": "Ville", "en": "Cities", "branches": [
       {"id": "new-york", "fr": "New York", "en": "New York"},
       {"id": "boston", "fr": "Boston", "en": "Boston"},
       {"id": "londres", "fr": "Londres", "en": "London"},
       {"id": "munich", "fr": "Munich", "en": "Munich"},
       {"id": "ailleurs", "fr": "Ailleurs", "en": "Elsewhere"}]},
-    {"id": "personnes", "fr": "Personnes", "en": "People", "branches": [
+    {"id": "personnes", "fr": "Présences", "en": "Presences", "branches": [
       {"id": "proches", "fr": "Proches", "en": "Close ones"},
       {"id": "inconnus", "fr": "Inconnus", "en": "Strangers"},
       {"id": "scene", "fr": "Scène", "en": "Stage"}]},
