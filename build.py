@@ -27,7 +27,7 @@ TEXT = {
         "about": "à propos",
         "sky": "constellation",
         "sky_title": "Constellation",
-        "sky_desc": "Photographies argentiques de Lucie Termignon, disposées comme une carte du ciel : villes, portraits, montagne, mer, hiver.",
+        "sky_desc": "Photographies argentiques de Lucie Termignon, disposées comme une carte du ciel : villes, portraits, montagne, mer, essais.",
         "sky_noscript": "Cette vue a besoin de JavaScript. Retrouvez les séries sur la page",
         "sky_label": "Carte des photographies : chaque série est une constellation, chaque photo une étoile.",
         "series": "Séries",
@@ -43,7 +43,7 @@ TEXT = {
         "rights": "tous droits réservés",
         "email": "e-mail",
         "nav_label": "Navigation principale",
-        "home_desc": "Séries photographiques argentiques de Lucie Termignon : villes, portraits, montagne, mer, hiver.",
+        "home_desc": "Séries photographiques argentiques de Lucie Termignon : villes, portraits, montagne, mer, essais.",
         "about_desc": "La démarche photographique de Lucie Termignon : noir et blanc, montagne, littoral, ville.",
         "series_desc": "{title} : {subtitle}. Série de Lucie Termignon.",
     },
@@ -53,7 +53,7 @@ TEXT = {
         "about": "about",
         "sky": "constellation",
         "sky_title": "Constellation",
-        "sky_desc": "Film photographs by Lucie Termignon, laid out like a sky chart: cities, portraits, mountains, sea, winter.",
+        "sky_desc": "Film photographs by Lucie Termignon, laid out like a sky chart: cities, portraits, mountains, sea, experiments.",
         "sky_noscript": "This view needs JavaScript. Browse the series on the",
         "sky_label": "Map of the photographs: each series is a constellation, each photo a star.",
         "series": "Series",
@@ -69,7 +69,7 @@ TEXT = {
         "rights": "all rights reserved",
         "email": "e-mail",
         "nav_label": "Main navigation",
-        "home_desc": "Film photography series by Lucie Termignon: cities, portraits, mountains, sea, winter.",
+        "home_desc": "Film photography series by Lucie Termignon: cities, portraits, mountains, sea, experiments.",
         "about_desc": "Lucie Termignon’s photographic practice: black and white, mountains, coastline, cities.",
         "series_desc": "{title}: {subtitle}. A series by Lucie Termignon.",
     },
@@ -288,7 +288,7 @@ def build_about(lang):
 ''' + footer(lang))
 
 
-CAMERA_KEYS = [("Nikon", "nikon"), ("Leica", "leica"), ("Lomo", "lomo"), ("Yashica", "yashica")]
+CAMERA_KEYS = [("Nikon", "nikon"), ("Leica", "leica"), ("Lomo", "lomo"), ("Yashica", "yashica"), ("Olympus", "olympus")]
 
 
 def camera_of(caption, series_cameras):
