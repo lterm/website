@@ -553,6 +553,31 @@ ul {
     border: 1px solid var(--line);
 }
 
+/* La page de la constellation tient dans l'écran, sans défilement :
+   la carte prend la place laissée par l'en-tête (1 à 3 lignes) et la barre.
+   dvh suit la hauteur visible sur mobile, barre d'adresse comprise. */
+body:has(.sky) {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+body:has(.sky) main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+    padding-bottom: calc(var(--bar-h) + 14px);
+}
+
+body:has(.sky) .sky {
+    flex: 1;
+    height: auto;
+    min-height: 0;
+}
+
 .sky {
     /* fond de carte : une grille d'étoiles */
     background-image: radial-gradient(circle, color-mix(in srgb, var(--fg) 45%, transparent) 1.1px, transparent 1.5px);
