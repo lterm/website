@@ -78,6 +78,7 @@ TEXT = {
 # Noms de lieux traduits dans les légendes anglaises
 PLACES_EN = {
     "Londres": "London",
+    "Hambourg": "Hamburg",
     "Pyrénées": "Pyrenees",
     "Îles Éoliennes": "Aeolian Islands",
     "Projet Berio": "Berio Project",
