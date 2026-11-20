@@ -152,7 +152,7 @@ document.addEventListener("click", function (e) {
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // centres des thèmes (paysage), dans l'ordre de content/constellation.json
-    var CENTERS = [[0.18, 0.28], [0.48, 0.2], [0.8, 0.26], [0.78, 0.7], [0.5, 0.8], [0.2, 0.72]];
+    var CENTERS = [[0.18, 0.28], [0.48, 0.2], [0.8, 0.26], [0.78, 0.7], [0.5, 0.8], [0.2, 0.72], [0.40, 0.56]];
 
     var W, H, vb, state = { t: -1, b: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [];
 

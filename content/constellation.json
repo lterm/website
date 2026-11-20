@@ -5,7 +5,7 @@
       {"id": "proches", "fr": "Proches", "en": "Close ones"},
       {"id": "inconnus", "fr": "Inconnus", "en": "Strangers"},
       {"id": "scene", "fr": "Scène", "en": "Stage"}]},
-    {"id": "villes", "fr": "Villes", "en": "Cities", "branches": [
+    {"id": "villes", "fr": "Villes de passage", "en": "Passing Cities", "branches": [
       {"id": "new-york", "fr": "New York", "en": "New York"},
       {"id": "boston", "fr": "Boston", "en": "Boston"},
       {"id": "londres", "fr": "Londres", "en": "London"},
@@ -24,6 +24,7 @@
       {"id": "ecrins", "fr": "Écrins", "en": "Écrins"},
       {"id": "pyrenees", "fr": "Pyrénées", "en": "Pyrenees"},
       {"id": "chamonix", "fr": "Chamonix", "en": "Chamonix"},
-      {"id": "etes", "fr": "Étés", "en": "Summers"}]}
+      {"id": "etes", "fr": "Étés", "en": "Summers"}]},
+    {"id": "paris-suspendu", "fr": "Paris suspendu", "en": "Paris on Hold", "branches": []}
   ]
 }
