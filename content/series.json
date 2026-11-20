@@ -125,6 +125,29 @@
       {
         "src": "villes-de-passage/villes-de-passage-13.jpg",
         "caption": "Boston — Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-01.jpg",
+        "caption": "Chiang Mai — Nikon FM2",
+        "color": 11
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-03.jpg",
+        "caption": "Chiang Mai — Nikon FM2",
+        "color": 16
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-09.jpg",
+        "caption": "Chiang Mai — Nikon FM2",
+        "color": 31
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-14.jpg",
+        "caption": "Leica M3"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-15.jpg",
+        "caption": "Leica M3"
       }
     ]
   },
@@ -159,21 +182,72 @@
       {
         "src": "paris-suspendu/paris-suspendu-05.jpg",
         "caption": "Arènes de Lutèce, Paris"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-06.jpg",
+        "caption": "Paris — Nikon FM2"
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-07.jpg",
+        "caption": "Paris — Nikon FM2",
+        "color": 44
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-08.jpg",
+        "caption": "Paris — Nikon FM2",
+        "color": 114
       }
     ]
   },
   {
-    "slug": "proches",
+    "slug": "presences",
     "cameras": "Nikon FM2, Leica M3, Lomo, Yashica",
     "fr": {
-      "title": "Proches",
+      "title": "Présences",
       "subtitle": "Portraits"
     },
     "en": {
-      "title": "Close Ones",
+      "title": "Presences",
       "subtitle": "Portraits"
     },
-    "images": []
+    "images": [
+      {
+        "src": "presences/presences-01.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "presences/presences-02.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "presences/presences-03.jpg",
+        "caption": "Nikon FM2",
+        "color": 204
+      },
+      {
+        "src": "presences/presences-04.jpg",
+        "caption": "Leica M3",
+        "color": 23
+      },
+      {
+        "src": "presences/presences-05.jpg",
+        "caption": "Nikon FM2",
+        "color": 75
+      },
+      {
+        "src": "presences/presences-06.jpg",
+        "caption": "Nikon FM2",
+        "color": 36
+      },
+      {
+        "src": "presences/presences-07.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "presences/presences-08.jpg",
+        "caption": "Leica M3"
+      }
+    ]
   },
   {
     "slug": "gr20",
@@ -523,6 +597,24 @@
         "src": "essais/essais-18.jpg",
         "caption": "New York",
         "color": 198
+      },
+      {
+        "src": "essais/essais-13.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "essais/essais-19.jpg",
+        "caption": "Chiang Mai — Nikon FM2",
+        "color": 9
+      },
+      {
+        "src": "essais/essais-20.jpg",
+        "caption": "Nikon FM2",
+        "color": 23
+      },
+      {
+        "src": "essais/essais-21.jpg",
+        "caption": "Leica M3"
       }
     ]
   },
@@ -552,11 +644,11 @@
       },
       {
         "src": "le-carre/le-carre-04.jpg",
-        "caption": "Paris — Yashica"
+        "caption": "L’Arc de Triomphe, Wrapped (Christo), 2021"
       },
       {
         "src": "le-carre/le-carre-05.jpg",
-        "caption": "Paris — Yashica"
+        "caption": "L’Arc de Triomphe, Wrapped (Christo), 2021"
       },
       {
         "src": "le-carre/le-carre-06.jpg",
