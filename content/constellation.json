@@ -9,7 +9,7 @@
       {"id": "new-york", "fr": "New York", "en": "New York"},
       {"id": "boston", "fr": "Boston", "en": "Boston"},
       {"id": "londres", "fr": "Londres", "en": "London"},
-      {"id": "paris", "fr": "Paris", "en": "Paris"},
+      {"id": "munich", "fr": "Munich", "en": "Munich"},
       {"id": "ailleurs", "fr": "Ailleurs", "en": "Elsewhere"}]},
     {"id": "carre", "fr": "Le carré", "en": "The Square", "branches": []},
     {"id": "mer", "fr": "Mer", "en": "Sea", "branches": [
