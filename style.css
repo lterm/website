@@ -10,6 +10,8 @@
     --muted: #7f7f7f;
     --line: #ececec;
     --line-soft: #2a2a2a;
+    --star-s: 80%; /* symboles des photos en couleur : teinte de la photo */
+    --star-l: 62%;
 
     --gutter: 16px;
     --header-h: 48px;
@@ -30,6 +32,8 @@
     --muted: #a3a3a3;
     --line: #111111;
     --line-soft: #e4e4e4;
+    --star-s: 75%;
+    --star-l: 42%;
     color-scheme: light;
 }
 
@@ -577,6 +581,15 @@ ul {
 
 .sky .sym-fill {
     fill: var(--fg);
+}
+
+/* Photos en couleur : le symbole prend la teinte dominante de la photo (--h) */
+.sky .star.is-color .sym {
+    stroke: hsl(var(--h) var(--star-s) var(--star-l));
+}
+
+.sky .star.is-color .sym-fill {
+    fill: hsl(var(--h) var(--star-s) var(--star-l));
 }
 
 .sky .hit {

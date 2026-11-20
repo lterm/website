@@ -19,7 +19,7 @@ python3 build.py
 ## Ajouter une photo
 
 1. Placez le fichier dans `images/<série>/` (environ 1800 px de large).
-2. Ajoutez une ligne dans la liste `images` de la série, dans `content/series.json`.
+2. Ajoutez une ligne dans la liste `images` de la série, dans `content/series.json`. Pour une photo en couleur, ajoutez `"color"` : sa teinte dominante en degrés, de 0 à 360 (0 rouge, 30 orange, 60 jaune, 120 vert, 200 bleu ciel, 240 bleu, 300 violet). Son symbole prend cette teinte dans la constellation.
 3. Lancez `python3 build.py`.
 
 `images/sources.tsv` indique l'origine (dossier Google Drive) de chaque photo.

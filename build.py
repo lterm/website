@@ -312,7 +312,8 @@ def build_sky(lang, series):
         for k, img in enumerate(s["images"]):
             data["photos"].append({"s": i, "n": k + 1, "src": p + "images/" + img["src"],
                                    "cap": translate_caption(img["caption"], lang),
-                                   "cam": camera_of(img["caption"], s["cameras"])})
+                                   "cam": camera_of(img["caption"], s["cameras"]),
+                                   "col": img.get("color", -1)})  # teinte dominante, -1 = noir et blanc
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     return (head(lang, "index.html", "Lucie Termignon — " + t["tagline"], t["sky_desc"])
             + header(lang, "index.html", "sky")

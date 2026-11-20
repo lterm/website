@@ -224,7 +224,8 @@ document.addEventListener("click", function (e) {
             placed.push([x, y]);
             var s = data.series[p.s];
             var a = el("a", { href: s.href + "#" + p.n, transform: "translate(" + x + " " + y + ")",
-                              "class": "star", "data-s": p.s, "aria-label": s.title + ", " + p.n + (p.cap ? " — " + p.cap : "") }, stars);
+                              "class": p.col >= 0 ? "star is-color" : "star", "data-s": p.s, "aria-label": s.title + ", " + p.n + (p.cap ? " — " + p.cap : "") }, stars);
+            if (p.col >= 0) a.style.setProperty("--h", p.col); // teinte dominante de la photo
             symbol(a, p.cam);
             var label = s.title + " — " + (p.n < 10 ? "0" : "") + p.n + (p.cap ? " — " + p.cap : "");
             function on() {
