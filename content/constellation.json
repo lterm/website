@@ -7,6 +7,7 @@
       {"id": "boston", "fr": "Boston", "en": "Boston"},
       {"id": "londres", "fr": "Londres", "en": "London"},
       {"id": "munich", "fr": "Munich", "en": "Munich"},
+      {"id": "chiang-mai", "fr": "Chiang Mai", "en": "Chiang Mai"},
       {"id": "ailleurs", "fr": "Ailleurs", "en": "Elsewhere"}]},
     {"id": "personnes", "fr": "Présences", "en": "Presences", "branches": [
       {"id": "proches", "fr": "Proches", "en": "Close ones"},
