@@ -32,6 +32,11 @@ TEXT = {
         "sky_label": "Carte des photographies : chaque thème est une constellation, ses branches des lieux ou des catégories, chaque photo une étoile.",
         "sky_help": "Choisissez un thème puis une branche pour vous rapprocher. Échap revient en arrière.",
         "sky_crumbs": "Position dans la constellation",
+        "legend": "légende",
+        "legend_title": "Légende",
+        "legend_items": [("nikon", "Nikon FM2"), ("leica", "Leica M3"), ("lomo", "Lomo"), ("yashica", "Yashica"),
+                         ("olympus", "Olympus XA4"), ("color", "photo en couleur, dans sa teinte dominante"),
+                         ("link", "lien vers un lieu"), ("node", "thème ou branche")],
         "series": "Séries",
         "image": "image",
         "images": "images",
@@ -60,6 +65,11 @@ TEXT = {
         "sky_label": "Map of the photographs: each theme is a constellation, its branches places or categories, each photo a star.",
         "sky_help": "Choose a theme, then a branch, to zoom in. Escape goes back.",
         "sky_crumbs": "Position in the constellation",
+        "legend": "legend",
+        "legend_title": "Legend",
+        "legend_items": [("nikon", "Nikon FM2"), ("leica", "Leica M3"), ("lomo", "Lomo"), ("yashica", "Yashica"),
+                         ("olympus", "Olympus XA4"), ("color", "colour photo, in its dominant hue"),
+                         ("link", "link to a place"), ("node", "theme or branch")],
         "series": "Series",
         "image": "image",
         "images": "images",
@@ -312,6 +322,31 @@ def count_label(n, t):
     return f'{n:02d} {t["image"] if n == 1 else t["images"]}'
 
 
+LEGEND_SVG = {
+    "nikon": '<circle r="5.5"/>',
+    "leica": '<path d="M-5.5 -5.5L5.5 5.5M5.5 -5.5L-5.5 5.5"/>',
+    "lomo": '<circle r="5.5"/><circle r="1.6" class="fill"/>',
+    "yashica": '<circle r="5.5"/><path d="M-3.9 -3.9L3.9 3.9M3.9 -3.9L-3.9 3.9"/>',
+    "olympus": '<rect x="-4.6" y="-4.6" width="9.2" height="9.2"/>',
+    "color": '<circle r="5.5" style="--h:30" class="hue"/>',
+    "link": '<path d="M-7 0H7" class="dash"/>',
+    "node": '<path d="M-6 0H6M0 -6V6"/>',
+}
+
+
+def legend_html(t):
+    """Encadré de légende de la constellation, fermé par défaut."""
+    items = "\n".join(f'''            <li><svg class="legend-sym" viewBox="-8 -8 16 16" width="16" height="16" aria-hidden="true">{LEGEND_SVG[k]}</svg>{esc(label)}</li>'''
+                      for k, label in t["legend_items"])
+    return f'''    <div class="sky-legend" id="sky-legend" role="dialog" aria-label="{t["legend_title"]}" hidden>
+        <p class="sky-legend-title">{t["legend_title"]}</p>
+        <ul>
+{items}
+        </ul>
+    </div>
+'''
+
+
 def build_sky(lang, series):
     """Page d'accueil : la constellation à plusieurs niveaux (thèmes > branches > photos)."""
     t = TEXT[lang]
@@ -358,11 +393,12 @@ def build_sky(lang, series):
     </main>
     <script type="application/json" id="sky-data">{payload}</script>
     <div class="preview" aria-hidden="true"><img src="" alt=""></div>
-    <div class="bar">
+{legend_html(t)}    <div class="bar">
         <nav class="sky-crumbs" aria-label="{t["sky_crumbs"]}"></nav>
         <span class="sky-coord">RA&nbsp;<span class="sky-ra">—</span></span>
         <span class="sky-coord">DE&nbsp;<span class="sky-de">—</span></span>
         <span class="sky-info" aria-live="polite"></span>
+        <button type="button" class="sky-legend-toggle no-js-hide" aria-expanded="false" aria-controls="sky-legend">{t["legend"]}</button>
         <span>{len(photos)} {t["images"]}</span>
     </div>
 </body>

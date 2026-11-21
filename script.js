@@ -377,7 +377,24 @@ document.addEventListener("click", function (e) {
 
     window.addEventListener("hashchange", function () { fromHash(); apply(true); });
     svg.addEventListener("click", function (e) { if (!e.target.closest("a")) up(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") up(); });
+    // légende : ouverte par le bouton de la barre, fermée par Échap ou un clic à côté
+    var legend = document.getElementById("sky-legend");
+    var legendBtn = document.querySelector(".sky-legend-toggle");
+    function setLegend(open) {
+        if (!legend || !legendBtn) return;
+        legend.hidden = !open;
+        legendBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    if (legendBtn) legendBtn.addEventListener("click", function () { setLegend(legend.hidden); });
+    document.addEventListener("click", function (e) {
+        if (legend && !legend.hidden && !legend.contains(e.target) && e.target !== legendBtn) setLegend(false);
+    }, true);
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key !== "Escape") return;
+        if (legend && !legend.hidden) { setLegend(false); legendBtn.focus(); return; }
+        up();
+    });
 
     sky.addEventListener("mousemove", function (e) {
         var rect = sky.getBoundingClientRect();
