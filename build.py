@@ -82,6 +82,7 @@ TEXT = {
 # Noms de lieux traduits dans les légendes anglaises
 PLACES_EN = {
     "Londres": "London",
+    "15 avril 2019": "15 April 2019",
     "Hambourg": "Hamburg",
     "Pyrénées": "Pyrenees",
     "Îles Éoliennes": "Aeolian Islands",

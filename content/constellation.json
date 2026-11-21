@@ -9,7 +9,7 @@
       {"id": "munich", "fr": "Munich", "en": "Munich"},
       {"id": "chiang-mai", "fr": "Chiang Mai", "en": "Chiang Mai"},
       {"id": "ailleurs", "fr": "Ailleurs", "en": "Elsewhere"}]},
-    {"id": "personnes", "fr": "Présences", "en": "Presences", "branches": [
+    {"id": "personnes", "fr": "Personnes", "en": "People", "branches": [
       {"id": "proches", "fr": "Proches", "en": "Close ones"},
       {"id": "inconnus", "fr": "Inconnus", "en": "Strangers"},
       {"id": "scene", "fr": "Scène", "en": "Stage"}]},
