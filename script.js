@@ -281,4 +281,20 @@ document.addEventListener("click", function (e) {
     render();
     var timer;
     window.addEventListener("resize", function () { clearTimeout(timer); timer = setTimeout(render, 150); });
+
+    // légende : ouverte par le bouton de la barre, fermée par Échap ou un clic à côté
+    var legend = document.getElementById("sky-legend");
+    var legendBtn = document.querySelector(".sky-legend-toggle");
+    function setLegend(open) {
+        if (!legend || !legendBtn) return;
+        legend.hidden = !open;
+        legendBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    if (legendBtn) legendBtn.addEventListener("click", function () { setLegend(legend.hidden); });
+    document.addEventListener("click", function (e) {
+        if (legend && !legend.hidden && !legend.contains(e.target) && e.target !== legendBtn) setLegend(false);
+    }, true);
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && legend && !legend.hidden) { setLegend(false); legendBtn.focus(); }
+    });
 })();

@@ -638,6 +638,63 @@ ul {
     padding: 24px;
 }
 
+/* Légende de la constellation */
+.sky-legend {
+    position: fixed;
+    right: var(--gutter);
+    bottom: calc(var(--bar-h) + 10px);
+    z-index: 11;
+    max-width: calc(100vw - 2 * var(--gutter));
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    font-size: var(--fs-small);
+}
+
+.sky-legend[hidden] {
+    display: none;
+}
+
+.sky-legend-title {
+    margin: 0 0 8px;
+    color: var(--muted);
+}
+
+.sky-legend ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sky-legend li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.legend-sym {
+    flex: none;
+    overflow: visible;
+    fill: none;
+    stroke: var(--fg);
+    stroke-width: 1.4;
+}
+
+.legend-sym .fill {
+    fill: var(--fg);
+    stroke: none;
+}
+
+.legend-sym .hue {
+    stroke: hsl(var(--h) var(--star-s) var(--star-l));
+}
+
+.bar .sky-legend-toggle[aria-expanded="true"] {
+    background: var(--fg);
+    color: var(--bg);
+}
+
 .bar .sky-coord {
     min-width: 9.5em;
     font-variant-numeric: tabular-nums;

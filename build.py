@@ -30,6 +30,11 @@ TEXT = {
         "sky_desc": "Photographies argentiques de Lucie Termignon, disposées comme une carte du ciel : villes, portraits, montagne, mer, essais.",
         "sky_noscript": "Cette vue a besoin de JavaScript. Retrouvez les séries sur la page",
         "sky_label": "Carte des photographies : chaque série est une constellation, chaque photo une étoile.",
+        "legend": "légende",
+        "legend_title": "Légende",
+        "legend_items": [("nikon", "Nikon FM2"), ("leica", "Leica M3"), ("lomo", "Lomo"), ("yashica", "Yashica"),
+                         ("olympus", "Olympus XA4"), ("color", "photo en couleur, dans sa teinte dominante"),
+                         ("node", "série")],
         "series": "Séries",
         "image": "image",
         "images": "images",
@@ -56,6 +61,11 @@ TEXT = {
         "sky_desc": "Film photographs by Lucie Termignon, laid out like a sky chart: cities, portraits, mountains, sea, experiments.",
         "sky_noscript": "This view needs JavaScript. Browse the series on the",
         "sky_label": "Map of the photographs: each series is a constellation, each photo a star.",
+        "legend": "legend",
+        "legend_title": "Legend",
+        "legend_items": [("nikon", "Nikon FM2"), ("leica", "Leica M3"), ("lomo", "Lomo"), ("yashica", "Yashica"),
+                         ("olympus", "Olympus XA4"), ("color", "colour photo, in its dominant hue"),
+                         ("node", "series")],
         "series": "Series",
         "image": "image",
         "images": "images",
@@ -304,6 +314,30 @@ def camera_of(caption, series_cameras):
     return "nikon"
 
 
+LEGEND_SVG = {
+    "nikon": '<circle r="5.5"/>',
+    "leica": '<path d="M-5.5 -5.5L5.5 5.5M5.5 -5.5L-5.5 5.5"/>',
+    "lomo": '<circle r="5.5"/><circle r="1.6" class="fill"/>',
+    "yashica": '<circle r="5.5"/><path d="M-3.9 -3.9L3.9 3.9M3.9 -3.9L-3.9 3.9"/>',
+    "olympus": '<rect x="-4.6" y="-4.6" width="9.2" height="9.2"/>',
+    "color": '<circle r="5.5" style="--h:30" class="hue"/>',
+    "node": '<path d="M-6 0H6M0 -6V6"/>',
+}
+
+
+def legend_html(t):
+    """Encadré de légende de la constellation, fermé par défaut."""
+    items = "\n".join(f'''            <li><svg class="legend-sym" viewBox="-8 -8 16 16" width="16" height="16" aria-hidden="true">{LEGEND_SVG[k]}</svg>{esc(label)}</li>'''
+                      for k, label in t["legend_items"])
+    return f'''    <div class="sky-legend" id="sky-legend" role="dialog" aria-label="{t["legend_title"]}" hidden>
+        <p class="sky-legend-title">{t["legend_title"]}</p>
+        <ul>
+{items}
+        </ul>
+    </div>
+'''
+
+
 def build_sky(lang, series):
     t = TEXT[lang]
     p = LANGS[lang]["prefix"]
@@ -329,10 +363,11 @@ def build_sky(lang, series):
     </main>
     <script type="application/json" id="sky-data">{payload}</script>
     <div class="preview" aria-hidden="true"><img src="" alt=""></div>
-    <div class="bar">
+{legend_html(t)}    <div class="bar">
         <span class="sky-coord">RA&nbsp;<span class="sky-ra">—</span></span>
         <span class="sky-coord">DE&nbsp;<span class="sky-de">—</span></span>
         <span class="sky-info" aria-live="polite"></span>
+        <button type="button" class="sky-legend-toggle no-js-hide" aria-expanded="false" aria-controls="sky-legend">{t["legend"]}</button>
         <span>{len(data["photos"])} {t["images"]}</span>
     </div>
 </body>
