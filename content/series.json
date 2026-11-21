@@ -148,6 +148,20 @@
       {
         "src": "villes-de-passage/villes-de-passage-15.jpg",
         "caption": "Munich — Leica M3"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-16.jpg",
+        "caption": "Nikon FM2",
+        "color": 14
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-17.jpg",
+        "caption": "Nikon FM2",
+        "color": 24
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-18.jpg",
+        "caption": "Nikon FM2"
       }
     ]
   },
@@ -196,56 +210,78 @@
         "src": "paris-suspendu/paris-suspendu-08.jpg",
         "caption": "Paris — Nikon FM2",
         "color": 114
+      },
+      {
+        "src": "paris-suspendu/paris-suspendu-09.jpg",
+        "caption": "Notre-Dame, 15 avril 2019",
+        "color": 215
       }
     ]
   },
   {
-    "slug": "presences",
+    "slug": "personnes",
     "cameras": "Nikon FM2, Leica M3, Lomo, Yashica",
     "fr": {
-      "title": "Présences",
+      "title": "Personnes",
       "subtitle": "Portraits"
     },
     "en": {
-      "title": "Presences",
+      "title": "People",
       "subtitle": "Portraits"
     },
     "images": [
       {
-        "src": "presences/presences-01.jpg",
+        "src": "personnes/personnes-01.jpg",
         "caption": "Nikon FM2"
       },
       {
-        "src": "presences/presences-02.jpg",
+        "src": "personnes/personnes-02.jpg",
         "caption": "Nikon FM2"
       },
       {
-        "src": "presences/presences-03.jpg",
+        "src": "personnes/personnes-03.jpg",
         "caption": "Nikon FM2",
         "color": 204
       },
       {
-        "src": "presences/presences-04.jpg",
+        "src": "personnes/personnes-04.jpg",
         "caption": "Leica M3",
         "color": 23
       },
       {
-        "src": "presences/presences-05.jpg",
+        "src": "personnes/personnes-05.jpg",
         "caption": "Nikon FM2",
         "color": 75
       },
       {
-        "src": "presences/presences-06.jpg",
+        "src": "personnes/personnes-06.jpg",
         "caption": "Nikon FM2",
         "color": 36
       },
       {
-        "src": "presences/presences-07.jpg",
+        "src": "personnes/personnes-07.jpg",
         "caption": "Nikon FM2"
       },
       {
-        "src": "presences/presences-08.jpg",
+        "src": "personnes/personnes-08.jpg",
         "caption": "Leica M3"
+      },
+      {
+        "src": "personnes/personnes-09.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "personnes/personnes-10.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "personnes/personnes-11.jpg",
+        "caption": "Nikon FM2",
+        "color": 15
+      },
+      {
+        "src": "personnes/personnes-12.jpg",
+        "caption": "Nikon FM2"
       }
     ]
   },
@@ -415,6 +451,18 @@
         "src": "montagne/montagne-21.jpg",
         "caption": "Chamonix — Lomo",
         "color": 38
+      },
+      {
+        "src": "montagne/montagne-10.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-12.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "montagne/montagne-16.jpg",
+        "caption": "Nikon FM2"
       }
     ]
   },
@@ -501,6 +549,18 @@
       {
         "src": "lignes-d-horizon/lignes-d-horizon-26.jpg",
         "caption": "Îles Éoliennes — Nikon FM2"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-05.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-06.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "lignes-d-horizon/lignes-d-horizon-09.jpg",
+        "caption": "Nikon FM2"
       }
     ]
   },
@@ -615,6 +675,20 @@
       {
         "src": "essais/essais-21.jpg",
         "caption": "Leica M3"
+      },
+      {
+        "src": "essais/essais-22.jpg",
+        "caption": "Nikon FM2",
+        "color": 29
+      },
+      {
+        "src": "essais/essais-23.jpg",
+        "caption": "Nikon FM2"
+      },
+      {
+        "src": "essais/essais-24.jpg",
+        "caption": "Nikon FM2",
+        "color": 215
       }
     ]
   },
