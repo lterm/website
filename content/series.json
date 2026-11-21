@@ -162,6 +162,11 @@
       {
         "src": "villes-de-passage/villes-de-passage-18.jpg",
         "caption": "Nikon FM2"
+      },
+      {
+        "src": "villes-de-passage/villes-de-passage-19.jpg",
+        "caption": "New York",
+        "color": 198
       }
     ]
   },
@@ -577,86 +582,17 @@
     },
     "images": [
       {
-        "src": "essais/essais-01.jpg",
-        "caption": "Olympus XA4",
-        "color": 41
-      },
-      {
-        "src": "essais/essais-02.jpg",
-        "caption": "Olympus XA4",
-        "color": 35
-      },
-      {
         "src": "essais/essais-03.jpg",
         "caption": "La Muse endormie II"
-      },
-      {
-        "src": "essais/essais-04.jpg",
-        "caption": "Olympus XA4",
-        "color": 31
-      },
-      {
-        "src": "essais/essais-05.jpg",
-        "caption": "Olympus XA4",
-        "color": 30
-      },
-      {
-        "src": "essais/essais-06.jpg",
-        "caption": "Olympus XA4"
-      },
-      {
-        "src": "essais/essais-07.jpg",
-        "caption": "Olympus XA4",
-        "color": 21
-      },
-      {
-        "src": "essais/essais-08.jpg",
-        "caption": "Olympus XA4",
-        "color": 53
       },
       {
         "src": "essais/essais-09.jpg",
         "caption": "New York"
       },
       {
-        "src": "essais/essais-10.jpg",
-        "caption": "Olympus XA4",
-        "color": 33
-      },
-      {
         "src": "essais/essais-11.jpg",
         "caption": "Olympus XA4",
         "color": 93
-      },
-      {
-        "src": "essais/essais-12.jpg",
-        "caption": "Olympus XA4",
-        "color": 31
-      },
-      {
-        "src": "essais/essais-14.jpg",
-        "caption": "Olympus XA4",
-        "color": 15
-      },
-      {
-        "src": "essais/essais-15.jpg",
-        "caption": "Olympus XA4",
-        "color": 37
-      },
-      {
-        "src": "essais/essais-16.jpg",
-        "caption": "Olympus XA4",
-        "color": 198
-      },
-      {
-        "src": "essais/essais-17.jpg",
-        "caption": "Olympus XA4",
-        "color": 195
-      },
-      {
-        "src": "essais/essais-18.jpg",
-        "caption": "New York",
-        "color": 198
       },
       {
         "src": "essais/essais-13.jpg",
