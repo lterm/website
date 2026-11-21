@@ -156,7 +156,9 @@ document.addEventListener("click", function (e) {
     // sauf si l'entrée donne une 3e et 4e valeur : la position [x, y] en portrait.
     var CENTERS = [[0.18, 0.28], [0.48, 0.2], [0.82, 0.38, 0.22, 0.85], [0.78, 0.7], [0.5, 0.8], [0.2, 0.72]];
 
-    var W, H, vb, state = { t: -1, b: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [];
+    var touch = window.matchMedia("(hover: none)").matches; // sur écran tactile : 1er toucher = aperçu, 2e = ouvrir
+    var armed = -1;
+    var W, H, vb, state = { t: -1, b: -1, p: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [];
 
     function rng(seed) {
         return function () {
@@ -267,6 +269,13 @@ document.addEventListener("click", function (e) {
             }
             a.addEventListener("mouseenter", on); a.addEventListener("focus", on);
             a.addEventListener("mouseleave", off); a.addEventListener("blur", off);
+            a.addEventListener("click", function (e) {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return; // nouvel onglet : page de la série
+                e.preventDefault();
+                if (touch && armed !== idx) { armed = idx; on(); return; }
+                armed = -1;
+                openPhoto(idx);
+            });
         });
 
         // libellés des branches puis des thèmes
@@ -363,20 +372,101 @@ document.addEventListener("click", function (e) {
         anim ? animate(target()) : draw(target());
     }
 
+    // Adresses : #theme, #theme/branche, et #theme[/branche]/n pour la n-ième photo de ce groupe
     function fromHash() {
-        var parts = decodeURIComponent(location.hash.slice(1)).split("/"), t = -1, b = -1;
+        var parts = decodeURIComponent(location.hash.slice(1)).split("/"), t = -1, b = -1, p = -1;
+        if (parts.length > 1 && /^\d+$/.test(parts[parts.length - 1])) p = +parts.pop() - 1;
         data.themes.forEach(function (th, i) { if (th.id === parts[0]) t = i; });
         if (t >= 0 && parts[1]) data.themes[t].branches.forEach(function (br, k) { if (br.id === parts[1]) b = k; });
-        state = { t: t, b: b };
+        if (t < 0 || p >= group(t, b).length) p = -1;
+        state = { t: t, b: b, p: p };
+    }
+
+    function group(t, b) { // indices des photos d'un thème ou d'une branche, dans l'ordre
+        var list = [];
+        data.photos.forEach(function (q, i) { if (q.t === t && (b < 0 || q.b === b)) list.push(i); });
+        return list;
+    }
+
+    function base(t, b) {
+        return data.themes[t].id + (b >= 0 ? "/" + data.themes[t].branches[b].id : "");
     }
 
     function up() {
+        if (state.p >= 0) { location.hash = base(state.t, state.b); return; } // ferme la photo
         if (state.t < 0) return;
         location.hash = state.b >= 0 ? data.themes[state.t].id : "";
     }
 
-    window.addEventListener("hashchange", function () { fromHash(); apply(true); });
-    svg.addEventListener("click", function (e) { if (!e.target.closest("a")) up(); });
+    // ---------- photo ouverte par-dessus la carte ----------
+    var ui = data.ui, lastFocus = null;
+    var box = document.createElement("div");
+    box.className = "sky-photo";
+    box.hidden = true;
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.innerHTML = '<figure class="sky-photo-fig"><img alt=""></figure>' +
+        '<div class="bar sky-photo-bar"><a class="sky-photo-series"></a><span class="bar-caption sky-photo-cap"></span>' +
+        '<button type="button" class="sky-photo-prev">←</button><span class="counter sky-photo-count"></span>' +
+        '<button type="button" class="sky-photo-next">→</button><button type="button" class="sky-photo-close"></button></div>';
+    document.body.appendChild(box);
+    var fig = box.querySelector("figure"), photo = box.querySelector("img");
+    var seriesLink = box.querySelector(".sky-photo-series"), cap = box.querySelector(".sky-photo-cap");
+    var count = box.querySelector(".sky-photo-count"), closeBtn = box.querySelector(".sky-photo-close");
+    box.querySelector(".sky-photo-prev").setAttribute("aria-label", ui.prev);
+    box.querySelector(".sky-photo-next").setAttribute("aria-label", ui.next);
+    closeBtn.textContent = ui.close;
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+    function openPhoto(idx) {
+        var p = data.photos[idx], t = state.t, b = state.b;
+        // reste dans le thème ou la branche en cours si la photo en fait partie, sinon prend son thème
+        if (t !== p.t || (b >= 0 && b !== p.b)) { t = p.t; b = -1; }
+        lastFocus = document.activeElement;
+        location.hash = base(t, b) + "/" + (group(t, b).indexOf(idx) + 1);
+    }
+
+    function step(d) {
+        var n = group(state.t, state.b).length;
+        location.hash = base(state.t, state.b) + "/" + ((state.p + d + n) % n + 1);
+    }
+
+    function showPhoto() {
+        if (state.p < 0) {
+            if (!box.hidden) {
+                box.hidden = true;
+                if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+            }
+            return;
+        }
+        var list = group(state.t, state.b), p = data.photos[list[state.p]];
+        photo.src = p.src;
+        photo.alt = p.series + ", " + p.n + (p.cap ? " — " + p.cap : "");
+        box.setAttribute("aria-label", photo.alt);
+        seriesLink.href = p.href;
+        seriesLink.textContent = ui.series + " " + p.series;
+        cap.textContent = p.cap || "";
+        count.textContent = pad(state.p + 1) + " / " + pad(list.length);
+        var next = data.photos[list[(state.p + 1) % list.length]];
+        if (next) new Image().src = next.src; // précharge la suivante
+        if (box.hidden) { box.hidden = false; closeBtn.focus(); }
+        if (preview) preview.classList.remove("is-visible");
+    }
+
+    fig.addEventListener("click", function (e) {
+        var r = fig.getBoundingClientRect();
+        step(e.clientX < r.left + r.width / 2 ? -1 : 1);
+    });
+    fig.addEventListener("mousemove", function (e) {
+        var r = fig.getBoundingClientRect();
+        fig.classList.toggle("cursor-prev", e.clientX < r.left + r.width / 2);
+    });
+    box.querySelector(".sky-photo-prev").addEventListener("click", function () { step(-1); });
+    box.querySelector(".sky-photo-next").addEventListener("click", function () { step(1); });
+    closeBtn.addEventListener("click", up);
+
+    window.addEventListener("hashchange", function () { fromHash(); apply(true); showPhoto(); });
+    svg.addEventListener("click", function (e) { if (!e.target.closest("a")) { armed = -1; up(); } });
     // légende : ouverte par le bouton de la barre, fermée par Échap ou un clic à côté
     var legend = document.getElementById("sky-legend");
     var legendBtn = document.querySelector(".sky-legend-toggle");
@@ -391,6 +481,7 @@ document.addEventListener("click", function (e) {
     }, true);
 
     document.addEventListener("keydown", function (e) {
+        if (state.p >= 0 && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { step(e.key === "ArrowLeft" ? -1 : 1); return; }
         if (e.key !== "Escape") return;
         if (legend && !legend.hidden) { setLegend(false); legendBtn.focus(); return; }
         up();
@@ -413,6 +504,7 @@ document.addEventListener("click", function (e) {
 
     fromHash();
     layout();
+    showPhoto();
     var timer;
     window.addEventListener("resize", function () { clearTimeout(timer); timer = setTimeout(layout, 150); });
 })();
