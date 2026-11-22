@@ -156,8 +156,6 @@ document.addEventListener("click", function (e) {
     // sauf si l'entrée donne une 3e et 4e valeur : la position [x, y] en portrait.
     var CENTERS = [[0.18, 0.28], [0.48, 0.2], [0.82, 0.38, 0.22, 0.85], [0.78, 0.7], [0.5, 0.8], [0.2, 0.72]];
 
-    var touch = window.matchMedia("(hover: none)").matches; // sur écran tactile : 1er toucher = aperçu, 2e = ouvrir
-    var armed = -1;
     var W, H, vb, state = { t: -1, b: -1, p: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [];
 
     function rng(seed) {
@@ -272,9 +270,7 @@ document.addEventListener("click", function (e) {
             a.addEventListener("click", function (e) {
                 if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return; // nouvel onglet : page de la série
                 e.preventDefault();
-                if (touch && armed !== idx) { armed = idx; on(); return; }
-                armed = -1;
-                openPhoto(idx);
+                openPhoto(idx); // un seul clic ou toucher ouvre la photo
             });
         });
 
@@ -305,11 +301,13 @@ document.addEventListener("click", function (e) {
         else pts.push([th.branches[state.b].x, th.branches[state.b].y]);
         var x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
         pts.forEach(function (q) { x0 = Math.min(x0, q[0]); y0 = Math.min(y0, q[1]); x1 = Math.max(x1, q[0]); y1 = Math.max(y1, q[1]); });
-        // marge proportionnelle au groupe, plus de place à gauche et à droite pour les libellés
-        var size = Math.max(x1 - x0, y1 - y0, Math.min(W, H) * 0.08);
-        x0 -= size * 0.35; x1 += size * 0.35; y0 -= size * 0.25; y1 += size * 0.15;
-        var w = Math.max(x1 - x0, W / 8), h = Math.max(y1 - y0, H / 8), cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
-        if (w / h < W / H) w = h * W / H; else h = w * H / W; // garder les proportions de l'écran
+        // Les libellés et les étoiles gardent leur taille à l'écran : la marge qui leur est laissée
+        // se compte donc en pixels d'écran, pas en proportion du groupe (sinon, sur téléphone,
+        // le zoom reste faible et tout s'entasse au milieu).
+        var mx = Math.min(40, W * 0.08), my = Math.min(48, H * 0.08); // les noms s'écrivent vers l'intérieur du groupe
+        var z = Math.min((W - 2 * mx) / Math.max(x1 - x0, 1), (H - 2 * my) / Math.max(y1 - y0, 1), 6);
+        z = Math.max(z, 1);
+        var w = W / z, h = H / z, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
         return [cx - w / 2, cy - h / 2, w, h];
     }
 
@@ -399,7 +397,7 @@ document.addEventListener("click", function (e) {
     }
 
     // ---------- photo ouverte par-dessus la carte ----------
-    var ui = data.ui, lastFocus = null;
+    var ui = data.ui, lastFocus = null, openedAt = 0;
     var box = document.createElement("div");
     box.className = "sky-photo";
     box.hidden = true;
@@ -449,11 +447,12 @@ document.addEventListener("click", function (e) {
         count.textContent = pad(state.p + 1) + " / " + pad(list.length);
         var next = data.photos[list[(state.p + 1) % list.length]];
         if (next) new Image().src = next.src; // précharge la suivante
-        if (box.hidden) { box.hidden = false; closeBtn.focus(); }
+        if (box.hidden) { box.hidden = false; openedAt = Date.now(); closeBtn.focus(); }
         if (preview) preview.classList.remove("is-visible");
     }
 
     fig.addEventListener("click", function (e) {
+        if (Date.now() - openedAt < 450) return; // le 2e clic d'un double clic ne fait pas défiler
         var r = fig.getBoundingClientRect();
         step(e.clientX < r.left + r.width / 2 ? -1 : 1);
     });
@@ -466,7 +465,7 @@ document.addEventListener("click", function (e) {
     closeBtn.addEventListener("click", up);
 
     window.addEventListener("hashchange", function () { fromHash(); apply(true); showPhoto(); });
-    svg.addEventListener("click", function (e) { if (!e.target.closest("a")) { armed = -1; up(); } });
+    svg.addEventListener("click", function (e) { if (!e.target.closest("a")) up(); });
     // légende : ouverte par le bouton de la barre, fermée par Échap ou un clic à côté
     var legend = document.getElementById("sky-legend");
     var legendBtn = document.querySelector(".sky-legend-toggle");

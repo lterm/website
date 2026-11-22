@@ -406,7 +406,7 @@ def build_sky(lang, series):
         <span class="sky-coord">DE&nbsp;<span class="sky-de">—</span></span>
         <span class="sky-info" aria-live="polite"></span>
         <button type="button" class="sky-legend-toggle no-js-hide" aria-expanded="false" aria-controls="sky-legend">{t["legend"]}</button>
-        <span>{len(photos)} {t["images"]}</span>
+        <span class="sky-total">{len(photos)} {t["images"]}</span>
     </div>
 </body>
 </html>
