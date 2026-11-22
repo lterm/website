@@ -195,9 +195,27 @@ document.addEventListener("click", function (e) {
         return a;
     }
 
+    // Fond : un semis d'étoiles irrégulier (tailles et éclats variés), fixe pendant le zoom
+    var bg = document.createElementNS(NS, "svg");
+    bg.setAttribute("class", "sky-bg");
+    bg.setAttribute("aria-hidden", "true");
+    sky.insertBefore(bg, svg);
+    function background() {
+        while (bg.firstChild) bg.removeChild(bg.firstChild);
+        bg.setAttribute("viewBox", "0 0 " + W + " " + H);
+        var r = rng(7), n = Math.round(W * H / 1000);
+        for (var i = 0; i < n; i++) {
+            var big = r() < 0.08; // quelques étoiles plus brillantes
+            el("circle", { cx: (r() * W).toFixed(1), cy: (r() * H).toFixed(1),
+                           r: (big ? 1.2 + r() * 0.7 : 0.5 + r() * 0.6).toFixed(2),
+                           opacity: (big ? 0.55 + r() * 0.3 : 0.18 + r() * 0.35).toFixed(2) }, bg);
+        }
+    }
+
     function layout() {
         animId++;
         W = sky.clientWidth; H = sky.clientHeight;
+        background();
         var portrait = H > W, unit = Math.min(W, H);
         while (svg.firstChild) svg.removeChild(svg.firstChild);
         floating = []; themeEls = []; branchEls = []; starEls = []; linkEls = []; rampEls = [];
