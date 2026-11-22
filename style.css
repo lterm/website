@@ -707,6 +707,12 @@ body:has(.sky) .sky {
     opacity: 0.12;
 }
 
+/* Pas de zoom du navigateur au double toucher sur la carte et la photo */
+.sky,
+.sky-photo {
+    touch-action: manipulation;
+}
+
 .sky .cross {
     stroke: var(--fg);
     stroke-width: 2;
@@ -733,6 +739,66 @@ body:has(.sky) .sky {
 
 .sky-noscript {
     padding: 24px;
+}
+
+/* Photo ouverte par-dessus la constellation */
+.sky-photo {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+}
+
+.sky-photo[hidden] {
+    display: none;
+}
+
+.sky-photo-fig {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    margin: 0;
+    padding: var(--gutter) var(--gutter) calc(var(--bar-h) + var(--gutter));
+    cursor: e-resize;
+}
+
+.sky-photo-fig.cursor-prev {
+    cursor: w-resize;
+}
+
+.sky-photo-fig img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.sky-photo-bar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sky-photo-bar a:hover,
+.sky-photo-bar a:focus-visible {
+    background: var(--fg);
+    color: var(--bg);
+}
+
+@media (max-width: 720px) {
+    .sky-photo-bar .sky-photo-cap {
+        display: none;
+    }
+
+    .sky-photo-bar .sky-photo-series {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 /* Légende de la constellation */
@@ -810,7 +876,8 @@ body:has(.sky) .sky {
 }
 
 @media (max-width: 720px) {
-    .bar .sky-coord {
+    .bar .sky-coord,
+    .bar .sky-total {
         display: none;
     }
 }

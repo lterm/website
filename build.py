@@ -42,6 +42,9 @@ TEXT = {
         "images": "images",
         "photo": "photographie",
         "close": "fermer",
+        "see_series": "voir la série",
+        "prev_photo": "photo précédente",
+        "next_photo": "photo suivante",
         "dark": "sombre",
         "light": "clair",
         "theme_label": "Changer de thème",
@@ -75,6 +78,9 @@ TEXT = {
         "images": "images",
         "photo": "photograph",
         "close": "close",
+        "see_series": "see the series",
+        "prev_photo": "previous photo",
+        "next_photo": "next photo",
         "dark": "dark",
         "light": "light",
         "theme_label": "Switch theme",
@@ -379,7 +385,8 @@ def build_sky(lang, series):
         th["count"] = count_label(th["count"], t)
         for br in th["branches"]:
             br["count"] = count_label(br["count"], t)
-    data = {"home": t["sky_title"], "themes": themes, "photos": photos}
+    data = {"home": t["sky_title"], "themes": themes, "photos": photos,
+            "ui": {"close": t["close"], "series": t["see_series"], "prev": t["prev_photo"], "next": t["next_photo"]}}
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     return (head(lang, "index.html", "Lucie Termignon — " + t["tagline"], t["sky_desc"])
             + header(lang, "index.html", "sky")
@@ -399,7 +406,7 @@ def build_sky(lang, series):
         <span class="sky-coord">DE&nbsp;<span class="sky-de">—</span></span>
         <span class="sky-info" aria-live="polite"></span>
         <button type="button" class="sky-legend-toggle no-js-hide" aria-expanded="false" aria-controls="sky-legend">{t["legend"]}</button>
-        <span>{len(photos)} {t["images"]}</span>
+        <span class="sky-total">{len(photos)} {t["images"]}</span>
     </div>
 </body>
 </html>

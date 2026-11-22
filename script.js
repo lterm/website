@@ -156,7 +156,7 @@ document.addEventListener("click", function (e) {
     // sauf si l'entrée donne une 3e et 4e valeur : la position [x, y] en portrait.
     var CENTERS = [[0.18, 0.28], [0.48, 0.2], [0.82, 0.38, 0.22, 0.85], [0.78, 0.7], [0.5, 0.8], [0.2, 0.72]];
 
-    var W, H, vb, state = { t: -1, b: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [];
+    var W, H, vb, state = { t: -1, b: -1, p: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [];
 
     function rng(seed) {
         return function () {
@@ -267,6 +267,11 @@ document.addEventListener("click", function (e) {
             }
             a.addEventListener("mouseenter", on); a.addEventListener("focus", on);
             a.addEventListener("mouseleave", off); a.addEventListener("blur", off);
+            a.addEventListener("click", function (e) {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return; // nouvel onglet : page de la série
+                e.preventDefault();
+                openPhoto(idx); // un seul clic ou toucher ouvre la photo
+            });
         });
 
         // libellés des branches puis des thèmes
@@ -296,11 +301,13 @@ document.addEventListener("click", function (e) {
         else pts.push([th.branches[state.b].x, th.branches[state.b].y]);
         var x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
         pts.forEach(function (q) { x0 = Math.min(x0, q[0]); y0 = Math.min(y0, q[1]); x1 = Math.max(x1, q[0]); y1 = Math.max(y1, q[1]); });
-        // marge proportionnelle au groupe, plus de place à gauche et à droite pour les libellés
-        var size = Math.max(x1 - x0, y1 - y0, Math.min(W, H) * 0.08);
-        x0 -= size * 0.35; x1 += size * 0.35; y0 -= size * 0.25; y1 += size * 0.15;
-        var w = Math.max(x1 - x0, W / 8), h = Math.max(y1 - y0, H / 8), cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
-        if (w / h < W / H) w = h * W / H; else h = w * H / W; // garder les proportions de l'écran
+        // Les libellés et les étoiles gardent leur taille à l'écran : la marge qui leur est laissée
+        // se compte donc en pixels d'écran, pas en proportion du groupe (sinon, sur téléphone,
+        // le zoom reste faible et tout s'entasse au milieu).
+        var mx = Math.min(40, W * 0.08), my = Math.min(48, H * 0.08); // les noms s'écrivent vers l'intérieur du groupe
+        var z = Math.min((W - 2 * mx) / Math.max(x1 - x0, 1), (H - 2 * my) / Math.max(y1 - y0, 1), 6);
+        z = Math.max(z, 1);
+        var w = W / z, h = H / z, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
         return [cx - w / 2, cy - h / 2, w, h];
     }
 
@@ -363,19 +370,101 @@ document.addEventListener("click", function (e) {
         anim ? animate(target()) : draw(target());
     }
 
+    // Adresses : #theme, #theme/branche, et #theme[/branche]/n pour la n-ième photo de ce groupe
     function fromHash() {
-        var parts = decodeURIComponent(location.hash.slice(1)).split("/"), t = -1, b = -1;
+        var parts = decodeURIComponent(location.hash.slice(1)).split("/"), t = -1, b = -1, p = -1;
+        if (parts.length > 1 && /^\d+$/.test(parts[parts.length - 1])) p = +parts.pop() - 1;
         data.themes.forEach(function (th, i) { if (th.id === parts[0]) t = i; });
         if (t >= 0 && parts[1]) data.themes[t].branches.forEach(function (br, k) { if (br.id === parts[1]) b = k; });
-        state = { t: t, b: b };
+        if (t < 0 || p >= group(t, b).length) p = -1;
+        state = { t: t, b: b, p: p };
+    }
+
+    function group(t, b) { // indices des photos d'un thème ou d'une branche, dans l'ordre
+        var list = [];
+        data.photos.forEach(function (q, i) { if (q.t === t && (b < 0 || q.b === b)) list.push(i); });
+        return list;
+    }
+
+    function base(t, b) {
+        return data.themes[t].id + (b >= 0 ? "/" + data.themes[t].branches[b].id : "");
     }
 
     function up() {
+        if (state.p >= 0) { location.hash = base(state.t, state.b); return; } // ferme la photo
         if (state.t < 0) return;
         location.hash = state.b >= 0 ? data.themes[state.t].id : "";
     }
 
-    window.addEventListener("hashchange", function () { fromHash(); apply(true); });
+    // ---------- photo ouverte par-dessus la carte ----------
+    var ui = data.ui, lastFocus = null, openedAt = 0;
+    var box = document.createElement("div");
+    box.className = "sky-photo";
+    box.hidden = true;
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.innerHTML = '<figure class="sky-photo-fig"><img alt=""></figure>' +
+        '<div class="bar sky-photo-bar"><a class="sky-photo-series"></a><span class="bar-caption sky-photo-cap"></span>' +
+        '<button type="button" class="sky-photo-prev">←</button><span class="counter sky-photo-count"></span>' +
+        '<button type="button" class="sky-photo-next">→</button><button type="button" class="sky-photo-close"></button></div>';
+    document.body.appendChild(box);
+    var fig = box.querySelector("figure"), photo = box.querySelector("img");
+    var seriesLink = box.querySelector(".sky-photo-series"), cap = box.querySelector(".sky-photo-cap");
+    var count = box.querySelector(".sky-photo-count"), closeBtn = box.querySelector(".sky-photo-close");
+    box.querySelector(".sky-photo-prev").setAttribute("aria-label", ui.prev);
+    box.querySelector(".sky-photo-next").setAttribute("aria-label", ui.next);
+    closeBtn.textContent = ui.close;
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+    function openPhoto(idx) {
+        var p = data.photos[idx], t = state.t, b = state.b;
+        // reste dans le thème ou la branche en cours si la photo en fait partie, sinon prend son thème
+        if (t !== p.t || (b >= 0 && b !== p.b)) { t = p.t; b = -1; }
+        lastFocus = document.activeElement;
+        location.hash = base(t, b) + "/" + (group(t, b).indexOf(idx) + 1);
+    }
+
+    function step(d) {
+        var n = group(state.t, state.b).length;
+        location.hash = base(state.t, state.b) + "/" + ((state.p + d + n) % n + 1);
+    }
+
+    function showPhoto() {
+        if (state.p < 0) {
+            if (!box.hidden) {
+                box.hidden = true;
+                if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+            }
+            return;
+        }
+        var list = group(state.t, state.b), p = data.photos[list[state.p]];
+        photo.src = p.src;
+        photo.alt = p.series + ", " + p.n + (p.cap ? " — " + p.cap : "");
+        box.setAttribute("aria-label", photo.alt);
+        seriesLink.href = p.href;
+        seriesLink.textContent = ui.series + " " + p.series;
+        cap.textContent = p.cap || "";
+        count.textContent = pad(state.p + 1) + " / " + pad(list.length);
+        var next = data.photos[list[(state.p + 1) % list.length]];
+        if (next) new Image().src = next.src; // précharge la suivante
+        if (box.hidden) { box.hidden = false; openedAt = Date.now(); closeBtn.focus(); }
+        if (preview) preview.classList.remove("is-visible");
+    }
+
+    fig.addEventListener("click", function (e) {
+        if (Date.now() - openedAt < 450) return; // le 2e clic d'un double clic ne fait pas défiler
+        var r = fig.getBoundingClientRect();
+        step(e.clientX < r.left + r.width / 2 ? -1 : 1);
+    });
+    fig.addEventListener("mousemove", function (e) {
+        var r = fig.getBoundingClientRect();
+        fig.classList.toggle("cursor-prev", e.clientX < r.left + r.width / 2);
+    });
+    box.querySelector(".sky-photo-prev").addEventListener("click", function () { step(-1); });
+    box.querySelector(".sky-photo-next").addEventListener("click", function () { step(1); });
+    closeBtn.addEventListener("click", up);
+
+    window.addEventListener("hashchange", function () { fromHash(); apply(true); showPhoto(); });
     svg.addEventListener("click", function (e) { if (!e.target.closest("a")) up(); });
     // légende : ouverte par le bouton de la barre, fermée par Échap ou un clic à côté
     var legend = document.getElementById("sky-legend");
@@ -391,6 +480,7 @@ document.addEventListener("click", function (e) {
     }, true);
 
     document.addEventListener("keydown", function (e) {
+        if (state.p >= 0 && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { step(e.key === "ArrowLeft" ? -1 : 1); return; }
         if (e.key !== "Escape") return;
         if (legend && !legend.hidden) { setLegend(false); legendBtn.focus(); return; }
         up();
@@ -413,6 +503,7 @@ document.addEventListener("click", function (e) {
 
     fromHash();
     layout();
+    showPhoto();
     var timer;
     window.addEventListener("resize", function () { clearTimeout(timer); timer = setTimeout(layout, 150); });
 })();
