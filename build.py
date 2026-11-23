@@ -8,11 +8,19 @@ content/series.json. Le texte de la page à propos et les libellés de
 l'interface sont dans ce fichier, dans TEXT et ABOUT.
 Ne modifiez pas les fichiers .html à la main : ils sont écrasés à chaque génération.
 """
+import hashlib
 import json
 import os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 INSTAGRAM = "https://www.instagram.com/lucie_tmgn/"
+def version(name):
+    """Empreinte courte du fichier : change à chaque modification, ce qui force
+    les navigateurs à recharger style.css et script.js au lieu de garder l'ancien en cache."""
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), name), "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+
+
 MAIL = "rf.egnaro@nongimreteicul"  # adresse e-mail écrite à l'envers, remise à l'endroit par script.js
 
 LANGS = {
@@ -184,9 +192,9 @@ def head(lang, page, title, desc):
     <meta name="color-scheme" content="dark light">
     <link rel="alternate" hreflang="fr" href="{fr_href}">
     <link rel="alternate" hreflang="en" href="{en_href}">
-    <link rel="stylesheet" href="{p}style.css">
+    <link rel="stylesheet" href="{p}style.css?v={version("style.css")}">
     {HEAD_SCRIPT}
-    <script src="{p}script.js" defer></script>
+    <script src="{p}script.js?v={version("script.js")}" defer></script>
 </head>
 <body>
 '''
