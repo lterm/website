@@ -223,28 +223,63 @@ def footer(lang):
 
 
 def build_index(lang, series):
+    """Index : le sommaire de la constellation (thèmes › branches), puis les séries."""
     t = TEXT[lang]
     p = LANGS[lang]["prefix"]
+    with open(os.path.join(ROOT, "content", "constellation.json"), encoding="utf-8") as f:
+        tree = json.load(f)["themes"]
+    # photos de chaque thème et de chaque branche, dans l'ordre de la constellation
+    groups = {}
+    for s in series:
+        for img in s["images"]:
+            th = img["branch"].split("/")[0]
+            groups.setdefault(th, []).append(img)
+            if "/" in img["branch"]:
+                groups.setdefault(img["branch"], []).append(img)
+
+    def preview(key):
+        imgs = groups.get(key)
+        return f' data-preview="{p}images/{imgs[0]["src"]}"' if imgs else ""
+
+    themes = []
+    for i, th in enumerate(tree, 1):
+        n = len(groups.get(th["id"], []))
+        if not n:
+            continue
+        branches = []
+        for br in th["branches"]:
+            key = th["id"] + "/" + br["id"]
+            m = len(groups.get(key, []))
+            if m:
+                branches.append(f'''                    <li><a href="index.html#{key}/1"{preview(key)}>{esc(br[lang])} <span class="toc-n">{m}</span></a></li>''')
+        branches = ("\n                <ul class=\"toc-branches\">\n" + "\n".join(branches) + "\n                </ul>") if branches else ""
+        themes.append(f'''            <li class="toc-theme">
+                <a class="toc-theme-link" href="index.html#{th["id"]}/1"{preview(th["id"])}>
+                    <span class="toc-num">{i:02d}</span>
+                    <h2 class="toc-title">{esc(th[lang])}</h2>
+                    <span class="toc-count">{count_label(n, t)}</span>
+                </a>{branches}
+            </li>''')
     rows = []
     for s in series:
         n = len(s["images"])
+        if not n:
+            continue
         txt = s[lang]
-        preview = f' data-preview="{p}images/{s["images"][0]["src"]}"' if n else ""  # série vide : pas d'aperçu
-        rows.append(f'''            <li>
-                <a class="series" href="{s["slug"]}.html"{preview}>
-                    <span class="series-meta">{esc(s["cameras"])}</span>
-                    <span class="series-meta series-meta--right">{n:02d} {t["image"] if n == 1 else t["images"]}</span>
-                    <h2 class="series-title">{esc(txt["title"])}
-                        <span class="muted">{esc(txt["subtitle"])}</span>
-                    </h2>
-                </a>
-            </li>''')
-    rows = "\n".join(rows)
+        rows.append(f'''            <li><a class="toc-serie" href="{s["slug"]}.html" data-preview="{p}images/{s["images"][0]["src"]}">
+                <span class="toc-serie-title">{esc(txt["title"])} <span class="muted">{esc(txt["subtitle"])}</span></span>
+                <span class="toc-n">{n}</span>
+            </a></li>''')
+    themes, rows = "\n".join(themes), "\n".join(rows)
     return (head(lang, "liste.html", "Index — Lucie Termignon", t["home_desc"])
             + header(lang, "liste.html", "index")
             + f'''    <main class="page">
-        <p class="section-label">{t["series"]}</p>
-        <ul class="series-list">
+        <p class="section-label">{t["sky_title"]}</p>
+        <ol class="toc">
+{themes}
+        </ol>
+        <p class="section-label section-label--spaced">{t["series"]}</p>
+        <ul class="toc-series">
 {rows}
         </ul>
     </main>

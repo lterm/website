@@ -228,6 +228,114 @@ ul {
     }
 }
 
+/* Sommaire de la constellation : thèmes › branches, puis les séries */
+.toc,
+.toc-series {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.toc-theme {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px var(--gutter);
+    padding: 22px 0 26px;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.toc-theme-link {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: baseline;
+}
+
+.toc-num,
+.toc-count,
+.toc-n {
+    color: var(--muted);
+    font-size: var(--fs-small);
+    font-variant-numeric: tabular-nums;
+}
+
+.toc-title {
+    grid-column: 2 / 4;
+    font-size: clamp(1.75rem, 3.6vw, 3rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.toc-count {
+    text-align: right;
+}
+
+.toc-theme-link:hover .toc-title,
+.toc-theme-link:focus-visible .toc-title {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.12em;
+}
+
+.toc-branches {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 2 / -1;
+    gap: 6px 26px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.toc-branches a:hover,
+.toc-branches a:focus-visible,
+.toc-serie:hover .toc-serie-title,
+.toc-serie:focus-visible .toc-serie-title {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.toc-n {
+    margin-left: 2px;
+}
+
+.toc-series > li {
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.toc-serie {
+    display: flex;
+    gap: var(--gutter);
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+}
+
+.toc-serie-title .muted {
+    margin-left: 0.4em;
+}
+
+@media (max-width: 720px) {
+    .toc-theme {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .toc-num {
+        grid-row: 1;
+    }
+
+    .toc-count {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .toc-title,
+    .toc-branches {
+        grid-column: 1 / -1;
+    }
+}
+
 /* Aperçu qui suit le curseur (desktop uniquement) */
 .preview {
     position: fixed;
