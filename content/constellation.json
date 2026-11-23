@@ -1,7 +1,7 @@
 {
   "_note": "Arbre de la constellation (page d'accueil). Chaque photo de series.json indique sa branche (\"branch\": \"theme/branche\") et, si besoin, un lien en pointillé vers une autre branche (\"link\").",
   "themes": [
-    {"id": "paris", "fr": "Dates", "en": "Dates", "branches": []},
+    {"id": "paris", "fr": "Moments", "en": "Moments", "branches": []},
     {"id": "villes", "fr": "Ville", "en": "Cities", "branches": [
       {"id": "new-york", "fr": "New York", "en": "New York"},
       {"id": "boston", "fr": "Boston", "en": "Boston"},
@@ -22,10 +22,8 @@
     {"id": "essais", "fr": "Essais", "en": "Experiments", "branches": []},
     {"id": "montagne", "fr": "Montagne", "en": "Mountains", "branches": [
       {"id": "corse", "fr": "Corse", "en": "Corsica"},
-      {"id": "ecrins", "fr": "Écrins", "en": "Écrins"},
+      {"id": "alpes", "fr": "Alpes", "en": "Alps"},
       {"id": "pyrenees", "fr": "Pyrénées", "en": "Pyrenees"},
-      {"id": "chamonix", "fr": "Chamonix", "en": "Chamonix"},
-      {"id": "neige", "fr": "Neige", "en": "Snow"},
       {"id": "etes", "fr": "Étés", "en": "Summers"}]}
   ]
 }

@@ -507,27 +507,27 @@
       {
         "src": "montagne/montagne-09.jpg",
         "caption": "Écrins — Nikon FM2",
-        "branch": "montagne/ecrins"
+        "branch": "montagne/alpes"
       },
       {
         "src": "montagne/montagne-11.jpg",
         "caption": "Écrins — Nikon FM2",
-        "branch": "montagne/ecrins"
+        "branch": "montagne/alpes"
       },
       {
         "src": "montagne/montagne-13.jpg",
         "caption": "Écrins — Nikon FM2",
-        "branch": "montagne/ecrins"
+        "branch": "montagne/alpes"
       },
       {
         "src": "montagne/montagne-14.jpg",
         "caption": "Écrins — Nikon FM2",
-        "branch": "montagne/ecrins"
+        "branch": "montagne/alpes"
       },
       {
         "src": "montagne/montagne-15.jpg",
         "caption": "Écrins — Nikon FM2",
-        "branch": "montagne/ecrins"
+        "branch": "montagne/alpes"
       },
       {
         "src": "montagne/montagne-17.jpg",
@@ -547,18 +547,18 @@
       {
         "src": "montagne/montagne-21.jpg",
         "caption": "Chamonix — Lomo",
-        "branch": "montagne/chamonix",
+        "branch": "montagne/alpes",
         "color": 38
       },
       {
         "src": "montagne/montagne-10.jpg",
-        "caption": "Nikon FM2",
-        "branch": "montagne/neige"
+        "caption": "Beaufortain — Nikon FM2",
+        "branch": "montagne/alpes"
       },
       {
         "src": "montagne/montagne-12.jpg",
-        "caption": "Nikon FM2",
-        "branch": "montagne/neige"
+        "caption": "Beaufortain — Nikon FM2",
+        "branch": "montagne/alpes"
       },
       {
         "src": "montagne/montagne-16.jpg",
@@ -770,8 +770,8 @@
     "images": [
       {
         "src": "le-carre/le-carre-01.jpg",
-        "caption": "Yashica",
-        "branch": "montagne"
+        "caption": "Îles Éoliennes — Yashica",
+        "branch": "mer/eoliennes"
       },
       {
         "src": "le-carre/le-carre-02.jpg",
@@ -781,7 +781,7 @@
       {
         "src": "le-carre/le-carre-03.jpg",
         "caption": "Yashica",
-        "branch": "montagne"
+        "branch": "montagne/alpes"
       },
       {
         "src": "le-carre/le-carre-04.jpg",
@@ -796,17 +796,17 @@
       {
         "src": "le-carre/le-carre-06.jpg",
         "caption": "Yashica",
-        "branch": "montagne/neige"
+        "branch": "montagne/alpes"
       },
       {
         "src": "le-carre/le-carre-07.jpg",
         "caption": "Yashica",
-        "branch": "montagne/neige"
+        "branch": "montagne/alpes"
       },
       {
         "src": "le-carre/le-carre-08.jpg",
         "caption": "Yashica",
-        "branch": "montagne/neige"
+        "branch": "montagne/alpes"
       },
       {
         "src": "le-carre/le-carre-09.jpg",
