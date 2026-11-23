@@ -933,6 +933,42 @@ body:has(.sky) .sky {
     }
 }
 
+/* Série choisie : un tracé relie ses photos */
+.sky .spath {
+    fill: none;
+    stroke: var(--fg);
+    stroke-width: 1;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.sky .spath.is-on {
+    opacity: 0.8;
+}
+
+/* En mode série, la ligne des thèmes s'efface derrière le tracé */
+.sky .link {
+    transition: opacity 0.3s;
+}
+
+.sky[data-level="serie"] .link {
+    opacity: 0.15;
+}
+
+.sky-series ul a:hover,
+.sky-series ul a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.bar .sky-series-toggle[aria-expanded="true"] {
+    background: var(--fg);
+    color: var(--bg);
+}
+
 /* Légende de la constellation */
 .sky-legend {
     position: fixed;

@@ -156,7 +156,7 @@ document.addEventListener("click", function (e) {
     // sauf si l'entrée donne une 3e et 4e valeur : la position [x, y] en portrait.
     var CENTERS = [[0.18, 0.28], [0.48, 0.2], [0.82, 0.38, 0.22, 0.85], [0.78, 0.7], [0.5, 0.8], [0.2, 0.72]];
 
-    var W, H, vb, state = { t: -1, b: -1, p: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [];
+    var W, H, vb, state = { t: -1, b: -1, p: -1, s: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [], pathEls = [];
 
     function rng(seed) {
         return function () {
@@ -218,9 +218,9 @@ document.addEventListener("click", function (e) {
         background();
         var portrait = H > W, unit = Math.min(W, H);
         while (svg.firstChild) svg.removeChild(svg.firstChild);
-        floating = []; themeEls = []; branchEls = []; starEls = []; linkEls = []; rampEls = [];
+        floating = []; themeEls = []; branchEls = []; starEls = []; linkEls = []; rampEls = []; pathEls = [];
 
-        var gLinks = el("g", {}, svg), gRamps = el("g", {}, svg), gStars = el("g", {}, svg), gBranches = el("g", {}, svg), gThemes = el("g", {}, svg);
+        var gLinks = el("g", {}, svg), gRamps = el("g", {}, svg), gPaths = el("g", {}, svg), gStars = el("g", {}, svg), gBranches = el("g", {}, svg), gThemes = el("g", {}, svg);
         var rand = rng(5), placed = [];
 
         // positions des thèmes et des branches
@@ -305,18 +305,31 @@ document.addEventListener("click", function (e) {
             themeEls.push(a);
         });
 
+        // chaque série : un tracé qui relie ses photos dans l'ordre de la série
+        data.series.forEach(function (se, i) {
+            var pts = data.photos.filter(function (p) { return p.s === i; })
+                                 .sort(function (a, b) { return a.n - b.n; })
+                                 .map(function (p) { return p.x.toFixed(1) + "," + p.y.toFixed(1); });
+            pathEls.push(el("polyline", { points: pts.join(" "), "class": "spath", "data-s": i }, gPaths));
+        });
+
         apply(false);
     }
 
     // ---------- zoom ----------
     function target() {
-        if (state.t < 0) return [0, 0, W, H];
-        var th = data.themes[state.t], pts = [];
-        data.photos.forEach(function (p) {
-            if (p.t === state.t && (state.b < 0 || p.b === state.b)) pts.push([p.x, p.y]);
-        });
-        if (state.b < 0) { pts.push([th.x, th.y]); th.branches.forEach(function (b) { pts.push([b.x, b.y]); }); }
-        else pts.push([th.branches[state.b].x, th.branches[state.b].y]);
+        var pts = [];
+        if (state.s >= 0) {
+            data.photos.forEach(function (p) { if (p.s === state.s) pts.push([p.x, p.y]); });
+        } else {
+            if (state.t < 0) return [0, 0, W, H];
+            var th = data.themes[state.t];
+            data.photos.forEach(function (p) {
+                if (p.t === state.t && (state.b < 0 || p.b === state.b)) pts.push([p.x, p.y]);
+            });
+            if (state.b < 0) { pts.push([th.x, th.y]); th.branches.forEach(function (b) { pts.push([b.x, b.y]); }); }
+            else pts.push([th.branches[state.b].x, th.branches[state.b].y]);
+        }
         var x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
         pts.forEach(function (q) { x0 = Math.min(x0, q[0]); y0 = Math.min(y0, q[1]); x1 = Math.max(x1, q[0]); y1 = Math.max(y1, q[1]); });
         // Les libellés et les étoiles gardent leur taille à l'écran : la marge qui leur est laissée
@@ -353,8 +366,10 @@ document.addEventListener("click", function (e) {
     }
 
     function apply(anim) {
-        var t = state.t, b = state.b;
-        sky.setAttribute("data-level", t < 0 ? 0 : b < 0 ? 1 : 2);
+        var t = state.t, b = state.b, s = state.s;
+        sky.setAttribute("data-level", s >= 0 ? "serie" : t < 0 ? 0 : b < 0 ? 1 : 2);
+        pathEls.forEach(function (n, i) { n.classList.toggle("is-on", i === s); });
+        if (s >= 0) return applySerie(anim);
         function dim(n, keep) { n.classList.toggle("is-dim", !keep); }
         themeEls.forEach(function (n, i) { dim(n, t < 0 || i === t); });
         branchEls.forEach(function (n) {
@@ -388,14 +403,39 @@ document.addEventListener("click", function (e) {
         anim ? animate(target()) : draw(target());
     }
 
-    // Adresses : #theme, #theme/branche, et #theme[/branche]/n pour la n-ième photo de ce groupe
+    // Série choisie : ses étoiles et son tracé ressortent, le reste s'estompe
+    function applySerie(anim) {
+        var s = state.s, se = data.series[s];
+        themeEls.forEach(function (n) { n.classList.add("is-dim"); });
+        branchEls.forEach(function (n) {
+            n.classList.add("is-hidden"); n.setAttribute("tabindex", "-1"); n.setAttribute("aria-hidden", "true");
+        });
+        rampEls.forEach(function (n) { n.classList.add("is-dim"); });
+        starEls.forEach(function (n, i) { n.classList.toggle("is-dim", data.photos[i].s !== s); });
+        linkEls.forEach(function (n) { n.classList.remove("is-on"); });
+        if (crumbs) {
+            crumbs.innerHTML = "";
+            var home = document.createElement("a"); home.href = "#"; home.textContent = data.home;
+            var cur = document.createElement("a"); cur.href = "#serie/" + se.id; cur.textContent = data.series_label + " : " + se.title;
+            cur.setAttribute("aria-current", "location");
+            crumbs.appendChild(home); crumbs.appendChild(document.createTextNode(" › ")); crumbs.appendChild(cur);
+        }
+        if (info) info.textContent = se.count;
+        anim ? animate(target()) : draw(target());
+    }
+
+    // Adresses : #theme, #theme/branche, #serie/nom, et …/n pour la n-ième photo de ce groupe
     function fromHash() {
-        var parts = decodeURIComponent(location.hash.slice(1)).split("/"), t = -1, b = -1, p = -1;
+        var parts = decodeURIComponent(location.hash.slice(1)).split("/"), t = -1, b = -1, p = -1, s = -1;
         if (parts.length > 1 && /^\d+$/.test(parts[parts.length - 1])) p = +parts.pop() - 1;
-        data.themes.forEach(function (th, i) { if (th.id === parts[0]) t = i; });
-        if (t >= 0 && parts[1]) data.themes[t].branches.forEach(function (br, k) { if (br.id === parts[1]) b = k; });
-        if (t < 0 || p >= group(t, b).length) p = -1;
-        state = { t: t, b: b, p: p };
+        if (parts[0] === "serie") {
+            data.series.forEach(function (se, i) { if (se.id === parts[1]) s = i; });
+        } else {
+            data.themes.forEach(function (th, i) { if (th.id === parts[0]) t = i; });
+            if (t >= 0 && parts[1]) data.themes[t].branches.forEach(function (br, k) { if (br.id === parts[1]) b = k; });
+        }
+        state = { t: t, b: b, p: -1, s: s };
+        if ((t >= 0 || s >= 0) && p < current().length) state.p = p;
     }
 
     function group(t, b) { // indices des photos d'un thème ou d'une branche, dans l'ordre
@@ -404,12 +444,22 @@ document.addEventListener("click", function (e) {
         return list;
     }
 
+    function current() { // photos du groupe en cours : série (dans son ordre), branche ou thème
+        if (state.s < 0) return group(state.t, state.b);
+        var list = [];
+        data.photos.forEach(function (q, i) { if (q.s === state.s) list.push(i); });
+        return list.sort(function (a, b) { return data.photos[a].n - data.photos[b].n; });
+    }
+
     function base(t, b) {
         return data.themes[t].id + (b >= 0 ? "/" + data.themes[t].branches[b].id : "");
     }
 
+    function here() { return state.s >= 0 ? "serie/" + data.series[state.s].id : base(state.t, state.b); }
+
     function up() {
-        if (state.p >= 0) { location.hash = base(state.t, state.b); return; } // ferme la photo
+        if (state.p >= 0) { location.hash = here(); return; } // ferme la photo
+        if (state.s >= 0) { location.hash = ""; return; }
         if (state.t < 0) return;
         location.hash = state.b >= 0 ? data.themes[state.t].id : "";
     }
@@ -436,6 +486,11 @@ document.addEventListener("click", function (e) {
 
     function openPhoto(idx) {
         var p = data.photos[idx], t = state.t, b = state.b;
+        lastFocus = document.activeElement;
+        if (state.s >= 0 && p.s === state.s) { // dans une série : on parcourt la série
+            location.hash = here() + "/" + (current().indexOf(idx) + 1);
+            return;
+        }
         // reste dans le thème ou la branche en cours si la photo en fait partie, sinon prend son thème
         if (t !== p.t || (b >= 0 && b !== p.b)) { t = p.t; b = -1; }
         lastFocus = document.activeElement;
@@ -443,8 +498,8 @@ document.addEventListener("click", function (e) {
     }
 
     function step(d) {
-        var n = group(state.t, state.b).length;
-        location.hash = base(state.t, state.b) + "/" + ((state.p + d + n) % n + 1);
+        var n = current().length;
+        location.hash = here() + "/" + ((state.p + d + n) % n + 1);
     }
 
     function showPhoto() {
@@ -455,7 +510,7 @@ document.addEventListener("click", function (e) {
             }
             return;
         }
-        var list = group(state.t, state.b), p = data.photos[list[state.p]];
+        var list = current(), p = data.photos[list[state.p]];
         photo.src = p.src;
         photo.alt = p.series + ", " + p.n + (p.cap ? " — " + p.cap : "");
         box.setAttribute("aria-label", photo.alt);
@@ -484,23 +539,32 @@ document.addEventListener("click", function (e) {
 
     window.addEventListener("hashchange", function () { fromHash(); apply(true); showPhoto(); });
     svg.addEventListener("click", function (e) { if (!e.target.closest("a")) up(); });
-    // légende : ouverte par le bouton de la barre, fermée par Échap ou un clic à côté
-    var legend = document.getElementById("sky-legend");
-    var legendBtn = document.querySelector(".sky-legend-toggle");
-    function setLegend(open) {
-        if (!legend || !legendBtn) return;
-        legend.hidden = !open;
-        legendBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    // Panneaux de la barre (séries, légende) : un seul ouvert, fermés par Échap ou un clic à côté
+    var panels = [[".sky-series-toggle", "sky-series"], [".sky-legend-toggle", "sky-legend"]].map(function (q) {
+        return { btn: document.querySelector(q[0]), box: document.getElementById(q[1]) };
+    }).filter(function (p) { return p.btn && p.box; });
+    function setPanel(which) {
+        panels.forEach(function (p) {
+            var open = p === which;
+            p.box.hidden = !open;
+            p.btn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
     }
-    if (legendBtn) legendBtn.addEventListener("click", function () { setLegend(legend.hidden); });
+    panels.forEach(function (p) {
+        p.btn.addEventListener("click", function () { setPanel(p.box.hidden ? p : null); });
+        p.box.addEventListener("click", function (e) { if (e.target.closest("a")) setPanel(null); });
+    });
     document.addEventListener("click", function (e) {
-        if (legend && !legend.hidden && !legend.contains(e.target) && e.target !== legendBtn) setLegend(false);
+        panels.forEach(function (p) {
+            if (!p.box.hidden && !p.box.contains(e.target) && e.target !== p.btn) setPanel(null);
+        });
     }, true);
 
     document.addEventListener("keydown", function (e) {
         if (state.p >= 0 && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { step(e.key === "ArrowLeft" ? -1 : 1); return; }
         if (e.key !== "Escape") return;
-        if (legend && !legend.hidden) { setLegend(false); legendBtn.focus(); return; }
+        var open = panels.filter(function (p) { return !p.box.hidden; })[0];
+        if (open) { setPanel(null); open.btn.focus(); return; }
         up();
     });
 

@@ -34,9 +34,12 @@ TEXT = {
         "sky_crumbs": "Position dans la constellation",
         "legend": "légende",
         "legend_title": "Légende",
+        "series_btn": "séries",
+        "series_hint": "Chaque série relie ses photos sur la carte.",
         "legend_items": [("nikon", "Nikon FM2"), ("leica", "Leica M3"), ("lomo", "Lomo"), ("yashica", "Yashica"),
                          ("olympus", "Olympus XA4"), ("color", "photo en couleur, dans sa teinte dominante"),
-                         ("link", "lien vers un lieu"), ("node", "thème ou branche")],
+                         ("link", "lien vers un lieu"), ("node", "thème ou branche"),
+                         ("path", "série : ses photos reliées")],
         "series": "Séries",
         "image": "image",
         "images": "images",
@@ -70,9 +73,12 @@ TEXT = {
         "sky_crumbs": "Position in the constellation",
         "legend": "legend",
         "legend_title": "Legend",
+        "series_btn": "series",
+        "series_hint": "Each series links its photos on the map.",
         "legend_items": [("nikon", "Nikon FM2"), ("leica", "Leica M3"), ("lomo", "Lomo"), ("yashica", "Yashica"),
                          ("olympus", "Olympus XA4"), ("color", "colour photo, in its dominant hue"),
-                         ("link", "link to a place"), ("node", "theme or branch")],
+                         ("link", "link to a place"), ("node", "theme or branch"),
+                         ("path", "series: its photos linked")],
         "series": "Series",
         "image": "image",
         "images": "images",
@@ -266,7 +272,7 @@ def build_index(lang, series):
         if not n:
             continue
         txt = s[lang]
-        rows.append(f'''            <li><a class="toc-serie" href="{s["slug"]}.html" data-preview="{p}images/{s["images"][0]["src"]}">
+        rows.append(f'''            <li><a class="toc-serie" href="index.html#serie/{s["slug"]}" data-preview="{p}images/{s["images"][0]["src"]}">
                 <span class="toc-serie-title">{esc(txt["title"])} <span class="muted">{esc(txt["subtitle"])}</span></span>
                 <span class="toc-n">{n}</span>
             </a></li>''')
@@ -364,6 +370,7 @@ def count_label(n, t):
 
 
 LEGEND_SVG = {
+    "path": '<path d="M-7 5L-2 -3L3 2L7 -6"/>',
     "nikon": '<circle r="5.5"/>',
     "leica": '<path d="M-5.5 -5.5L5.5 5.5M5.5 -5.5L-5.5 5.5"/>',
     "lomo": '<circle r="5.5"/><circle r="1.6" class="fill"/>',
@@ -373,6 +380,19 @@ LEGEND_SVG = {
     "link": '<path d="M-7 0H7" class="dash"/>',
     "node": '<path d="M-6 0H6M0 -6V6"/>',
 }
+
+
+def series_html(t, items):
+    """Liste des séries de la constellation : en choisir une trace ses photos sur la carte."""
+    rows = "\n".join(f'''            <li><a href="#serie/{s["id"]}">{esc(s["title"])} <span class="toc-n">{s["n"]}</span></a></li>'''
+                     for s in items)
+    return f'''    <div class="sky-legend sky-series" id="sky-series" role="dialog" aria-label="{t["series"]}" hidden>
+        <p class="sky-legend-title">{t["series_hint"]}</p>
+        <ul>
+{rows}
+        </ul>
+    </div>
+'''
 
 
 def legend_html(t):
@@ -403,14 +423,18 @@ def build_sky(lang, series):
         themes.append({"id": th["id"], "title": th[lang], "count": 0,
                        "branches": [{"id": br["id"], "title": br[lang], "count": 0} for br in th["branches"]]})
     photos = []
+    sky_series = []
     for s in series:
+        if s["images"]:
+            sky_series.append({"id": s["slug"], "title": s[lang]["title"], "href": s["slug"] + ".html",
+                               "n": len(s["images"]), "count": count_label(len(s["images"]), t)})
         for k, img in enumerate(s["images"]):
             ti, bi = index[img["branch"]]  # une branche inconnue fait échouer la génération
             lt, lb = index[img["link"]] if img.get("link") else (-1, -1)
             themes[ti]["count"] += 1
             if bi >= 0:
                 themes[ti]["branches"][bi]["count"] += 1
-            photos.append({"t": ti, "b": bi, "lt": lt, "lb": lb, "n": k + 1,
+            photos.append({"t": ti, "b": bi, "lt": lt, "lb": lb, "n": k + 1, "s": len(sky_series) - 1,
                            "series": s[lang]["title"], "href": s["slug"] + ".html#" + str(k + 1),
                            "src": p + "images/" + img["src"],
                            "cap": translate_caption(img["caption"], lang),
@@ -420,7 +444,7 @@ def build_sky(lang, series):
         th["count"] = count_label(th["count"], t)
         for br in th["branches"]:
             br["count"] = count_label(br["count"], t)
-    data = {"home": t["sky_title"], "themes": themes, "photos": photos,
+    data = {"home": t["sky_title"], "themes": themes, "photos": photos, "series": sky_series, "series_label": t["series"],
             "ui": {"close": t["close"], "series": t["see_series"], "prev": t["prev_photo"], "next": t["next_photo"]}}
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     return (head(lang, "index.html", "Lucie Termignon — " + t["tagline"], t["sky_desc"])
@@ -435,11 +459,12 @@ def build_sky(lang, series):
     </main>
     <script type="application/json" id="sky-data">{payload}</script>
     <div class="preview" aria-hidden="true"><img src="" alt=""></div>
-{legend_html(t)}    <div class="bar">
+{series_html(t, sky_series)}{legend_html(t)}    <div class="bar">
         <nav class="sky-crumbs" aria-label="{t["sky_crumbs"]}"></nav>
         <span class="sky-coord">RA&nbsp;<span class="sky-ra">—</span></span>
         <span class="sky-coord">DE&nbsp;<span class="sky-de">—</span></span>
         <span class="sky-info" aria-live="polite"></span>
+        <button type="button" class="sky-series-toggle no-js-hide" aria-expanded="false" aria-controls="sky-series">{t["series_btn"]}</button>
         <button type="button" class="sky-legend-toggle no-js-hide" aria-expanded="false" aria-controls="sky-legend">{t["legend"]}</button>
         <span class="sky-total">{len(photos)} {t["images"]}</span>
     </div>
