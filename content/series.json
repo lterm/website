@@ -222,49 +222,49 @@
       {
         "src": "paris-suspendu/paris-suspendu-01.jpg",
         "caption": "Paris — Leica M3",
-        "branch": "paris"
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-02.jpg",
         "caption": "Paris — Leica M3",
-        "branch": "paris"
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-03.jpg",
         "caption": "Paris — Leica M3",
-        "branch": "paris"
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-04.jpg",
         "caption": "Paris — Leica M3",
-        "branch": "paris"
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-05.jpg",
         "caption": "Arènes de Lutèce, Paris",
-        "branch": "paris"
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-06.jpg",
         "caption": "Paris — Nikon FM2",
-        "branch": "paris"
+        "branch": "villes/paris"
       },
       {
         "src": "paris-suspendu/paris-suspendu-07.jpg",
         "caption": "Paris — Nikon FM2",
-        "branch": "paris",
+        "branch": "villes/paris",
         "color": 44
       },
       {
         "src": "paris-suspendu/paris-suspendu-08.jpg",
         "caption": "Paris — Nikon FM2",
-        "branch": "paris",
+        "branch": "villes/paris",
         "color": 114
       },
       {
         "src": "paris-suspendu/paris-suspendu-09.jpg",
         "caption": "Notre-Dame, 15 avril 2019",
-        "branch": "paris",
+        "branch": "villes/paris",
         "color": 215
       }
     ]
@@ -786,12 +786,12 @@
       {
         "src": "le-carre/le-carre-04.jpg",
         "caption": "L’Arc de Triomphe, Wrapped (Christo), 2021",
-        "branch": "paris"
+        "branch": "villes/paris"
       },
       {
         "src": "le-carre/le-carre-05.jpg",
         "caption": "L’Arc de Triomphe, Wrapped (Christo), 2021",
-        "branch": "paris"
+        "branch": "villes/paris"
       },
       {
         "src": "le-carre/le-carre-06.jpg",
@@ -826,7 +826,7 @@
       {
         "src": "le-carre/le-carre-12.jpg",
         "caption": "Paris — Yashica",
-        "branch": "paris"
+        "branch": "villes/paris"
       }
     ]
   }

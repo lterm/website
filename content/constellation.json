@@ -1,8 +1,8 @@
 {
   "_note": "Arbre de la constellation (page d'accueil). Chaque photo de series.json indique sa branche (\"branch\": \"theme/branche\") et, si besoin, un lien en pointillé vers une autre branche (\"link\").",
   "themes": [
-    {"id": "paris", "fr": "Moments", "en": "Moments", "branches": []},
     {"id": "villes", "fr": "Ville", "en": "Cities", "branches": [
+      {"id": "paris", "fr": "Paris", "en": "Paris"},
       {"id": "new-york", "fr": "New York", "en": "New York"},
       {"id": "boston", "fr": "Boston", "en": "Boston"},
       {"id": "londres", "fr": "Londres", "en": "London"},

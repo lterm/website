@@ -154,7 +154,8 @@ document.addEventListener("click", function (e) {
     // centres des thèmes (paysage), dans l'ordre de content/constellation.json
     // [x, y] en paysage. En portrait, les coordonnées sont transposées,
     // sauf si l'entrée donne une 3e et 4e valeur : la position [x, y] en portrait.
-    var CENTERS = [[0.18, 0.28], [0.48, 0.2], [0.82, 0.38, 0.22, 0.85], [0.78, 0.7], [0.5, 0.8], [0.2, 0.72]];
+    // Ville, Personnes, Mer, Essais, Montagne : un arc ouvert (Montagne n'est pas reliée à Ville)
+    var CENTERS = [[0.2, 0.3], [0.52, 0.2], [0.8, 0.4], [0.62, 0.76], [0.25, 0.72]];
 
     var W, H, vb, state = { t: -1, b: -1, p: -1, s: -1 }, floating = [], themeEls = [], branchEls = [], starEls = [], linkEls = [], rampEls = [], pathEls = [];
 
