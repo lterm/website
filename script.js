@@ -238,8 +238,7 @@ document.addEventListener("click", function (e) {
             placed.push([th.x, th.y]);
         });
 
-        // lignes entre thèmes, et ramifications thème → branches
-        el("polyline", { points: data.themes.map(function (t) { return t.x + "," + t.y; }).join(" "), "class": "link" }, gRamps);
+        // ramifications thème → branches (pas de ligne entre les thèmes : chacun est une constellation à part)
         data.themes.forEach(function (th, i) {
             th.branches.forEach(function (br, k) {
                 rampEls.push(el("line", { x1: th.x, y1: th.y, x2: br.x, y2: br.y, "class": "ramp", "data-t": i, "data-b": k }, gRamps));
